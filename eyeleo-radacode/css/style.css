@@ -1,0 +1,185 @@
+.features {
+  background-color: #dbdcde;
+  padding: 30px 0;
+  text-align: center;
+}
+.features .text h2 {
+  text-align: center;
+  color: #000;
+  font-size: 26px;
+  padding-bottom: 40px;
+  margin: 0;
+}
+.features .text p {
+  font-size: 18px;
+  color: #000;
+  text-align: center;
+  margin: 0;
+}
+.features .mac-screen img {
+  max-width: 100%;
+  min-width: 100%;
+}
+.buy-section {
+  background-color: #dbdcde;
+  padding: 80px 0;
+  margin-top: 24px;
+  text-align: center;
+  line-height: 40px;
+}
+.buy-section .logo3 {
+  text-align: center;
+}
+.buy-section .logo3 img {
+  margin-right: 10px;
+}
+.buy-section .logo3::after {
+  content: 'EyeLeo';
+  font-size: 48px;
+  color: #000;
+  position: relative;
+  top: 10px;
+}
+.buy-section .buy-button {
+  height: 90px;
+  line-height: 90px;
+}
+.buy-section .buy-button a {
+  display: inline-block;
+  line-height: 60px;
+  height: 60px;
+  padding: 0 30px;
+  color: #000;
+  font-size: 24px;
+  background-color: #327c48;
+}
+.buy-section .buy-button a:hover {
+  text-decoration: none;
+  background-color: #216b37;
+}
+header {
+  background-image: url("../img/header-background.png");
+  background-position: top center;
+  background-size: cover;
+  padding: 30px 20px 40px;
+  position: relative;
+}
+header .pows {
+  display: none;
+}
+header .header {
+  padding-top: 30px;
+}
+header .header .logo1 img {
+  float: left;
+  margin-right: 10px;
+}
+header .header .logo1::after {
+  content: 'EyeLeo';
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  position: relative;
+  top: 5px;
+}
+header .header .menu {
+  text-align: right;
+  float: right;
+}
+header .header .menu ul {
+  padding-left: 0;
+}
+header .header .menu ul li {
+  list-style-type: none;
+}
+header .header .menu ul li a {
+  padding: 0 30px;
+  line-height: 44px;
+  height: 44px;
+  display: block;
+  color: #000;
+  font-size: 16px;
+}
+header .header .menu ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+header .header .menu ul li:nth-child(3) a {
+  border: 3px solid #000;
+  line-height: 39px;
+}
+header .header-content .logo2 img {
+  width: 60%;
+  margin: 16px 0 0 67px;
+}
+header .header-content h1 {
+  color: #000;
+  font-size: 34px;
+  text-align: center;
+  max-width: 75%;
+  font-weight: normal;
+  margin: 0 0 30px;
+}
+header .header-content .text {
+  max-width: 90%;
+  color: #000;
+  text-align: center;
+  padding-right: 60px;
+  font-size: 22px;
+}
+header .header-content .pow-img .pows {
+  max-width: 100%;
+  position: absolute;
+}
+header .header-content .pow-img .pows img {
+  max-width: 100%;
+}
+header .header-content .pow-img div:nth-child(1) {
+  top: 25%;
+  right: 32%;
+}
+header .header-content .pow-img div:nth-child(2) {
+  top: 20%;
+  right: 22%;
+}
+header .header-content .pow-img div:nth-child(3) {
+  top: 27%;
+  right: 12%;
+}
+header .header-content .pow-img div:nth-child(4) {
+  top: 47%;
+  right: 6%;
+}
+header .header-content .pow-img div:nth-child(5) {
+  top: 65%;
+  right: 3%;
+}
+header .header-content .pow-img div:nth-child(6) {
+  top: 85%;
+  right: 3%;
+}
+footer {
+  background-image: url("../img/footer-background.png");
+  background-position: center bottom;
+  background-size: cover;
+  padding: 0 10px;
+}
+footer .footer-elem {
+  padding: 115px 0 50px;
+  float: left;
+  width: 20%;
+  text-align: center;
+  line-height: 45px;
+}
+footer .footer-elem a {
+  text-align: center;
+  color: #000;
+  font-size: 20px;
+  text-decoration: none;
+}
+footer .copyright {
+  text-align: center;
+  color: #000;
+  font-size: 18px;
+  padding-bottom: 25px;
+}
