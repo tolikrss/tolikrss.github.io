@@ -1,0 +1,97 @@
+header .top .logo a img {
+  width: 200px;
+  height: 200px;
+}
+header .top .contacts {
+  min-height: 200px;
+  position: relative;
+}
+header .top .contacts .contacts-container {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -50px;
+  text-align: left;
+  color: #fff;
+  font-size: 18px;
+}
+nav .menu {
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), color-stop(50%, rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.8)));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.8) 100%);
+}
+nav .menu.fixed {
+  width: 80%;
+  position: fixed;
+  top: 0;
+  z-index: 4;
+}
+nav .menu .toggleMenu {
+  padding: 0 43%;
+  color: #fff;
+  font-size: 18px;
+  display: none;
+}
+nav .menu ul li {
+  list-style-type: none;
+  text-transform: uppercase;
+  float: left;
+}
+nav .menu ul li a {
+  color: #fff;
+  font-size: 18px;
+  display: inline-block;
+  margin: 5px 0;
+  padding: 5px 15px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+}
+nav .menu ul li a:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 768px) {
+  header .contacts .contacts-container {
+    position: relative !important;
+    margin: 0 5%;
+  }
+  nav .menu.fixed {
+    width: 100%;
+  }
+  nav .menu ul li {
+    float: none;
+  }
+}
+.footer {
+  color: #fff;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  padding: 10px 0;
+}
+.footer .menu ul li {
+  list-style-type: none;
+}
+.footer .menu ul li a {
+  color: #fff;
+}
+.footer .social a {
+  color: #fff;
+  font-size: 28px;
+  margin: 10px;
+}
+body {
+  background-image: url("../img/background.jpg");
+  background-position: top center;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 0 10%;
+}
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+}
