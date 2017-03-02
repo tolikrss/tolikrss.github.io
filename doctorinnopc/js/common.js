@@ -36,28 +36,5 @@ $(document).ready(function() {
 });
 
 $(window).resize(function() {
-  var $menu = $("#menu");
-  var start_pos = $('#menu').offset().top;
-  var navHeight = $('#menu').height();
-  $('nav').css('height', navHeight);
 
-  $(window).scroll(function() {
-      if ($(this).scrollTop() > start_pos && $menu.hasClass("default")) {
-          $menu.removeClass("default").addClass("fixed");
-      } else if ($(this).scrollTop() <= start_pos && $menu.hasClass("fixed")) {
-          $menu.removeClass("fixed").addClass("default");
-      }
-  }); //scroll
-
-  var windowWidth = $(window).width();
-  console.log(windowWidth);
-  $(".toggleMenu").click(function(e) {
-      e.preventDefault();
-      $(".nav").toggle();
-  });
-  if (windowWidth < 768) {
-      $(".toggleMenu").css("display", "inline-block");
-      $(".nav").hide();
-  } else {
-  };
 });
