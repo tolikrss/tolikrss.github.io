@@ -83,6 +83,70 @@ nav .menu ul li a:hover {
   font-size: 28px;
   margin: 10px;
 }
+.footer .social a.vk {
+  color: #00f;
+}
+.footer .social a.instagram {
+  color: #f00;
+}
+section {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  margin: 10px 0;
+  color: #fff;
+  padding: 15px;
+}
+section .right-sidebar .vk-group {
+  margin: 10px 0;
+}
+section .right-sidebar .vk-group h2 {
+  font-size: 22px;
+}
+section .right-sidebar .news {
+  border-top: 1px solid #fff;
+}
+section .right-sidebar .news h2 {
+  font-size: 22px;
+  margin: 10px 0;
+}
+section .right-sidebar .news .item {
+  padding: 5px;
+}
+section .right-sidebar .news .item h3 {
+  font-size: 18px;
+  color: #ddd;
+  margin: 5px 0;
+}
+section .right-sidebar .news .item img {
+  max-width: 100%;
+}
+section .right-sidebar .news .item .article-text {
+  font-size: 12px;
+  height: 50px;
+  color: #ddd;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+section .right-sidebar .news .item .read-button {
+  display: inline-block;
+  background-color: #777;
+  padding: 5px 10px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  margin: 5px 0;
+  color: #ddd;
+}
+section .right-sidebar .news .item .read-button:hover {
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  section .right-sidebar {
+    border-top: 1px solid #fff;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+}
 body {
   background-image: url("../img/background.jpg");
   background-position: top center;
