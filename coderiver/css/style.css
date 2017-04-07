@@ -79,12 +79,12 @@ ul {
 .header .menu ul li .dropdown-inside {
   display: none;
   position: absolute;
-  left: 0;
-  top: 85px;
+  right: 0;
+  top: 35px;
   float: none;
   background-color: #141a1d;
   width: 300px;
-  padding: 20px 0;
+  padding: 40px 0 20px 0;
 }
 .header .menu ul li .dropdown-inside li {
   float: none;
