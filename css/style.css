@@ -231,12 +231,30 @@ ul {
   text-transform: uppercase;
   color: #fff;
 }
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
+  .header .logo {
+    width: 80px;
+    height: 110px;
+  }
   .header .logo-text .main-container .container .p2 {
-    font-size: 38px;
+    font-size: 32px;
   }
   .header .menu ul li a {
-    padding: 0 10px;
+    padding: 0 15px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 1440px) {
+  .header .logo {
+    width: 80px;
+    height: 110px;
+  }
+  .header .logo-text .main-container .container .p2 {
+    font-size: 32px;
+  }
+  .header .menu ul li a {
+    padding: 0 5px;
+    font-size: 16px;
   }
   .main-section {
     height: 700px;
@@ -264,17 +282,6 @@ ul {
   }
 }
 @media (max-width: 1024px) {
-  .header .logo {
-    width: 80px;
-    height: 110px;
-  }
-  .header .logo-text .main-container .container .p2 {
-    font-size: 32px;
-  }
-  .header .menu ul li a {
-    padding: 0 5px;
-    font-size: 16px;
-  }
   .main-section {
     height: 700px;
   }
@@ -381,7 +388,7 @@ ul {
     height: 120px;
   }
   .main-section .button-div .text {
-    font-size: 22px;
+    font-size: 20px;
     margin: 5px 0;
   }
   .main-section .button-div button {
@@ -422,7 +429,7 @@ ul {
     font-size: 24px;
   }
   .main-section .button-div .text {
-    font-size: 18px;
+    font-size: 16px;
   }
   .main-section .button-div button {
     font-size: 16px;
