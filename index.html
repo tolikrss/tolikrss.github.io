@@ -1,58 +1,184 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>Тестовые проекты</title>
-    <style media="screen">
-      a {
-        text-decoration: none;
-        display: inline-block;
-        padding: 15px;
-        color: #f00;
-        background-color: #f3f3f3;
-        font-size: 24px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Тестовые проекты:</h1>
-    <ul>
-      <li>
-        <div class="">
-          <h2>Coderiver Grid</h2>
-          <a href="coderiver/index.html">Main page</a>
-          <br/>
-          Тестовое задание, LESS, адаптивный
+    <title>STRONGEST</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="vendor/normalize.css">
+</head>
+
+<body>
+    <div class="clearfix header">
+        <div class="logo">
+            <img src="img/fl.png" alt="">
         </div>
-      </li>
-      <li>
-        <div class="">
-          <h2>Doctorinnopc</h2>
-          <a href="doctorinnopc/index.html">Main page</a>
-          <br/>
-          Bootstrap, Font Awesome, Gulp, LESS, адаптивный
+        <div class="logo-text clearfix">
+            <div class="main-container clearfix">
+                <div class="container">
+                    <div class="p1">Stone products</div>
+                    <div class="p2">Strongest</div>
+                </div>
+            </div>
         </div>
-      </li>
-      <li>
-        <div class="">
-          <h2>Awesomag</h2>
-          <a href="awesomag-responsive/index.html">Main page</a>
-          <a href="awesomag-responsive/photography.html">Photography page</a>
-          <br/>
-          Адаптивная верстка без использования Bootstrap, с использованием препроцеcсора LESS
+        <div class="menu">
+            <button onclick="toggle()" id="menu-button" type="button" name="button" style="">Menu</button>
+            <ul id="menu-show">
+                <li>
+                    <a href="#">Home</a>
+                    <ul class="dropdown-inside">
+                        <li><a href="#">Quisque nulla</a></li>
+                        <li><a href="#">Vestibulum libero nis</a></li>
+                        <li><a href="#">Porta vel scelerisque eget</a></li>
+                        <li><a href="#">Malesuada at neque</a></li>
+                        <li><a href="#">Vivamus eget nibh</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                    <ul class="dropdown-inside">
+                        <li><a href="#">Quisque nulla</a></li>
+                        <li><a href="#">Vestibulum libero nis</a></li>
+                        <li><a href="#">Porta vel scelerisque eget</a></li>
+                        <li><a href="#">Malesuada at neque</a></li>
+                        <li><a href="#">Vivamus eget nibh</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Solutions</a>
+                    <ul class="dropdown-inside">
+                        <li><a href="#">Quisque nulla</a></li>
+                        <li><a href="#">Vestibulum libero nis</a></li>
+                        <li><a href="#">Porta vel scelerisque eget</a></li>
+                        <li><a href="#">Malesuada at neque</a></li>
+                        <li><a href="#">Vivamus eget nibh</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                    <ul class="dropdown-inside">
+                        <li><a href="#">Quisque nulla</a></li>
+                        <li><a href="#">Vestibulum libero nis</a></li>
+                        <li><a href="#">Porta vel scelerisque eget</a></li>
+                        <li><a href="#">Malesuada at neque</a></li>
+                        <li><a href="#">Vivamus eget nibh</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Testimonials</a>
+                    <ul class="dropdown-inside">
+                        <li><a href="#">Quisque nulla</a></li>
+                        <li><a href="#">Vestibulum libero nis</a></li>
+                        <li><a href="#">Porta vel scelerisque eget</a></li>
+                        <li><a href="#">Malesuada at neque</a></li>
+                        <li><a href="#">Vivamus eget nibh</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Gallery</a>
+                    <ul class="dropdown-inside">
+                        <li><a href="#">Quisque nulla</a></li>
+                        <li><a href="#">Vestibulum libero nis</a></li>
+                        <li><a href="#">Porta vel scelerisque eget</a></li>
+                        <li><a href="#">Malesuada at neque</a></li>
+                        <li><a href="#">Vivamus eget nibh</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Contacts</a>
+                    <ul class="dropdown-inside">
+                        <li><a href="#">Quisque nulla</a></li>
+                        <li><a href="#">Vestibulum libero nis</a></li>
+                        <li><a href="#">Porta vel scelerisque eget</a></li>
+                        <li><a href="#">Malesuada at neque</a></li>
+                        <li><a href="#">Vivamus eget nibh</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><img src="img/search.png" alt=""></a>
+                </li>
+            </ul>
         </div>
-      </li>
-      <li>
-        <div class="">
-          <h2>EyeLeo</h2>
-          <a href="eyeleo-radacode/index.html">EyeLeo</a>
-          <br/>
-          Sticky footer, футер прибит к низу экрана, даже если текста на сайте не хватает что бы он был опущен вниз. <br/>
-          Элементы в дизайне появляться в виде анимации при заходе на сайт по очереди <br/>
-          Верстка выполнена с использованием препроцессора LESS <br/>
-          responsive с 320px до 1920px+
+    </div>
+
+    <div class="clearfix main-section">
+
+        <div class="button-div">
+            <div class="slider-buttons">
+                <div class="left">
+                    < </div>
+                        <div class="right">
+                            >
+                        </div>
+                </div>
+                <div class="text">
+                    How do you create a product that looks like natural stone?
+                </div>
+                <button>Click here!</button>
+            </div>
+            <div class="slide slide1" style="">
+                <img src="img/slide1-background.png" alt="">
+                <div class="text">
+                    Beautify your home with handcrafted stone
+                </div>
+            </div>
+            <div class="slide slide2" style="display: none">
+                <img src="img/slide2-background.png" alt="">
+                <div class="text">
+                    We love your design ideas in stone
+                </div>
+            </div>
+            <div class="slide slide3" style="display: none">
+                <img src="img/slide3-background.png" alt="">
+            </div>
         </div>
-      </li>
-    </ul>
-  </body>
+        <div class="group clearfix">
+            <div class="group-item" style="">
+                <img src="img/group1.png" alt="">
+                <div class="information">
+                    <div class="text">
+                        <p>Sed ut perspiciatis</p>
+                        Sed ut perspiciatis undomnis iste natus error sit voluptaccusantium doleremque laundantium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+                    </div>
+                    <button class="group-button" type="button" name="button">Learn more</button>
+                </div>
+            </div>
+            <div class="group-item" style="">
+                <img src="img/group2.png" alt="">
+                <div class="information">
+                    <div class="text">
+                        <p>Sed ut perspiciatis</p>
+                        Sed ut perspiciatis undomnis iste natus error sit voluptaccusantium doleremque laundantium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+                    </div>
+                    <button class="group-button" type="button" name="button">Learn more</button>
+                </div>
+            </div>
+            <div class="group-item" style="">
+                <img src="img/group3.png" alt="">
+                <div class="information">
+                    <div class="text">
+                        <p>Sed ut perspiciatis</p>
+                        Sed ut perspiciatis undomnis iste natus error sit voluptaccusantium doleremque laundantium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+                    </div>
+                    <button class="group-button" type="button" name="button">Learn more</button>
+                </div>
+            </div>
+            <div class="group-item" style="">
+                <img src="img/group4.png" alt="">
+                <div class="information">
+                    <div class="text">
+                        <p>Sed ut perspiciatis</p>
+                        Sed ut perspiciatis undomnis iste natus error sit voluptaccusantium doleremque laundantium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+                    </div>
+                    <button class="group-button" type="button" name="button">Learn more</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script type="text/javascript" src="js/main.js"></script>
+</body>
+
 </html>
