@@ -169,6 +169,7 @@ ul {
   font-size: 32px;
   line-height: 70px;
   display: inline-block;
+  cursor: pointer;
 }
 .main-section .button-div .slider-buttons .right {
   width: 70px;
@@ -181,6 +182,7 @@ ul {
   font-size: 32px;
   line-height: 70px;
   display: inline-block;
+  cursor: pointer;
 }
 .main-section .slide img {
   width: 100%;
