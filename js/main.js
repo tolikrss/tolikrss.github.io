@@ -1,7 +1,8 @@
 var fl = false,
     activeSlide = 0,
-    sliders = document.getElementsByClassName('slide');
-console.log(sliders);
+    sliders = document.getElementsByClassName('slide'),
+    sliderNext = document.getElementById('next'),
+    sliderPrevious = document.getElementById('previous');
 
 function toggle() {
     var menu = document.getElementById('menu-show');
@@ -44,3 +45,6 @@ function previous() {
     sliders[activeSlide].style.display = 'block';
     displayNone();
 }
+
+sliderNext.addEventListener('click', next);
+sliderPrevious.addEventListener('click', previous);
