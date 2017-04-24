@@ -1,136 +1,166 @@
-.header {
-    z-index: 999;
-    height: 110px;
-    background-color: @black;
-    float: left;
-    width: 100%;
-    display: block;
-    position: relative;
+.header-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 103px;
 
     .logo {
-        background-color: @orange;
-        width: 110px;
-        height: 110px;
         display: inline-block;
-        text-align: center;
+        position: relative;
+        height: 103px;
+        width: 50%;
 
         img {
-            padding-top: 55px;
-            margin-top: -35px;
+          margin: auto;
+          position: absolute;
+          top: 0;
+
+          bottom: 0;
+
+            max-width: 100%;
         }
     }
+    .slogan-container {
+      display: none;
+      position: relative;
+      width: 33%;
+      .slogan {
+        display: inline;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        text-transform: uppercase;
+        font-size: 18px;
+        color: #007497;
+      }
+    }
 
-    .logo-text {
+    .social-container {
+        width: 50%;
         display: inline-block;
-
-        .main-container {
-            text-align: right;
-            margin: 0 15px;
-            display: flex;
-            flex-direction: row;
-
-            .container {
+        float: left;
+        .social {
+            position: relative;
+            height: 52px;
+            .links {
                 margin: auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                display: inline-block;
 
-                .p1 {
-                    font-size: 16px;
-                    line-height: 16px;
-                    margin: -15px 0 0;
-                    color: @orange;
-                    text-transform: uppercase;
-                    font-weight: 800;
-                }
-
-                .p2 {
-                    font-size: 46px;
-                    line-height: 46px;
-                    margin: 0;
-                    color: @orange;
-                    text-transform: uppercase;
-                    font-weight: 800;
-                }
-            }
-        }
-    }
-
-    .menu {
-        #menu-button {
-            display: none;
-            z-index: 100;
-            background-color: #333;
-            border: none;
-            border-radius: 5px;
-            margin-right: 20px;
-            width: 100px;
-            height: 40px;
-        }
-        float: right;
-        padding-top: 55px;
-
-        ul {
-            margin-top: -15px;
-
-            li {
-                float: left;
-                position: relative;
-
-                .dropdown-inside {
-                    display: none;
-                    position: absolute;
-                    right: 0;
-                    top: 35px;
-                    float: none;
-                    background-color: @black;
-                    width: 300px;
-                    padding: 40px 0 20px 0;
+                ul {
+                    float: right;
 
                     li {
-                        float: none;
-                        padding: 5px 20px;
+                        display: inline-block;
 
-                        &:hover {
-                            background-color: @activeMenu;
+                        &:first-child {
+                            margin-right: 5px;
+                            font-size: 14px;
+                        }
 
-                            &::after {
-                                content: '>';
-                                color: #fff;
-                                font-weight: 600;
-                                font-size: 16px;
+                        &:nth-child(3) {
+                            a {
+                                background-color: #38c8eb;
                             }
                         }
 
                         a {
+                            display: inline-block;
+                            width: 22px;
+                            height: 22px;
+                            border-radius: 50%;
+                            text-align: center;
+                            font-size: 12px;
+                            line-height: 22px;
+                            background-color: #555;
                             color: #fff;
-                            /*#c0c1c2*/
-                            text-transform: none;
-                            font-size: 16px;
                         }
-                    }
-                }
-
-                &:hover {
-                    .dropdown-inside {
-                        display: block;
-                    }
-                }
-
-                a {
-                    padding: 0 20px;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    color: @menuTextColor;
-
-                    &:hover {
-                        color: #fff;
-                    }
-                    font-size: 22px;
-                    line-height: 22px;
-
-                    img {
-                        height: 22px;
                     }
                 }
             }
         }
+
+        .language-change-container {
+            position: relative;
+            height: 51px;
+
+            .language-change {
+
+                a {
+                    line-height: 51px;
+                    float: right;
+                    text-decoration: none;
+                    color: #555;
+                }
+            }
+        }
     }
+}
+@media (min-width: 750px) {
+  .header-section {
+    margin: 0 10%;
+    .logo {
+      width: 33%;
+    }
+
+    .contact-container {
+      width: 66%;
+
+    }
+  }
+}
+@media (min-width: 970px) {
+  .header-section {
+    .slogan-container {
+      display: inline-block;
+      margin: 32px 56px;
+    }
+    .contact-container {
+      width: 33%;
+    }
+  }
+}
+@media (min-width: 1170px) {
+  .header-section {
+    height: 130px;
+    .slogan-container {
+      width: 60%;
+      margin: 48px 26px;
+      .slogan {
+        font-size: 22px;
+      }
+    }
+    .contact-container {
+      width: 18%;
+    }
+    .logo {
+      height: 130px;
+    }
+    .social-container {
+      .social {
+        height: 65px;
+        .links {
+          ul {
+            li {
+
+              &:first-child {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+      .language-change-container {
+        height: 65px;
+        font-size: 18px;
+      }
+    }
+  }
 }
