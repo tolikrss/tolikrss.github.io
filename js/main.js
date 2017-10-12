@@ -23,5 +23,6 @@
 
     window.onload = function() {
         console.log("window load occurred!");
+        $('.preloader-overlay').css('display', 'none');
     };
 }());
