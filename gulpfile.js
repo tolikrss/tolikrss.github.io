@@ -15,12 +15,10 @@ var ngmin        = require('gulp-ngmin');
       }))
       .pipe(gulp.dest('css'));
   });
-  
 
   gulp.task('html', function(){
     gulp.src('*.html');
-  });
-  
+  });  
   
   gulp.task('scripts', function(){
     return gulp.src(paths.script)
@@ -39,8 +37,8 @@ var ngmin        = require('gulp-ngmin');
   });
 
   gulp.task('js-min', function () {
-    return gulp.src('js/main.js') //return gulp.src('app/js/**/*.js')
-        .pipe(concat('main.min.js')) //.pipe(concat('build.min.js'))
+    return gulp.src('js/main.js')
+        .pipe(concat('main.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('js'));
   });
@@ -50,7 +48,7 @@ var ngmin        = require('gulp-ngmin');
 
     gulp.watch('scss/**/*.scss', ['css-min']); 
     gulp.watch('js/main.js', ['js-min']); 
-  })
+  });
 
 gulp.task('build', ['css-min', 'js-min']);
 
