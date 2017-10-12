@@ -1,0 +1,74 @@
+<div class="followers-block with-bg">
+
+  <div class="column-navbar" data-simplebar>
+    <large-navbar></large-navbar>
+  </div>
+
+  <div class="column-sidebar">
+  </div>
+
+  <div class="column-content">
+    <!-- Do not change padding-right for following div (class: header-container)!!! -->
+    <div class="header-container">
+    </div>
+
+    <div class="content-container">
+
+      <mobile-menu-switch-panel data-back-btn="true" data-back-page="'wall'"></mobile-menu-switch-panel>
+
+      <div class="page-content">
+        <div class="header">
+          <div class="user-info">
+            <img ng-src="/assets/img/user.jpg" alt="">
+            <div class="user-text-info">
+              <span class="user-name">Frank Sinatra</span> \ Followers <span class="count">[[vm.count]]</span></div>
+            </div>
+        </div>
+        <div class="followers-board">
+          <div class="follower clearfix" ng-repeat="(id, follower) in vm.followers">
+            <div class="follower-content">
+              <div class="follower-img"><img ng-src="/assets/img/user1.jpg" alt=""></div>
+              <div class="follower-info">
+                <div class="follower-name">[[follower.name]]</div>
+                <div class="follower-counts">
+                  <span class="follower-follows"><span class="count">[[follower.follows]]</span> FOLLOWS</span>
+                  <span class="follower-followers"><span class="count">[[follower.followers]]</span> FOLLOWERS</span>
+                </div>
+              </div>
+            </div>
+
+              <div class="laptop-btns">
+
+                <div 
+                  class="view-profile"
+                  data-ng-click="$event.stopPropagation();"                
+                >
+                  View profile
+                </div>
+                <span 
+                  class="btn purple"
+                  data-ng-click="follower.follow ? vm.openFollowerPopup(follower) : follower.follow = !follower.follow"
+                  data-ng-class="follower.follow ? 'filled' : ''"
+                >
+                  <!--data-ng-click="follower.follow = !follower.follow; $event.stopPropagation();"-->
+
+                  <span class="ico" data-ng-class="follower.follow ? 'icon-ok' : ''"></span>
+                  [[follower.follow ? 'Following' : 'Follow']]
+                </span>
+              </div>
+              <span 
+                class="ico ico-mobile"
+                data-ng-click="follower.follow ? vm.openFollowerPopup(follower) : follower.follow = !follower.follow"
+                data-ng-class="follower.follow ? 'icon-ok filled' : 'icon-plus'"
+              >
+              </span>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>

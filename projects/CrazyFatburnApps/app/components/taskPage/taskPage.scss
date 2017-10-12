@@ -1,0 +1,723 @@
+.task-page-block {
+  padding: 5px 5px 5px 5px; 
+  .column-sidebar {
+    display: none;
+  }
+  .column-content {
+    padding: 0;
+    @include laptop {
+      width: auto; 
+      margin-left: 0; 
+    }    
+    @include large-laptop {
+      width: auto; 
+      margin-left: 0; 
+    }
+  }
+  #large-block {
+    transition: 3s;
+    &.with-open-menu {
+      width: calc(100% - 350px);
+      float: right;
+    }
+  }
+  .column-navbar {
+    &.small-1 {
+      width: 70px;
+      overflow: hidden;
+      
+      .mainMenu .item, .bottomMenu .item {
+        padding-left: 9px;
+        .has-new-notify {
+          display: inline-block;
+        }
+      }
+      .extraMenu {
+        .item {
+          display: none;
+          &.extra-menu-has-notify {
+            display: inline-block;
+          }
+        }
+      }
+      .logo {
+        font-size: 16px;
+        @include tablet {
+          &.small {
+            display: block;
+            top: 0;
+            width: 100%;
+            position: absolute;
+          }
+        }
+      }
+      .user-img {
+        margin-right: 0 !important;
+      }
+      .active {
+        padding-left: 9px;
+        padding-right: 45px;
+      }
+    }
+    &.small-2 {
+      .logo {
+        &.big {
+          opacity: 0;
+        }
+      }
+      .removable {
+        display: none !important;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .content {
+    @include laptop {
+      padding-left: 60px;
+    }
+    .strips {
+      background-color: white;
+    }
+  }
+
+  .head-large-block {
+    min-height: 358px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-top: 15px;
+    &::before {
+      content: '';
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      z-index: -4;
+      opacity: 1;
+    }
+    @include tablet {
+      height: 695px;//calc(735px - 75px)
+    }
+    @include laptop {
+      margin-top: 0;
+      padding-left: 60px;
+      padding-top: 36px;
+    }
+    
+
+    .large-block-content {
+      text-align: center;
+      .btn {
+        padding: 0;
+        &>a {
+          width: 100%;
+          height: 100%;
+          width: 180px;
+          height: 38px;
+          display: inline-block;
+          vertical-align: middle;
+          &::before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+          }
+          &>.ico {
+            position: relative;
+            top: 2px;
+          }
+          &>.back-btn-text {
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+    }
+    .turquoise {
+      width: 168px;
+      position: static;
+      margin-top: 18px;
+      .ico {
+        margin-right: 3px;
+        margin-left: -18px;
+        @include tablet {
+          margin-right: 7px;
+          margin-left: -8px;
+        }
+      }
+      @include tablet {
+        top: 85px;
+        left: 30px;
+        width: 180px;
+        position: absolute;
+      }
+      @include laptop {
+        top: 63px;
+        left: 165px;
+      }
+    }
+    .day-number {
+      color: #eebb08;
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 20px;
+
+      @include tablet {
+        font-size: 55px;
+        margin-top: 0;
+      }
+
+      @include laptop {
+        font-size: 89px;
+      }
+    }
+    .text {
+      font-size: 13px;
+      margin-top: 10px;
+      line-height: 18px;
+      @include tablet {
+        font-size: 15px;
+        line-height: 18px;
+        width: calc(100% - 450px);
+        margin: auto;
+        margin-top: 15px;
+      }
+      @include laptop {
+        font-size: 21px;
+        line-height: 33px;
+        max-width: 800px;
+        margin: auto;
+        margin-top: 20px;
+        width: 100%;
+      }
+    }
+    .player-background {
+      z-index: 0;
+      padding-bottom: 5px;
+      position: relative;
+      @include tablet {        
+        padding-bottom: 20px;
+      }
+      &:hover {
+        .progress-wrapper {
+          visibility: visible;
+        }
+      }
+      &::before {
+        content: "";
+        background-image: url(/assets/img/bg_mobile_v1.png);
+        background-position: bottom;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: -5;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        min-width: 100%;
+        opacity: 0.5;
+        @include tablet {
+          background-image: url(/assets/img/bg_v2.png);
+        }
+      }
+      .task-completed {
+            font-size: 11px;
+            margin-top: 14px;
+            font-weight: 700;
+            color: #5f3cea;
+            @include tablet {
+              font-size: 16px;
+              margin-top: 24px;
+            }
+            @include laptop {
+              font-size: 16px;
+              margin-top: 34px;
+            }
+            .ico {
+              font-size: 19px;
+              vertical-align: sub;
+              margin-right: 10px;
+              @include tablet {
+                font-size: 28px;
+                margin-right: 14px;
+              }
+            }
+          }
+          .player-btn-container {   
+            margin: 24px auto 0 auto;      
+            vertical-align: middle;
+            background-color: rgba(119, 132, 229, 0.4);
+            padding: 6px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            line-height: 35px;
+            text-align: center;
+            font-size: 11px;
+            color: white;
+            cursor: pointer;
+            @include tablet {
+                margin-top: 85px;
+                padding: 9px;
+                width: 96px;
+                height: 96px;
+            }
+            .player-btn {
+              text-align: center;
+              background-color: #7784e5;
+              border-radius: 50%;
+              width: 100%;
+              height: 100%;
+              @include tablet {
+                font-size: 24px;
+                cursor: pointer;
+              }
+              .ico {
+                position: relative;
+                top: -3px;
+                vertical-align: middle;
+                line-height: 29px;
+                @include tablet {
+                  line-height: 78px;
+                  top: 0;
+                }          
+                &.icon-font-1-62 {
+                  left: 1px;
+                  @include tablet {
+                    left: 2px;
+                  }
+                }
+              }
+            }
+          }
+          .player {
+            margin: 19px auto 0 auto;
+            width: 264px;
+            height: 50px;   
+            line-height: 50px;   
+            background-color: white;
+            border-radius: 110px;
+            text-align: left;
+            color: #5f3cea;
+            font-size: 12px;
+            padding: 0 15px;
+            opacity: 0.6;
+            @include tablet {
+              width: 500px;
+              height: 100px;
+              line-height: 100px;
+              margin-top: 34px;
+              font-size: 24px;
+              padding: 0 30px;
+            }
+            .track-title {
+
+            }
+            .time-and-ico {
+              float: right;
+              .ico {
+                margin-right: 10px;
+                font-size: 18px;
+                position: relative;
+                top: 3px;
+                @include tablet {
+                  margin-right: 25px;
+                  font-size: 35px;
+                  top: 5px;
+                }
+              }
+              .time {
+                color: #a4a2a3;
+              }
+            }            
+          }
+          .progress-wrapper {
+            height: 30px;
+            margin-top: 5px;
+            @include tablet {              
+              margin-top: 20px;
+            }
+            @include laptop {
+              visibility: hidden;
+            } 
+            &:before { // для центрирования по вертикали
+              content: '';
+              display: inline-block;
+              height: 100%;
+              vertical-align: middle;
+            }
+            .progress-container {
+              vertical-align: middle;
+              position: relative;
+              width: calc(100% - 130px);
+              display: inline-block;
+              margin: 0 auto 0 auto;
+              height: 3px;
+              border-radius: 2px;
+              @include tablet {
+                height: 4px;
+                width: 648px;
+              }
+              .progress {
+                height: 100%;
+                position: absolute;
+                left: 0;
+                z-index: 4;
+                background-color: #7784e5;
+              }
+              .progress-bar-background {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                z-index: 2;
+                background-color: #cdd1ee;
+              }
+              .form-control {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                top: -12px;
+                @include tablet {
+                  top: -11px;
+                }
+              }
+            }
+            .text {
+              vertical-align: middle;
+              color: #b9b8ba;
+              font-size: 10px;
+              line-height: 10px;    
+              width: 60px;      
+              display: inline-block;
+              margin: 0;
+              text-align: right;    
+              @include tablet {
+                font-size: 14px;
+                line-height: 14px;
+                width: 90px;
+              }
+            }
+          }
+          input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background: transparent;
+            z-index: 100;
+            border-radius: 1.3px;
+          }
+
+          input[type=range]:focus::-webkit-slider-runnable-track {
+            background: transparent;
+            z-index: 100;
+          }
+
+          input[type=range]::-moz-range-track {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background: transparent; 
+            z-index: 100;
+            border-radius: 1.3px;
+          }
+
+          input[type=range]::-ms-track {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background: transparent;
+            border-color: transparent;
+            border-width: 16px 0;
+            color: transparent;
+          }
+          // input[type=range]:focus::-ms-fill-lower {
+          //     background: #7784e5
+          // }
+          // input[type=range]::-ms-fill-lower {
+          //   background: #7784e5; //rgba(119, 132, 229, 0.4)
+          // }
+          // input[type=range]:focus::-ms-fill-lower {
+          //   background: #7784e5;
+          // }
+          // input[type=range]::-ms-fill-upper {
+          //   background: #7784e5;
+          // }
+          // input[type=range]:focus::-ms-fill-upper {
+          //   background: #7784e5;
+          // }
+          input[type=range]::-webkit-slider-thumb {
+            opacity: 0;
+          }
+          input[type=range]::-moz-range-thumb {
+            opacity: 0;
+          }
+          input[type=range]::-ms-thumb {
+            opacity: 0;
+          }
+    }    
+  }
+
+  .color-block {
+    width: 100%;
+    position: relative;
+    height: 80px;
+    padding-top: 26px;
+    cursor: pointer;
+    @include tablet {
+      height: 240px;
+      padding-top: 33px;
+    }
+    .icon-visualization {
+      font-size: 260px;
+      position: absolute;
+      left: 1.5%;
+      @include tablet {
+        left: 0;
+      }
+      @include laptop {
+        left: 11.5%;
+      }
+    }
+    .text {
+      margin-left: 31.5%;
+      width: 53%;
+      display: inline-block;
+      @include tablet {
+        margin-left: 33.5%;
+      }
+      .caption {
+        font-size: 18px;
+        font-weight: 700;
+        @include tablet {
+          font-size: 42px;
+        }
+        @include large-laptop {
+          font-size: 55px;
+        }
+      }
+      .explanation {
+        display: none;
+        @include tablet {
+          display: block;
+          line-height: 32px;
+          margin-top: 6px;
+        }
+      }
+    }
+    .icon-arrow {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 1%;
+      cursor: pointer;
+      font-size: 20px;
+      margin-top: 3px;
+      @include tablet {
+        font-size: 75px;
+        margin-top: 15px;
+      }
+    }
+    &.lets-go-block {
+      color: #2b2523;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      background-color: white;
+      height: 100px;
+      padding-top: 14px;
+      @include tablet {
+        height: 240px;
+        padding-top: 28px;
+        font-size: 32px;
+      }
+      .ico {
+        color: #e5e5e5;
+      }
+      .lets-go {
+        font-size: 13px;
+        font-weight: 600;
+        @include tablet {
+          font-size: 31px;
+        }
+      }
+      .get-off {
+        font-size: 13px;
+        margin-top: 5px;
+        @include tablet {
+          font-size: 32px;
+          margin-top: 20px;
+        }
+      }
+    }
+    &.introduction {
+      background-color: #ef4125;
+      color: #fff;
+      .icon-visualization {
+        font-size: 75px;
+        top: -14px;
+        @include tablet {
+          font-size: 260px;
+          top: -55px;
+          left: 0;
+        }
+        @include large-laptop {
+          left: 11.5%;
+        }
+      }
+      .explanation {
+        display: none;
+        @include tablet {
+          display: block;
+          color: #fbe190;
+        }
+      }
+    }
+    &.motivation {
+      background-color: #f3c933;
+      color: #2b2523;
+      .icon-visualization {
+        margin-left: 0;
+        font-size: 75px;
+        bottom: -10px;
+        @include tablet {
+          font-size: 260px;
+          bottom: -48px;
+          left: 0;
+        }
+        @include large-laptop {
+          left: 11.5%;
+        }
+      }
+      .explanation {
+        display: none;
+        @include tablet {
+          display: block;
+          color: #a3872b;
+        }
+      }
+    }
+    &.cooking-class {
+      background-color: #7784e5;
+      color: #fff;
+      .icon-visualization {
+        left: 3.5%;
+        top: 10px;
+        font-size: 57px;
+        @include tablet {
+          font-size: 190px;
+        }
+        @include large-laptop {
+          left: 13%;
+          top: 19px;
+        }
+      }
+    }
+    &.training {
+      background-color: #f3c933;
+      color: #2b2523;
+      .icon-visualization {
+        font-size: 60px;
+        left: 3.5%;
+        top: 10px;
+        @include tablet {
+          font-size: 198px;
+        }
+        @include large-laptop {
+          left: 13.5%;
+          top: 19px;
+        }
+      }
+      .explanation {
+        display: none;
+        @include tablet {
+          display: block;
+          color: #a3872b;
+        }
+      }
+    }
+    &.attention {
+      background-color: #5e3bea;
+      color: #fff;
+      .icon-visualization {
+        font-size: 61px;
+        left: 3.5%;
+        top: 5px;
+        @include tablet {
+          font-size: 182px;
+        }
+        @include large-laptop {
+          left: 13.5%;
+          top: 20px;
+        }
+      }
+    }
+    &.fun-stuff {
+      background-color: #f3c933;
+      color: #2b2523;
+      .icon-visualization {
+        font-size: 56px;
+        left: 3.5%;
+        top: 10px;
+        @include tablet {
+          font-size: 175px;
+        }
+        @include large-laptop {
+          left: 13.5%;
+          top: 27px;
+        }
+      }
+      .explanation {
+        display: none;
+        @include tablet {
+          display: block;
+          color: #a3872b;
+        }
+      }
+    }
+  }
+  .block-open {
+    @include tablet {
+      width: 100%;
+      max-width: 910px;
+      margin: auto;
+    }
+    @include laptop {
+      margin-left: calc(50% - 417px - 32px);
+      margin-top: 40px;
+    }
+    .close-task {
+      text-align: center;
+      font-size: 13px;
+      text-decoration: underline;
+      color: #f26751;
+      margin: 17px;
+      cursor: pointer;
+      @include tablet {
+        margin-top: 70px;
+        margin-bottom: 97px;
+        font-size: 19px;
+      }
+    }
+  }
+  .tast-not-performed {
+    background-color: #f26751;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    height: 80px;
+    font-size: 14px;
+    padding-top: 30px;
+    @include tablet {
+      height: 160px;
+      font-size: 45px;
+      padding-top: 45px;
+    }
+  }
+  .chat-header {
+    background-color: #7784e5;
+    color: #fff;
+  }
+}

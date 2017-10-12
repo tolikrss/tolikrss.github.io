@@ -1,0 +1,34 @@
+<div class="badges-popup-content">
+    <div class="close-btn" ng-click="close()">
+        <span class="ico icon-font-1-12"></span>
+    </div>
+    <div class="wrapper">
+        <ul 
+            rn-carousel 
+            rn-carousel-deep-watch
+            rn-carousel-transition="hexagon" 
+            rn-carousel-index="vm.carouselIndex"
+            class="emoji"
+        >
+            <li ng-repeat="smile in vm.smiles">
+                <div 
+                    class="layer smile"
+                    data-ng-class="($index === vm.carouselIndex) ? 'selected' : ''"  
+                >                    
+                    <img 
+                        ng-src=[[smile.id]] 
+                        class="em"
+                        data-ng-mouseover="vm[smile.id]=true" 
+                        data-ng-mouseleave="vm[smile.id]=false"
+                        data-ng-click="(vm.screenType() !== 'desktop') ? vm.openBadgesPopup() : '' ">
+
+                    <div class="description">
+                        <div class="description-title">[[smile.descriptionTitle]]</div>
+                        <div class="first">Lorem: <span class="first-value">[[smile.description1]]</span></div>
+                        <div class="second">Ipsum: <span class="second-value">[[smile.description2]]</span></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

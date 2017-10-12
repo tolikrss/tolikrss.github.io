@@ -1,0 +1,19 @@
+.empty-template-block {
+    .cropArea {
+        background: #E4E4E4;
+        overflow: hidden;
+        width:320px;
+        height:350px;
+        @include tablet {
+            width: 500px;
+            height: 550px;
+        }
+        .cropping-guide {
+                    background: rgba(255,255,255,0);
+                    border: none;
+                    &::before {
+                      border: none;
+                    }
+        }
+    }
+}

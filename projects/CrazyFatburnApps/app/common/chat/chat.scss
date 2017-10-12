@@ -1,0 +1,228 @@
+.chat-block {
+  width: 100%;
+  margin-top: 5px; //to-delete
+  background-color: white;
+  img {
+    border-radius: 50%;
+  }
+  @include tablet {
+    padding: 0;
+    padding-bottom: 15px;
+  }
+  .chat-header {
+    background-color: #7784e5;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    height: 80px;
+    padding-top: 26px;
+    @include tablet {
+      font-size: 37px;
+      height: 160px;
+      padding-top: 42px;
+    }
+  }
+  .chat-content {
+    width: 100%;
+    background-color: white;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    @include tablet {
+      margin-bottom: 70px;
+      padding: 0 20px;
+      margin-top: 35px;
+    }
+    @include laptop {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .chat-posts {
+      max-height: 600px;
+    }
+    .post {
+      position: relative;
+      padding: 25px 0;
+
+      .user-img {
+        display: inline-block;
+        vertical-align: top;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        margin-right: 7px;
+        @include tablet {
+          width: 35px;
+          height: 35px;
+          margin-right: 10px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .chat-message-inner {
+        display: inline-block;
+        width: calc(100% - 65px);
+        margin-top: -4px;
+      }
+
+      .name {
+        font-weight: 700;
+      }
+
+      .date {
+        font-size: 11px;
+        color: #aaa8a7;
+        @include tablet {
+          font-size: 14px;
+        }
+      }
+
+      .first-raw {
+        display: inline-block;
+        font-size: 13px;
+        color: #6948eb;
+
+        @include tablet {
+          font-size: 15px;
+        }
+
+        div {
+          display: inline-block;
+        }
+      }
+
+      .emoji-laptop {
+        display: none;
+        @include tablet {
+          display: inline-block;
+          float: right;
+          font-size: 21px;
+          .more {
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            text-align: center;
+            background-color: #bfbdbd;
+            vertical-align: bottom;
+            color: white;
+            font-weight: 100;
+            display: inline-block;
+            font-size: 15px;
+            padding: 5px 0;
+          }
+        }
+      }
+
+      .second-raw {
+        @include tablet {
+          margin-top: 7px;
+        }
+        .post-content {
+          color: #55514f;
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 19px;
+          max-height: calc(19px * 3);
+          overflow: hidden;
+
+          @include tablet {
+            font-size: 13px;
+            line-height: 17px;
+            max-height: calc(32px * 4);
+          }
+        }
+        .post-content[contenteditable="true"] {
+          display: block;
+          border: 2px solid #e9e9e9;
+          border-radius: 5px;
+          padding: 10px;
+          margin-bottom: 5px;
+        }
+      }
+
+      .like {
+        .ico {
+          color: #6948eb;
+          font-size: 17px;
+          margin-left: -4px;
+          vertical-align: sub;
+          @include tablet {
+            font-size: 17px;
+            margin-left: -4px;
+            vertical-align: middle;
+          }
+        }
+        .count {
+          margin-right: 8px;
+          margin-left: 1px;
+          color: #6948eb;
+        }
+      }
+      .reply, .edit {
+        margin-left: 7px;
+        cursor: pointer;
+      }
+
+      .third-raw {
+        color: #aaa8a7;
+        margin-top: 10px;
+        font-size: 11px;
+        font-weight: 700;
+        @include tablet {
+          margin-top: 4px;
+          font-size: 13px;
+          font-weight: 600;
+        }
+        div {
+          display: inline-block;
+        }
+
+        .emoji-mobile {
+          float: right;
+          margin-right: 10px;
+          @include tablet {
+            display: none;
+          }
+          .more {
+            border-radius: 50%;
+            padding: 1px 5px 1px 1px;
+            background-color: #bfbdbd;
+            vertical-align: bottom;
+            color: white;
+            font-weight: 100;
+          }
+        }
+      }
+      .message-replies {
+        margin-top: 28px;
+        padding-left: 36px;
+        @include tablet {
+          margin-top: 18px;
+          padding: 0 65px;
+        }
+
+        .chat-message-inner {
+          margin-top: 5px;
+          margin-left: 5px;
+        }
+
+        .message-reply {
+          border-left: 2px solid #6948eb;
+          padding-left: 13px;
+          margin-bottom: 27px;
+
+          .user-img {
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}

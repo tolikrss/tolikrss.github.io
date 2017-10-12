@@ -1,0 +1,124 @@
+<div class="posts-block">
+    <div class="chat-content">
+        <div 
+            class="post" 
+            data-ng-repeat="(id, post) in vm.posts"
+        >
+            <div class="user-img">
+                <img ng-src="[[post.authorImgUrl]]" data-ng-show="post.authorImgUrl">
+            </div>
+            <div class="text">
+                <div class="first-raw">
+                    <div class="name">[[post.name]]</div>
+                    <!--<input class="post-content" data-ng-if="post.postEditing" value="[[post.content]]"/>                    -->
+                    <span class="post-content-span"
+                          ng-keypress="vm.contentEditingDone($event, post)"
+                          contenteditable="[[(post.contentEditing) ? 'true' : 'false']]">                          
+                          <!--hm-read-more
+                          hm-text="[[post.content]]"
+                          hm-limit="250"
+                          hm-more-text="More"
+                          hm-less-text="Less"
+                          hm-dots-class="dots"
+                          hm-link-class="links"-->
+                        [[post.content]]
+                    </span>
+                </div>
+                <div class="second-raw">
+                </div>
+                <div class="third-raw">
+                    <div class="like">
+                        <span class="ico" data-ng-class="post.likesCount ? 'icon-lightning-filled' : 'icon-lightning'"></span>
+                        <span class="count">[[post.likesCount]]</span>
+                    </div>
+                    <div class="date">[[post.date]] at [[post.time]]</div>
+                    <div class="reply-word"  data-ng-click="vm.showReply(id)">Reply</div>
+                    <div class="edit"
+                         data-ng-click="post.contentEditing = !post.contentEditing">
+                        Edit
+                    </div>
+                </div>
+            </div>
+
+            <div class="replies" data-ng-show="vm.repliesCount(post.replies)">
+                <div class="replies-count"><span class="count">[[vm.repliesCount(post.replies)]]</span><span class="text">Replies</span></div>
+                <div class="reply" data-ng-repeat="reply in post.replies | limitTo:1">
+                    <div class="user-img">
+                        <img ng-src=[[reply.authorImgUrl]] alt="">
+                    </div>
+                    <div class="text">
+                        <div class="first-raw">
+                            <div class="name">[[reply.name]]</div>
+                            <div class="recipient">[[reply.recipient]]</div>
+                            <span class="reply-content-span"
+                                  data-ng-keypress="vm.contentEditingDone($event, reply)"
+                                  contenteditable="[[(reply.contentEditing) ? 'true' : 'false']]">
+                                [[reply.content]]
+                            </span>
+                        </div>
+                        <div class="third-raw">
+                            <div class="like"><span class="ico" data-ng-class="reply.likesCount ? 'icon-lightning-filled' : 'icon-lightning'"></span><span class="count">[[reply.likesCount]]</span></div>
+                            <div class="date">[[reply.date]] at [[reply.time]]</div>
+                            <div class="reply-word"
+                                 data-ng-click="vm.showReply(id+reply.replyId)">
+                                 Reply
+                        </div>
+                            <div class="edit"
+                                 data-ng-click="reply.contentEditing=!reply.contentEditing">
+                                Edit
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="new-reply" data-ng-if="vm.replies[id+reply.replyId]">
+                        <div class="new-reply-input"
+                             contenteditable="true"
+                             data-ng-model="reply.newReply"
+                             data-ng-init="reply.newReply=[[reply.name]]+',&nbsp'"
+                             set-focus-to-element
+                        >
+                        </div>
+
+                        <div class="btns-block">
+                            <div class="btn red cancel"
+                                 data-ng-click="reply.newReply=[[reply.name]]+',&nbsp'; vm.replies[id+reply.replyId]=false">
+                                Cancel
+                            </div>
+                            <div class="btn purple filled send"
+                                 data-ng-click="reply.newReply=[[reply.name]]+',&nbsp'; vm.replies[id+reply.replyId]=false">
+                                Send
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="write-comment">
+                <div class="write-comment-content"
+                     data-ng-click="vm.showReply(id)"
+                     data-ng-show="!vm.replies[id]">
+                    <span class="ico icon-font-1-13"></span>
+                    <div class="share-input"> Write a comment</div>
+                </div>
+                <div class="new-reply" data-ng-if="vm.replies[id]">
+                    <div class="new-reply-input large"
+                         contenteditable="true"
+                         data-ng-model="post.newReply"
+                         set-focus-to-element>
+                    </div>
+                    <div class="btns-block">
+                        <div class="btn red cancel"
+                             data-ng-click="post.newReply=null; vm.replies[id]=false">
+                            Cancel
+                        </div>
+                        <div class="btn purple filled send"
+                             data-ng-click="vm.replies[id]=false">
+                            Send
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,305 @@
+<div class="settings-page-block with-bg">
+
+  <div class="column-navbar" data-simplebar>
+    <large-navbar></large-navbar>    
+  </div>
+
+  <div class="column-sidebar">
+  </div>
+
+  <div class="column-content">
+    <!-- Do not change padding-right for following div (class: header-container)!!! -->
+    <div class="header-container">
+    </div>
+
+    <div class="content-container">
+
+      <mobile-menu-switch-panel></mobile-menu-switch-panel>
+      
+      <div class="page-title">
+        Settings
+      </div>
+      <div class="all-content-block">
+
+        <div class="main-photo-block">
+          <span 
+            class="more-btn icon-font-1-34" 
+            data-ng-click="vm.toggleLogout(); $event.stopPropagation();"
+          >
+            <!--<div data-ng-click="vm.logout(); $event.stopPropagation();" class="logout">
+              <a href="#/wall">
+                <span class="ico icon-font-1-58"></span>
+                <span class="text">Logout</span>
+              </a>              
+            </div>            -->
+          </span>
+          <div class="photo">
+            <img src="/assets/img/avatar.jpg" alt="">
+          </div>
+          <div class="name-and-change-btn-container">
+            <div class="name">
+              Frank Sinatra
+            </div>
+            <label class="change-photo-btn btn">
+                Change main photo
+                <input 
+                    type="file" 
+                    id="fileInput" 
+                    ng-model="vm.files" 
+                    custom-on-change="vm.onFileInputChange" 
+                />
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-block">
+            <div class="container">
+              <div class="name field">
+                <div class="field-name">
+                  Name
+                </div>
+                <input type="text" name="" value="">
+              </div>
+              <div class="last-name field">
+                <div class="field-name">
+                  Last Name
+                </div>
+                <input type="text" name="" value="">
+              </div>
+              <div class="show-my-last-name">
+                <div 
+                  data-ng-if="vm.user.showMyLastName" 
+                  data-ng-click="vm.changeShowStatus('showMyLastName')" 
+                  class="ico-selected"
+                >                
+                  <span class="icon-font-1-32"></span>
+                  <span class="icon-font-1-33 ico"></span>
+                </div>
+                <div 
+                  data-ng-if="!vm.user.showMyLastName" 
+                  data-ng-click="vm.changeShowStatus('showMyLastName')" 
+                  class="ico-not-selected"
+                >                
+                  <span class="icon-font-1-32"></span>
+                  <span class="icon-font-1-33 ico"></span>
+                </div>
+                <span class="text">Show my Last name to everyone</span>
+              </div>
+              <div class="nickname field">
+                <div class="field-name">
+                  Nickname
+                </div>
+                <input type="text" name="" value="">
+              </div>
+              <div class="show-my-nick-name">
+                <div 
+                  data-ng-if="vm.user.showMyNickName" 
+                  data-ng-click="vm.changeShowStatus('showMyNickName')" 
+                  class="ico-selected"
+                >                
+                  <span class="icon-font-1-32"></span>
+                  <span class="icon-font-1-33 ico"></span>
+                </div>
+                <div 
+                  data-ng-if="!vm.user.showMyNickName" 
+                  data-ng-click="vm.changeShowStatus('showMyNickName')" 
+                  class="ico-not-selected"
+                >                
+                  <span class="icon-font-1-32"></span>
+                  <span class="icon-font-1-33 ico"></span>
+                </div>
+                <span class="text">Show my Nickname only</span>
+              </div>
+              <div class="sex field">
+                <div class="field-name">
+                  Sex
+                </div>
+                <label data-ng-click="(vm.user.sex !== 'male') ? vm.openChangeSexPopup('male') : ''; $event.preventDefault();">
+                  <span 
+                    class="ico icon-font-1-31"
+                    data-ng-class="(vm.user.sex === 'male') ? 'checked' : ''"
+                  > 
+                    <span 
+                      data-ng-if="vm.user.sex === 'male'" 
+                      class="icon-font-1-28"
+                    >
+                    </span> 
+                  </span>
+                  <input 
+                    style="display: none" 
+                    type="radio" 
+                    ng-model="vm.user.sex" 
+                    value="male" 
+                  />
+                  Male
+                </label>
+                <label data-ng-click="(vm.user.sex !== 'female') ? vm.openChangeSexPopup('female') : ''; $event.preventDefault();">
+                  <span 
+                    class="ico icon-font-1-31" 
+                    data-ng-class="(vm.user.sex === 'female') ? 'checked' : ''"
+                  > 
+                    <span 
+                      data-ng-if="vm.user.sex === 'female'" 
+                      class="icon-font-1-28"
+                    >
+                    </span> 
+                  </span>
+                  <input 
+                    style="display: none" 
+                    type="radio" 
+                    ng-model="vm.user.sex" 
+                    value="female" 
+                  />
+                  Female
+                </label>
+              </div>            
+              <div class="email field">
+                <div class="field-name">
+                  Email
+                </div>
+                <input type="text" name="" value="">
+                <span class="icon-font-1-28 ico-verified"></span>
+                <span class="error">Your account is not verified. <a href="" data-ng-click="vm.openConfirmEmailPopup()" target="_blank">Confirm your email</a> </span>
+              </div>    
+              <div class="country-code-and-phone-number field">                
+                <div class="country-code">
+                  <div class="field-name">
+                    Country Code
+                  </div>                  
+                  <select-element class = "code"
+                                  data-items="vm.user.codesList"
+                                  data-active-item="vm.user.selectedCode">
+                  </select-element>
+                </div>
+                <div class="phone-number">
+                  <div class="field-name">
+                    Phone Number
+                  </div>
+                  <input type="text" name="" value="">
+                </div>
+              </div> 
+              <div class="birthday field">                
+                <div class="field-name">
+                  Birthday
+                </div>
+                <select-element class = "day"
+                                data-items="vm.user.daysList"
+                                data-active-item="vm.user.selectedDay">
+                </select-element>
+                <select-element class = "month"
+                                data-items="vm.user.monthList"
+                                data-active-item="vm.user.selectedMonth">
+                </select-element>
+                <select-element class = "year"
+                                data-items="vm.user.yearList"
+                                data-active-item="vm.user.selectedYear">
+                </select-element>
+              </div> 
+            </div> 
+            <div class="change-password">
+              <a 
+                href=""
+                data-ng-click="vm.showChangePassword = !vm.showChangePassword"
+              >
+                Change Password
+              </a>
+              <div 
+                data-ng-if="vm.showChangePassword" 
+                class="change-pasword-dropdown-block"
+              >
+                <div data-ng-show="false" class="new-password-changed">
+                  You've got a new password!
+                </div>
+                <div data-ng-show="true">
+                  <div class="current password">
+                    <div class="field-name">
+                      Current Password
+                    </div>
+                    <div class="input-container">
+                      <span 
+                        data-ng-click="vm.showCurrentPassword = !vm.showCurrentPassword; vm.changeShowPasswordIco($event.target)" 
+                        class="ico icon-font-1-47"
+                      >
+                        <span class="ico-show icon-font-1-48"></span>
+                      </span>
+                      <input 
+                        data-ng-class="(true) ? 'incorrectConfirmPassword' : ''" 
+                        type="[[vm.showCurrentPassword ? 'text' : 'password']]" 
+                        name="" 
+                        value=""
+                      >
+                    </div>
+                    <span class="error">Your current password is incorrect.</span>
+                  </div>
+                  <div class="new password">
+                    <div class="field-name">
+                      New Password
+                    </div>
+                    <div class="input-container">
+                      <span 
+                        data-ng-click="vm.showNewPassword = !vm.showNewPassword; vm.changeShowPasswordIco($event.target)" 
+                        class="ico icon-font-1-47"
+                      >
+                        <span class="ico-show icon-font-1-48"></span>
+                      </span>
+                      <input 
+                        data-ng-model="vm.newPass" 
+                        type="[[vm.showNewPassword ? 'text' : 'password']]" 
+                        name="" 
+                        value=""
+                      >
+                    </div>
+                  </div>
+                  <div class="confirm-new password">
+                    <div class="field-name">
+                      Confirm New Password
+                    </div>
+                    <div class="input-container">
+                      <span 
+                        data-ng-click="vm.showConfirmNewPassword = !vm.showConfirmNewPassword; vm.changeShowPasswordIco($event.target)" 
+                        class="ico icon-font-1-47"
+                      >
+                        <span class="ico-show icon-font-1-48"></span>
+                      </span>
+                      <input data-ng-class="(vm.confirmNewPass !== vm.newPass) ? 'incorrectConfirmPassword' : ''" data-ng-model="vm.confirmNewPass" type="[[vm.showConfirmNewPassword ? 'text' : 'password']]" name="" value="">
+                    </div>
+                    <span class="error" data-ng-if="vm.confirmNewPass !== vm.newPass">Passwords do not match</span>
+                  </div>
+                  <div class="buttons-container">
+                    <div class="btn save-btn">
+                      <span class="btn-text">Save</span>
+                    </div>
+                    <div 
+                      class="btn cancel-btn"
+                      data-ng-click="vm.showChangePassword = false"
+                    >
+                      <span class="btn-text">Cancel</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="container">
+              <div class="instagram field">
+                <div class="field-name">
+                  Instagram Profile
+                </div>
+                <input type="text" name="" value="">
+              </div>         
+              <div class="facebook field">
+                <div class="field-name">
+                  Facebook Profile
+                </div>
+                <input type="text" name="" value="">
+              </div>
+              <div class="save-btn-container">
+                <div class="save-btn">
+                  <span class="btn-text">Save</span>
+                </div>
+              </div>
+            </div>              
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

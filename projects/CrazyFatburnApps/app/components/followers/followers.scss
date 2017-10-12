@@ -1,0 +1,327 @@
+.followers-block {
+  img {
+    border-radius: 50%;
+  }
+
+  .mobile-menu-switch-panel {
+    .logo {
+      padding: 16px 10px;
+
+      .back-ico {
+        position: relative;
+        top: 1px;
+      }
+    }
+  }
+
+  .page-content {
+    padding: 15px 0;
+    .header {
+      background-color: #f3c933;
+      padding-top: 16px;
+      min-height: 77px;
+      padding-left: 15px;
+      @include tablet {
+        text-align: center;
+        min-height: 108px;
+      }
+      .user-info {
+        font-size: 15px;
+        font-weight: 600;
+        @include tablet {
+          font-size: 18px;
+        }
+        img {
+          width: 45px;
+          height: 45px;
+          margin-right: 11px;
+          @include tablet {
+            width: 80px;
+            height: 80px;
+            margin-right: 38px;
+          }
+        }
+        .user-name {
+          font-weight: 700;
+        }
+        .count {
+          font-weight: 700;
+        }
+        .user-text-info {
+          display: inline-block;
+          vertical-align: top;
+          margin-top: 11px;
+          @include tablet {
+            margin-top: 25px;
+          }
+        }
+      }
+    }
+    .followers-board {
+      background-color: white;
+      .follower {
+        border-bottom: 1px solid #e9e9e9;
+        .follower-content {
+          padding: 15px 12px;
+          float: left;
+          @include tablet {
+            padding: 15px 17px;
+          }
+          .follower-img {
+            display: inline-block;
+            vertical-align: top;
+            @include tablet {
+              margin-top: 5px;
+            }
+
+            img {
+              width: 40px;
+              height: 40px;
+              @include tablet {
+                width: 50px;
+                height: 50px;
+              }
+            }
+          }
+          .follower-info {
+            display: inline-block;
+            margin-left: 10px;
+            @include tablet {
+              margin-left: 10px;
+            }
+            .follower-name {
+              font-weight: 700;
+              font-size: 13px;
+              color: #5e3bea;
+              @include tablet {
+                font-size: 16px;
+                margin-top: 10px;
+              }
+            }
+            .follower-counts {
+              font-size: 10px;
+              margin-top: 2px;
+              color: #9f9d9c;
+              @include tablet {
+                font-size: 11px;
+                margin-top: 6px;
+              }
+              .follower-follows {
+                padding-right: 6px;
+                border-right: 1px solid black;
+                @include tablet {
+                  padding-right: 9px;
+                }
+              }
+              .follower-followers {
+                padding-left: 6px;
+                @include tablet {
+                  padding-left: 9px;
+                }
+              }
+              .count {
+                font-weight: 600;
+                color: #2b2523;
+              }
+            }
+          }
+        }
+        .ico.ico-mobile {
+          float: right;
+          margin-right: 10px;
+          border: 2px solid #5e3bea;
+          padding: 5px 7px;
+          border-radius: 7px;
+          margin-top: 18px;
+          color: #5e3bea;
+          cursor: pointer;
+          &.filled {
+            background-color: #5e3bea;
+            border: 2px solid #5e3bea;
+            color: white;
+            @include laptop {
+              &:hover {
+                background-color: white;
+                border: 2px solid #5e3bea;
+                color: #5e3bea;
+              }
+            }
+          }
+          @include laptop {
+            &:hover {
+              background-color: #5e3bea;
+              border: 2px solid #5e3bea;
+              color: white;
+            }
+          }
+
+          &.filled {
+            background-color: #5e3bea;
+            border: 2px solid #5e3bea;
+            color: white;
+          }
+          @include tablet {
+            display: none;
+          }
+        }
+        .view-profile {
+          display: none;
+          cursor: pointer;
+          @include tablet {
+            display: inline-block;
+            color: #808ce7;
+            font-weight: 700;
+            font-size: 13px;
+          }
+        }
+        .laptop-btns {
+          display: none;
+          @include tablet {
+            display: inline-block;
+            float: right;
+            margin-top: 26px;
+            margin-right: 15px;
+            .view-profile {
+              margin-right: 40px;
+            }
+            .btn {
+              min-width: 150px;
+            }
+            .ico {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.follower-popup {
+    &.ngdialog {
+       &>.ngdialog-content {
+            margin: 0 auto;
+            background-color: #fff;
+            display: block;
+            width: 400px;
+            max-width: 92%;
+            border-radius: 0;
+            position: relative;
+            padding: 0;
+            @include laptop {
+              margin-left: calc(100% - 675px);
+            }
+            @media(min-width: 1500px) {
+              margin-left: calc(100% - 800px);
+            }
+            @include large-laptop {
+             margin-left: 965px;
+            }
+
+            .close-btn {
+              position: absolute;
+              top: 5px;
+              right: 11px;
+              color: #603dea;
+              cursor: pointer;
+              @include tablet {
+                top: 9px;
+                right: 13px;
+              }
+              .ico {
+                font-size: 12px;
+                @include tablet {
+                  font-size: 16px;
+                }                
+              }
+            } 
+            .follower-popup-content {                     
+              .wrapper {
+                text-align: center;
+                overflow-x: hidden;
+                padding: 24px 0 34px;
+                @include tablet {
+                  padding: 42px 0 43px;
+                }
+                &>img {
+                  border-radius: 50%;
+                  width: 34px;
+                  height: 34px;
+                  @include tablet {
+                    width: 48px;
+                    height: 48px;
+                  }
+                }
+                .follower-name {
+                  color: #7355ed;
+                  font-size: 12px;
+                  font-weight: bold;
+                  margin-top: 5px;
+                  @include tablet {
+                    font-size: 16px;
+                    margin-top: 9px;
+                  }
+                }
+                .follower-info {
+                  font-size: 9px;
+                  line-height: 16px;
+                  font-weight: 600;
+                  margin-bottom: 36px;
+                  @include tablet {
+                    font-size: 11px;
+                    font-weight: 100; 
+                    margin-bottom: 34px;                   
+                  }
+                  &>span {
+                    display: inline-block;
+                    text-transform: uppercase;
+                    color: #9f9d9c;                    
+                    .number {
+                      color: #2b2523;
+                    }
+                  }
+                  .follows {
+                    padding-right: 7px;
+                    border-right: 1px solid black;
+                  }
+                  .followers {
+                    padding-left: 4px;
+                  }
+                }
+                .btn {
+                  margin: 0;
+                  padding: 0;
+                  width: 88px;
+                  height: 32px;
+                  border: 2px solid #5e3bea;
+                  @include tablet {
+                    width: 140px;
+                    height: 40px;
+                  }
+                  &.unfollow {
+                    background-color: #5e3bea;
+                    color: #fff;
+                    &:hover {
+                      background-color: #4420d2;
+                    }
+                  }
+                  &.follow {
+                    background-color: #fff;
+                    color: #5e3bea;
+                    &:hover {
+                      background-color: #5e3bea;
+                      color: #fff;
+                    }
+                  }                  
+                }
+              }      
+            }
+                
+            &>.ngdialog-close {
+                display: none;
+            }
+        }
+        &>.ngdialog-close {
+            display: none;
+        }
+    }
+}

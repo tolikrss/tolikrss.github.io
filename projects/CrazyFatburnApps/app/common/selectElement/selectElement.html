@@ -1,0 +1,24 @@
+
+<div class="select-element" data-ng-click="vm.openSelect($event.currentTarget)" >
+  <div>
+    <input 
+      class="select-input"
+      data-ng-show="!!vm.selectOpened" 
+      type="text" 
+      ng-model="vm.activeItem"
+      ng-click="$event.stopPropagation()"
+      maxlength="10"
+      size="10">
+
+    <div data-ng-show="!vm.selectOpened" class="selected-item">[[vm.activeItem]]</div>
+
+    <span class="switch-icon icon-font-1-14"></span>
+  </div>
+  <ul class="select-list hide" disable-scroll-event-propagation>
+          <li class="select-list-item"
+              data-ng-repeat="item in vm.items"
+              data-ng-click="vm.select(item);">
+            [[item]]
+          </li>
+  </ul>
+</div>

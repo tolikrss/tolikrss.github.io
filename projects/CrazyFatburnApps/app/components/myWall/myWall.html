@@ -1,0 +1,42 @@
+<div class="my-page-block with-bg">
+
+  <div class="column-navbar" data-simplebar>
+    <large-navbar></large-navbar>
+  </div>
+
+  <div class="column-sidebar">
+  </div>
+
+  <div class="column-content">
+    <!-- Do not change padding-right for following div (class: header-container)!!! -->
+    <div class="header-container">
+    </div>
+
+    <div class="content-container">
+      
+      <mobile-menu-switch-panel></mobile-menu-switch-panel>
+
+      <div class="house">
+        <div class="name-house"><input class="name-value" type="text" rows="1" ng-disabled="vm.disableNameEditing" max-length="25" value="Frank Sinatra's house"/></div>
+        <span class="ico icon-edit" data-ng-click="vm.disableNameEditing = false"></span>
+      </div>
+
+      <user-info data-is-current-user="true"></user-info>
+
+      <div class="share ">
+        <div class="share-content">
+          <img src="/assets/img/user.jpg" alt="">
+          <textarea rows="1" class="share-input" type="text" placeholder="Share your thoughts here. Don't be shy."></textarea>
+        </div>
+      </div>
+
+      <posts></posts>
+
+
+
+    </div>
+
+
+  </div>
+
+</div>

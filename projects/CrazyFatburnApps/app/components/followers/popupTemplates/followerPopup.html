@@ -1,0 +1,43 @@
+<div class="follower-popup-content">
+    <div class="close-btn" data-ng-click="close()">
+        <span class="ico icon-font-1-12"></span>
+    </div>
+    <div class="wrapper">        
+        <img ng-src="/assets/img/user1.jpg" alt="">
+        <div class="follower-name">
+            [[vm.followerInPopup.name]]
+        </div>
+        <div class="follower-info">
+            <span class="follows">
+                <span class="number">[[vm.followerInPopup.follows]]</span>
+                Follows
+            </span>
+            <span class="followers">
+                <span class="number">[[vm.followerInPopup.followers]]</span>
+                Followers
+            </span>
+        </div>
+        
+        <button
+            class="btn purple "
+            ng-click="vm.followerInPopup.follow = !vm.followerInPopup.follow; close()"
+            data-ng-class="(vm.followerInPopup.follow) ? 'filled' : ''"
+        >
+            [[(vm.followerInPopup.follow) ? 'Unfollow' : 'Follow']]
+        </button>
+        <!--<button
+            class="btn unfollow"
+            data-ng-click="vm.followerInPopup.follow = false"
+            data-ng-if="vm.followerInPopup.follow"
+        >
+            Unfollow
+        </button>
+        <button
+            class="btn follow"
+            data-ng-click="vm.followerInPopup.follow = true"
+            data-ng-if="!vm.followerInPopup.follow"
+        >
+            Follow
+        </button>-->
+    </div>
+</div>

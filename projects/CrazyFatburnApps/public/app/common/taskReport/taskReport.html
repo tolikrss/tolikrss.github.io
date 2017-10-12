@@ -1,0 +1,61 @@
+<div class="task-report-block">
+    <div class="page-content">
+        <div class="right-panel">
+
+            <div class="messages-panel" data-simplebar>
+                <div class="date">Friday, July 11, 2017</div>
+                <div class="new-message"
+                    data-ng-repeat="message in vm.currentMessageHistory"
+                    repeat-directive-for-task-messages>
+                    <div data-ng-class="message.type == 'in' ? 'incoming-message' : 'outgoing-message'">
+                        <div class="user-img" data-ng-show="message.type == 'in'">
+                            <img src="/assets/img/user.jpg" alt="">
+                        </div>
+                        <div class="message-content">
+                            <div class="name" data-ng-show="message.type == 'in'">Moderator</div>
+                            <div class="name"  data-ng-show="message.type == 'out'">[[vm.currentUserName]]</div>
+                            <div class="message">
+                            <span class="message-text">
+                                [[message.text]]
+                            </span>
+                            </div>
+                            <div class="time">[[message.time]]</div>
+                        </div>
+                        <div class="user-img" data-ng-show="message.type == 'out'">
+                            <img src="/assets/img/user.jpg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="new-reply">
+                <div class="new-reply-input large"
+                     contenteditable="true"
+                     data-ng-model="post.newReply">
+                </div>
+                <div class="actions">
+                    <label class="attach-file">
+                        <span class="ico icon-attach icon-font-1-30"></span>Attach file
+                        <input
+                        type="file"
+                        id="fileInput"
+                        ng-model="vm.files"
+                        custom-on-change="vm.onFileInputChange"
+                        />
+                    </label>
+                    <button class="btn purple filled send" type="submit" value="Submit">Send</button>
+                </div>
+                <div class="upload-photo-list">
+                    <div class="photo-container" ng-repeat="image in vm.images">
+                        <img data-ng-src="[[image.imageBase64]]"></img>
+                        <div class="name-container">
+                            <span class="name">[[image.imageName.name]]</span>
+                            <span class="type">[[image.imageName.type]]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+<div class="user-info-block shadow">
+    <div class="board">
+        <div class="board-head">
+            <div class="user-img">
+                <img src="/assets/img/user1.jpg" alt="">
+            </div>
+            <div class="text">
+                <div class="user-name">Frank Sinatra</div>
+                <div class="labels">
+                    <a href="#" data-ng-show="!vm.myWall">
+                        <div class="btn purple filled message">
+                            <span class="ico icon-font-1-49"></span>Message
+                        </div>
+                    </a>
+                    <a href="#" data-ng-show="!vm.myWall">
+                        <div class="btn black transparent follow" data-ng-class="{removable: !vm.myWall}">Follow</div>
+                    </a>
+                    <a href="#/myWall/followers">
+                        <div class="btn black transparent followers" data-ng-class="{filled: vm.myWall, removable: !vm.myWall}"><span class="count">10</span> Followers</div>
+                    </a>
+                    <a href="#/myWall/follows">
+                        <div class="btn black transparent follows" data-ng-class="{filled: vm.myWall, removable: !vm.myWall}"><span class="count">5</span> Follows</div>
+                    </a>
+                    <a data-ng-show="!vm.myWall" data-ng-click="vm.toggleDropDown(); $event.stopPropagation();">
+                        <div class="btn black transparent more">More <span class="ico icon-font-1-14"></span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="drop-down-more-menu">
+                <a href="" class="follow">
+                    <span class="ico icon-font-1-28"></span>
+                    <span class="">Following</span>
+                </a>
+                <a href="#/myWall/followers">
+                    <div class="followers" data-ng-class="{filled: vm.myWall, removable: !vm.myWall}">
+                        <span class="count">10</span> Followers
+                    </div>
+                </a>
+                <a href="#/myWall/follows">
+                    <div class="follows" data-ng-class="{filled: vm.myWall, removable: !vm.myWall}">
+                        <span class="count">5</span> Follows
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="board-body"> <!-- data-ng-mouseenter="vm.mousehoverBoard = true" data-ng-mouseleave="vm.mousehoverBoard = false" -->
+            <span class="ico icon-edit" data-ng-click="vm.EditingInfoMode = !vm.EditingInfoMode" data-ng-show="vm.myWall"></span> <!-- data-ng-show="vm.myWall && vm.mousehoverBoard" -->
+            <table class="info">
+                <tr>
+                    <td class="item">Country</td>
+                    <td class="item-value">
+                        <div class="info-input first" contenteditable="{{vm.EditingInfoMode ? 'true' : 'false'}}">
+                            United States
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="item">City</td>
+                    <td class="item-value">
+                        <div class="info-input" contenteditable="{{vm.EditingInfoMode ? 'true' : 'false'}}">
+                            United States
+                        </div>
+                        <!--<form data-ng-submit="vm.EditingInfoMode = true">-->
+                            <!--<input type="text" value="Los Angeles" ng-disabled="vm.EditingInfoMode">-->
+                        <!--</form>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="item">Sex</td>
+                    <td class="item-value">
+                        <div class="info-input" contenteditable="{{vm.EditingInfoMode ? 'true' : 'false'}}">
+                            Male
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="item quote-word"><div class="quote">Quote</div></td>
+                    <td class="item-value">
+                        <div class="quote">
+                            <div class="info-input" contenteditable="{{vm.EditingInfoMode ? 'true' : 'false'}}">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="item">Badges</td>
+                    <td class="item-value">
+                        <div class="emoji">
+                            <div 
+                                class="smile" 
+                                data-ng-repeat="smile in vm.smiles"
+                            >                                
+                                <img 
+                                    ng-src=[[smile.id]] 
+                                    class="em"
+                                    data-ng-show="$index < vm.getSmileLimit() || vm.showAllSmiles" 
+                                    data-ng-mouseover="vm[smile.id]=true" 
+                                    data-ng-mouseleave="vm[smile.id]=false"
+                                    data-ng-click="(vm.screenType() !== 'desktop') ? vm.openBadgesPopup(smile) : '' "
+                                >
+                                <span 
+                                    class="description" 
+                                    data-ng-show="vm[smile.id] && vm.screenType() === 'desktop'"
+                                >
+                                    <div class="description-title">[[smile.descriptionTitle]]</div>
+                                    <div class="first">Lorem: <span class="first-value">[[smile.description1]]</span></div>
+                                    <!--<div class="first">Screen type: <span class="first-value">[[vm.screenType()]]</span></div>-->
+                                    <div class="second">Ipsum: <span class="second-value">[[smile.description2]]</span></div>
+                                </span>
+                            </div>
+                            <div 
+                                class="more-container" 
+                                data-ng-show="vm.smiles.length>vm.getSmileLimit() && !vm.showAllSmiles"
+                                data-ng-click="(vm.screenType() !== 'desktop') ? vm.openBadgesPopup(smile) : vm.showAllSmiles=true "
+                            >
+                            +[[vm.smiles.length - vm.getSmileLimit()]]
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="photos-tr">
+                    <td class="item photos-word">Photos</td>
+                    <td class="item-value last">
+                        <div class="photos">
+                            <label class="add-photo" data-ng-show="vm.myWall">
+                                <span class="ico icon-plus"></span>Add Photo
+                                <input 
+                                    type="file" 
+                                    id="fileInput" 
+                                    ng-model="vm.files" 
+                                    custom-on-change="vm.onAddImage" 
+                                />
+                            </label>
+                            <span class="img" data-ng-repeat="photo in vm.userPhotos">
+                                <img ng-src="[[ photo.src ]]" alt=""
+                                     class="photo"
+                                     ui-sref=[[vm.photoClick($index)]]
+                                     data-ng-show="$index < vm.getPhotoLimit() || vm.showAllPhotos"
+                                     data-ng-click="(vm.screenType() == 'desktop') ? vm.openGalleryPopup(photo) : ''">
+                                <span class="more-photos-hover"
+                                      data-ng-show="$index == vm.getPhotoLimit()-1 && !vm.showAllPhotos"
+                                      data-ng-click="vm.showAllPhotos=true">
+                                    <div class="more-container">+{{vm.userPhotos.length - vm.getPhotoLimit() + 1}}</div>
+                                </span>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--| limitTo:vm.getSmileLimit()"-->

@@ -1,0 +1,465 @@
+//==== для слайдера ======
+// .animation-fade.ng-hide-add,
+// .animation-fade.ng-hide-remove {
+//      /* здесь прописаны эффекты проявления и исчезновения слайда */
+//      transition: 0.2s linear all;
+//      display: block !important;
+// }
+// .animation-fade.ng-hide-add,
+// .animation-fade.ng-hide-remove.ng-hide-remove-active {
+//      /* это стартовая точка анимации исчезновения и конечная точка анимации проявления */
+//      opacity: 1;
+//  }
+// .animation-fade.ng-hide-add.ng-hide-add-active,
+// .animation-fade.ng-hide-remove {
+//      /* это конечная точка анимации исчезновения и стартовая точка анимации проявления */
+//      opacity: 0;
+//      position: absolute;
+// }
+//==== для слайдера ======
+
+.vote-page-block {
+  background-color: #e5e5e5;
+  .column-content {
+    padding-bottom: 70px;
+    @media(max-width: 768px) {
+      padding: 5px;
+    }
+  }
+  .content-container {
+    // margin: 0;
+    padding: 0;
+    min-height: 600px;
+    @include tablet {
+      min-height: 1100px;
+    }
+  }
+  .page-title-container {
+    color: #5e3bea;
+    font-weight: 700;
+    padding-top: 11px;
+    padding-bottom: 15px;
+    line-height: 42px;
+    text-align: center;
+    margin-bottom: 7px;
+    max-width: 880px;
+    margin: 0 auto;
+    @include tablet {
+        margin-bottom: 0;
+        font-size: 42px;
+        padding-top: 17px;
+        padding-bottom: 48px;
+    }
+    .page-title {
+      color: #5e3bea;
+      font-size: 22px;
+      margin-top: -1px;
+      margin-bottom: -7px;
+      @include tablet {
+        font-size: 66px;
+        margin-top: 33px;
+        margin-bottom: 32px;
+      }
+    }
+    .available-likes {
+      color: #2b2523;
+      font-size: 13px;
+      @include tablet {
+        font-size: 16px;
+      }
+      .ico {
+        font-size: 18px;
+        position: relative;
+        top: 2px;
+        @include tablet {
+          font-size: 26px;
+        }
+      }
+      &>span {
+        color: #ef4125;
+        
+      }
+    }
+  }
+  .content-block {
+    margin-bottom: 23px;    
+    max-width: 880px;
+    margin: 0 5px;
+    background-color: #fff;    
+    @include tablet {
+      margin: 0 auto;      
+    }
+    .slider-container {
+      position: relative;
+      .slider-btn {
+        cursor: pointer;
+        font-size: 13px;
+        position: absolute;
+        color: #332e2c;
+        @include tablet {
+          font-size: 25px;
+        }
+      }
+      .btn-previous {
+        top: 286px;    
+        left: 41%;
+        @include tablet {
+          top: 349px;
+          left: 18px;
+        }
+      }
+      .btn-next {
+        top: 286px;    
+        right: 41%;
+        @include tablet {
+          top: 349px;
+          right: 18px;
+        }
+      }
+      .slider {
+        height: 453px;
+        padding: 16px 0 30px 0;
+        @include tablet {
+          height: 810px;
+          padding: 24px 0 47px 0;
+        }
+        &.boys-league {
+          border: 2px solid #5e3bea;
+          @include tablet {
+            border: 4px solid #5e3bea;
+          }
+          .title {
+            color: #5e3bea;
+          }
+        }
+        &.family-league {
+          border: 2px solid #46c4c0;
+          @include tablet {
+            border: 4px solid #46c4c0;
+          }
+          .title {
+            color: #46c4c0;
+          }
+        }
+        &.girls-league {
+          border: 2px solid #eebb08;
+          @include tablet {
+            border: 4px solid #eebb08;
+          }
+          .title {
+            color: #eebb08;
+          }
+        }
+        .title {
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 15px;
+          margin-bottom: 19px;
+          @include tablet {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 33px;
+          }
+        }
+        .imgs-container {
+          width: 100%;
+          padding: 0 10px;
+          margin-bottom: 65px;
+          @include tablet {
+            padding: 0 7%;
+            margin-bottom: 50px;
+          }
+          .img-before {
+            width: 49%;
+            float: left;
+            text-align: center;
+            background-color: #f9f9f9;
+            height: 220px;
+            line-height: 220px;
+            @include tablet {
+              height: 520px;
+              line-height: 520px;
+              width: 49%;
+            }
+            &>img {
+              max-height: 100%;
+              max-width: 100%;
+              vertical-align: middle;
+            }
+          }
+          .img-after {
+            width: 49%;
+            float: right;
+            text-align: center;
+            background-color: #f9f9f9;
+            height: 220px;
+            line-height: 220px;
+            position: relative;
+            @include tablet {
+              height: 520px;
+              line-height: 520px;
+              width: 49%;
+            }
+            &>img {
+              max-height: 100%;
+              max-width: 100%;
+              vertical-align: middle;
+            }
+            .valuation {
+              display: inline-block;
+              position: absolute;
+              bottom: -44px;              
+              right: 41%;
+              font-size: 23px;
+              line-height: 23px;
+              @include tablet {
+                bottom: -53px;
+                right: 43%;
+                font-size: 34px;
+                line-height: 34px;
+              }
+              .ico-like {
+                color: #7dc335;
+              }
+              .ico-not-inpressed {
+                color: #a1a7be;
+              }
+            }
+          }
+        }
+        .btns-container {
+          .btn {
+            transition: none;
+            margin: 0 auto;
+            border-style: solid;
+            display: block;
+            padding: 0;
+            width: 160px;
+            height: 34px;
+            line-height: 34px;
+            background: none;
+            border-radius: 17px;            
+            font-weight: 400;
+            transition: background-color 0.2s;
+            @include tablet {
+              width: 180px;
+              height: 36px;
+              line-height: 36px;
+              border-radius: 18px;
+            }  
+            .ico {
+              vertical-align: middle;
+              position: relative;
+              top: -3px;
+              font-size: 20px;
+              margin-right: 6px;
+            }
+            .text {
+              vertical-align: middle;
+              position: relative;
+              top: -3px;
+            }
+            &.like-btn {
+              border: 2px solid #7dc335;
+              color: #7dc335;
+              margin-bottom: 11px;
+              &:disabled {
+                border: 2px solid #d8edc2;
+                color: #d8edc2;
+                @include laptop {
+                  &:hover {
+                    background-color: #d8edc2;
+                    color: #fff;
+                  }
+                }
+              }
+              @include laptop {
+                &:hover {
+                  background-color: #7dc335;
+                  color: #fff;
+                }
+              }              
+              .ico {
+                font-size: 24px;
+              }
+            }          
+            &.not-inpressed-btn {
+              border: 2px solid #a1a7be;
+              color: #a1a7be;
+              &:disabled {
+                border: 2px solid #e3e4eb;
+                color: #e3e4eb;
+                @include laptop {
+                  &:hover {
+                    background-color: #e3e4eb;
+                    color: #fff;
+                  }
+                }
+              }
+              @include laptop {
+                &:hover {
+                  background-color: #a1a7be;
+                  color: #fff;
+                }
+              }
+              .ico {
+                top: -2px;
+              }
+            }
+            &.finish-vote-btn {
+              background-color: #7e62ee;
+              color: #fff;
+              width: 180px;
+              height: 45px;
+              border: none;
+              padding: 0;
+              margin: 0 auto;
+              border-radius: 0;
+              &:hover {
+                background-color: #4420d2;
+              }
+            }
+          }          
+        }  
+      }
+    }     
+  }
+}
+
+//========================================
+//popup
+//===================
+.thanks-for-voting-popup {
+    &.ngdialog {
+      padding-top: 200px;
+      padding-bottom: 20px;
+      @include tablet {
+        padding-top: 280px;
+      }
+      @include laptop {
+        padding-left: 420px;
+      }
+        &>.ngdialog-content {
+            padding: 20px 20px 40px 20px;
+            margin: 0 auto;
+            background-color: #fff;
+            width: 91%;
+            display: block;
+            border-radius: 0;
+            background-color: #f4f4f4;
+            @include tablet {
+              max-width: 738px;
+            }
+            @include laptop {              
+              width: 842px;
+            }
+            .close-btn {
+              position: absolute;
+              top: 4px;
+              right: 9px;
+              color: #0d35da;
+              cursor: pointer;
+              @include tablet {
+                top: 22px;
+                right: 25px;
+              }
+              .ico {
+                font-size: 12px;
+                @include tablet {
+                  font-size: 18px;
+                }
+              }
+            }
+            .thanks-for-votting-popup {
+                .content {
+                  color: #2b2523;
+                  text-align: center;
+                  margin-top: 10px;
+                  margin-bottom: 9px;         
+                  font-size: 16px;
+                  font-weight: 600;
+                  text-transform: uppercase;
+                  @include tablet {
+                    margin-top: 121px;
+                    margin-bottom: 163px;
+                  }
+                  .ico {
+                    color: #fff;
+                    position: relative;
+                    display: inline-block;
+                    font-size: 32px;
+                    margin-bottom: 18px;
+                    @include tablet {
+                      font-size: 55px;
+                      margin-bottom: 58px;
+                    }
+                    .ico-in {
+                      position: absolute;
+                      top: 8px;
+                      right: 8px;
+                      font-size: 16px;
+                      @include tablet {
+                        top: 13px;
+                        right: 12px;
+                        font-size: 30px;
+                      }
+                    }
+                  }
+                  &>.one {
+                    color: #5e3bea;
+                    font-size: 12px;
+                    @include tablet {
+                      font-size: 21px;  
+                    }
+                  }
+                  &>.two {
+                    display: inline-block;
+                    color: #a1a7be;
+                    overflow: hidden;
+                    width: 148px;
+                    margin-top: 7px;
+                    margin-bottom: 4px;
+                    font-weight: 100;
+                    font-size: 10px;
+                    @include tablet {
+                      width: 198px;
+                      margin-top: 32px;
+                      font-size: 15px;
+                      margin-bottom: 32px;
+                    }
+                    &::before,
+                    &::after {
+                      content: '';
+                      display: inline-block;
+                      vertical-align: middle;
+                      box-sizing: border-box;
+                      width: 100%;
+                      height: 1px;
+                      background: #a1a7be;
+                      border: solid #FFF;
+                      border-width: 0 7px;
+                      position: relative;
+                      top: -1px;
+                    }
+                    &::before {
+                      margin-left: -100%;
+                    }
+                    &::after {
+                      margin-right: -100%;
+                    }
+                  }
+                  &>.three {
+                    color: #5e3bea;
+                    font-size: 13px;                    
+                    @include tablet {
+                      font-size: 25px;
+                    }
+                  }
+                }
+            }
+            &>.ngdialog-close {
+                display: none;
+            }
+        }
+    }
+}

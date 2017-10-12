@@ -1,0 +1,43 @@
+<div class="users-photos-block with-bg">
+  
+  <div class="column-navbar" data-simplebar>
+    <large-navbar></large-navbar>
+  </div>
+
+  <div class="column-content">
+    <!-- Do not change padding-right for following div (class: header-container)!!! -->
+
+    <div class="content-container">
+
+      <div class="mobile-menu-switch-panel shadow">
+        <div class="logo">
+          <a class="back-btn-container" href="#/wall">
+            <span class="back-ico icon-font-1-60"></span>
+            <span>Frank Sinatra</span>
+          </a>
+        </div>
+        <span data-ng-click="vm.openMobileMenu()" class="ico icon-font-1-46"></span>
+      </div>
+
+      <div class="content-block">
+        <div class="photos">
+          <div class="photo" id="anchor[[$index]]" data-ng-repeat="photo in vm.photos" data-ng-click="console.log($index)">
+            <div class="date">[[photo.date]]</div>
+            <div class="img"><img src="[[photo.url]]" alt=""></div>
+            <div class="likes-comments">
+              <div class="likes">
+                <span class="ico" data-ng-class="photo.likesCount ? 'icon-lightning-filled' : 'icon-lightning'"></span>
+                <div class="likes-count">[[photo.likesCount]]</div>
+                <div class="likes-text">like this</div>
+              </div>
+              <a class="comments" href="#/photoCommentsMobile">
+                <span class="ico icon-font-1-64"></span>
+                <div class="comments-text">Comments</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

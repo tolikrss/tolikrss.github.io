@@ -1,0 +1,197 @@
+.large-navbar-block {
+  color: white;
+  font-weight: 600;
+  background-color: #29bab5;
+  min-height: 100vh;
+  .removable {
+    background-color: transparent;
+    word-wrap: normal;
+    white-space: nowrap;
+    transition: 0.5s linear; 
+    opacity: 1;
+  }
+  .header {
+    height: 140px;
+    text-align: center;
+    position: relative;
+    background-color: #46c4c0;
+    .close-menu-mobile-btn {
+      display: inline-block;
+      position: absolute;
+      top: 27px;
+      right: 23px;
+      color: #2e8d9d;
+      cursor: pointer;
+      @include laptop {
+        display: none;
+      }
+      .ico {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+    .logo {
+      height: 71px;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 23px 0 20px 0;
+      @include tablet {
+        font-size: 20px;
+      }
+      &.small {
+        display: none;
+      }
+    }
+    .client{
+      position: relative;
+      &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+      .user-img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+        vertical-align: middle;
+      }
+      .user-name {
+        color: #2c899a;
+        font-size: 18px;
+        font-weight: 700;
+        vertical-align: middle;
+      }
+      .ico {
+        color: #2c899a;
+        font-size: 14px;
+        vertical-align: middle;
+        vertical-align: middle;
+        position: relative;
+        top: 2px;
+      }
+      .drop-down-user-menu {
+        background-color: #fff;
+        width: 200px;
+        height: 80px;
+        color: #6c6866;
+        position: absolute;
+        bottom: -82px;
+        right: 16%;
+        display: none;
+        text-align: left;
+        &.show {
+          display: inline-block;
+        }
+        &:last-child {
+          border: none;
+        }
+        >a {
+          display: block;
+          height: 40px;
+          border-bottom: 1px solid #e9e9e9;
+          line-height: 40px;
+          .ico {
+            color: #5b5755;
+            font-size: 18px;
+            position: relative;
+            top: -2px;
+            display: inline-block;
+            min-width: 68px;
+            text-align: right;
+          }
+          .text {
+            margin-left: 21px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+  .mainMenu, .bottomMenu {
+    background-color: #29bab5;
+    padding: 25px 15px 33px 10px;
+    .item {
+      padding: 9px 32px;
+      font-size: 17px;
+      &>a {
+        display: inline-block;
+        width: 100%;
+      }
+      .ico {
+        margin-right: 17px;
+        color: #2c899a;
+        font-size: 26px;
+        vertical-align: sub;
+        position: relative;
+      }
+      &.active {
+        background-color: #54c8c4;
+      }
+      .indorm-block {
+        display: inline-block;
+        background-color: #eebb08;
+        color: #fff;
+        text-align: center;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        border-radius: 5px;        
+        margin-left: 8px;
+      }
+      &.messages,
+      &.kitchen {
+        .has-new-notify {
+          position: absolute;
+          top: 2px;
+          right: 0;
+          display: none;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: #eebb08;
+        }
+      }
+    }
+  }
+  .bottomMenu {
+    padding-top: 0;
+  }
+  .extraMenu {
+    padding: 10px 22px;
+    font-size: 17px;
+    background-color: #29bab5;
+    .item {
+      margin-bottom: 27px;
+      height: auto;
+      overflow: hidden;
+      @include laptop {
+        height: 26px;
+      }
+      &.extra-menu-has-notify {
+        display: none;
+        color: #eabb0b;
+        font-size: 22px;
+      }
+      .circle {
+        height: 8px;
+        width: 8px;
+        background-color: #eebb08;
+        border-radius: 50%;
+        margin-right: 20px;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 9px;
+      }
+      .text {
+        display: inline-block;
+        .first-line, .second-line {
+          @include tablet {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

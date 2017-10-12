@@ -1,0 +1,110 @@
+<div class="large-navbar-block" ng-swipe-left="vm.closeMobileMenu()">
+
+  <div class="header">
+    <div class="close-menu-mobile-btn" data-ng-click="vm.closeMobileMenu()">
+      <span class="ico icon-font-1-12"></span>
+    </div>
+    <div class="logo big">
+      <a ui-sref=""># C R A Z Y F A T B U R N</a>
+    </div>
+    <div class="logo small">
+      <a ui-sref=""># C F B</a>
+    </div>
+
+    <div class="client">
+      <a href="" data-ng-click="vm.toggleDropDown(); $event.stopPropagation();">
+        <img class="user-img" src="/assets/img/user.jpg" alt=""><span class="user-name removable">Frank Sinatra</span>
+        <span class="ico icon-font-1-45"></span>
+      </a>
+      <div class="drop-down-user-menu">
+        <a href="#/settings">
+          <div class="ico icon-font-1-57"></div>
+          <span class="text">Settings</span>
+        </a>
+        <a href="#/wall">
+          <span class="ico icon-font-1-58"></span>
+          <span class="text">Logout</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <ul class="mainMenu">
+    <li class="item">
+      <a ui-sref="">
+        <span class="ico icon-number"></span><span class="removable">SEASONS</span>
+      </a>
+    </li>
+    <li class="item" data-ng-class="(vm.getCurrentRoute() == '/wall') ? 'active' : ''">
+      <a href="#/wall">
+        <span class="ico icon-user"></span><span class="removable">My wall</span>
+      </a>
+    </li>
+    <li class="item" data-ng-class="(vm.getCurrentRoute() == '/party') ? 'active' : ''">
+      <a href="#/party">
+        <span class="ico icon-users"></span><span class="removable">The party</span>
+      </a>
+    </li>
+    <li class="item" data-ng-class="(vm.getCurrentRoute() == '/myBody') ? 'active' : ''">
+      <a href="#/myBody">
+
+        <span class="ico icon-diagram"></span><span class="removable">Your body</span>
+
+      </a>
+    </li>
+    <li class="item messages" data-ng-class="(vm.getCurrentRoute() == '/messages') ? 'active' : ''">
+      <a href="#/messages">
+        <span class="ico icon-message"><span class="has-new-notify"></span></span><span class="removable">Messages</span>
+        <span class="indorm-block removable" data-ng-show="true">2</span>
+      </a>
+    </li>
+    <li class="item kitchen" data-ng-class="(vm.getCurrentRoute() == '/kitchen') ? 'active' : ''">
+      <a href="#/kitchen">
+        <span class="ico icon-kitchen"><span class="has-new-notify"></span></span><span class="removable">My kitchen</span>
+        <span class="indorm-block removable" data-ng-show="true">5</span>
+      </a>
+    </li>
+    <li class="item" data-ng-class="(vm.getCurrentRoute() == '/course') ? 'active' : ''">
+      <a href="#/course">
+        <span class="ico icon-lightning"></span><span class="removable">#CFB SEASON 1</span>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="extraMenu">
+    <li class="item extra-menu-has-notify">
+      <a href="#/vote">
+        <span class="ico icon-font-1-66"></span>
+      </a>
+    </li>
+    <li class="item">
+      <a href="#/vote">
+        <div class="circle removable"></div><span class="removable">VOTE SEASON 1!!!</span>
+      </a>
+    </li>
+    <li class="item">
+      <a ui-sref="">
+        <span class="circle removable"></span>
+        <span class="text removable">
+          <div class="first-line">#Some extra links and pages. </div>
+          <div class="second-line">Super deal</div>
+        </span>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="bottomMenu">
+    <li class="item">
+      <a ui-sref="">
+        <span class="ico icon-present"></span><span class="removable">Contests</span>
+      </a>
+    </li>
+    <li class="item">
+      <a ui-sref="">
+        <span class="ico icon-question"></span><span class="removable">F.A.Q.</span>
+      </a>
+    </li>
+  </ul>
+    <div class="mobile-menu-overlay" data-ng-click="vm.closeMobileMenu()"></div>
+</div>
+

@@ -1,0 +1,1267 @@
+.settings-page-block {
+  background-color: #e5e5e5;
+  .page-title {
+    color: #2b2523;
+    font-size: 21px;
+    font-weight: 700;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    line-height: 42px;
+    text-align: center;
+    @include tablet {
+        font-size: 42px;
+        padding-top: 51px;
+        padding-bottom: 54px;
+    }
+  }
+  .all-content-block {    
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    .main-photo-block{
+      position: relative;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding-top: 24px;
+      padding-bottom: 26px;
+      @include tablet {
+        padding-top: 24px;
+        text-align: left;
+        padding-bottom: 37px;
+      }
+      .more-btn {
+        // display: inline-block;
+        display: none;
+        position: absolute;
+        top: 8px;
+        right: 14px;
+        font-size: 20px;
+        cursor: pointer;
+        color: #6a49eb;        
+        font-weight: 700;
+        @include tablet {
+          top: 23px;
+          right: 25px;
+        }
+        .logout {          
+          display: none;
+          width: 165px;
+          height: 42px;
+          line-height: 42px;
+          position: absolute;
+          bottom: -50px;
+          right: -5px;
+          background-color: #fff;
+          color: #6c6866;
+          text-align: center;
+          &.show {
+            display: inline-block;
+          }
+          .ico {
+            vertical-align: middle;
+            margin-right: 5px;
+            position: relative;
+            top: -4px;
+          }
+          .text {
+            font-family: "Open Sans";
+            vertical-align: middle;
+            position: relative;
+            top: -4px;
+          }
+        }
+      }
+      .photo {
+        @include tablet {
+          margin-left: 173px;
+          margin-top: 18px;
+          display: inline-block;
+        }
+        &>img {
+          padding: 4px;
+          width: 73px;
+          height: 73px;
+          border-radius: 50%;
+          border: 2px solid #7784e5;
+          @include tablet {
+            width: 135px;
+            height: 135px;
+          }
+        }
+      }
+      .name-and-change-btn-container {
+        @include tablet {
+          display: inline-block;
+          vertical-align: top;
+          padding-left: 57px;
+          padding-top: 26px;
+        }
+        .name {
+          color: #5e3bea;
+          margin-top: 8px;
+          font-size: 16px;
+          font-weight: 700;
+          @include tablet {
+            margin-top: 0;
+            font-size: 42px;
+          }
+        }
+        .change-photo-btn {
+          margin: 0;
+          padding: 0;
+          background-color: #5e3bea;
+          cursor: pointer;
+          color: #fff;
+          width: 160px;
+          height: 30px;
+          line-height: 30px;
+          border-radius: 15px;
+          text-align: center;
+          margin: 0 auto;          
+          margin-top: 9px;
+          font-size: 13px;
+          font-weight: 400;
+          @include tablet {
+            margin: 15px 0 0 4px;
+          }
+          @include laptop {
+            &:hover {
+              transition: background-color 0.2s;
+              background-color: #4420d2;
+            }
+          }          
+          &>input {
+            display: none;
+          }
+        }
+      }
+    }
+    .settings-block {
+      background-color: #ffffff;
+      padding: 15px 0 15px 0;
+      @include tablet {
+        padding: 38px 0 50px 0;
+      }
+      .select-element  {
+        .select-list-item {
+          font-size: 14px;
+        }
+      }
+      .container {
+        padding: 0 26px;
+        font-size: 10px;
+        // @include tablet {
+        //   padding:  0 20px;
+        // }        
+        @include tablet {
+          padding: 0 125px 0 120px;
+        }        
+        @include large-laptop {
+          padding: 0 175px 0 170px;
+        }        
+      }
+      .field-name {
+        color: #b0aead;
+        @include tablet {
+          display: inline-block;
+          width: 128px;
+          font-size: 14px;
+        }
+      }
+      input {
+        border: none;
+        border-bottom: 1px solid #e9e9e9;
+        color: #55514f;
+        width: 100%;
+        padding: 5px;
+        @include tablet {
+          display: inline-block;
+          padding: 9px;
+          width: calc(100% - 132px);
+          font-size: 14px;
+        }
+      }
+      .field {
+        margin-bottom: 10px;
+        @include tablet {
+          margin-bottom: 22px;
+        }
+      }
+      .name {
+
+      }
+      .last-name {
+        @include laptop {
+          margin-bottom: 11px;
+        }
+      }
+      .show-my-last-name {
+        text-align: left;
+        vertical-align: middle;
+        margin-bottom: 11px;
+        @include tablet {          
+          text-align: right;
+          padding-right: 8px;
+          margin-bottom: 14px;
+        }
+        .ico-not-selected {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          color: #dededd;
+          margin-right: 20px;
+          @include laptop {
+            margin-right: 14px;
+          }
+          &>span {
+            font-size: 24px;
+            line-height: 17px;
+          }
+          .ico {
+            position: absolute;  
+            top: 0;
+            left: 0;
+            font-size: 13px;
+            color: #bebdbc;
+          }
+        }
+        .ico-selected {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          color: #bbc1f2;
+          margin-right: 20px;
+          @include laptop {
+            margin-right: 14px;
+          }
+          &>span {
+            font-size: 24px;
+            line-height: 17px;
+          }
+          .ico {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 13px; 
+            color: #7784e5;
+          }
+        }
+        .text {
+          vertical-align: top;
+          color: #aaa8a7;
+          font-weight: 400;
+          font-size: 11px;          
+          line-height: 16px;
+        }
+      }
+      .nickname {
+
+      }
+      .show-my-nick-name {
+        text-align: left;
+        vertical-align: middle;
+        margin-bottom: 11px;
+        @include tablet {
+          text-align: right;
+        }
+        .ico-not-selected {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          color: #dededd;
+          margin-right: 20px;
+          @include laptop {
+            margin-right: 14px;
+          }
+          &>span {
+            font-size: 24px;
+            line-height: 17px;
+          }
+          .ico {
+            position: absolute;  
+            top: 0;
+            left: 0;
+            font-size: 13px;
+            color: #bebdbc;
+          }
+        }
+        .ico-selected {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          color: #bbc1f2;
+          margin-right: 20px;
+          @include laptop {
+            margin-right: 14px;
+          }
+          &>span {
+            font-size: 24px;
+            line-height: 17px;
+          }
+          .ico {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 13px; 
+            color: #7784e5;
+          }
+        }
+        .text {
+          vertical-align: top;
+          color: #aaa8a7;
+          font-weight: 400;
+          font-size: 11px;          
+          line-height: 16px;
+        }
+      }
+      .sex {
+        margin-bottom: 21px;
+        @include laptop {
+            margin-bottom: 38px;
+        }
+        &>.field-name {
+          margin-bottom: 3px;
+        }
+        label {
+          cursor: pointer;
+          margin-right: 21px;
+          font-size: 12px;    
+          vertical-align: top;
+          color: #55514f;
+          @include laptop {
+            position: relative;
+            top: 9px;
+            line-height: 24px;
+            font-size: 14px;
+            margin-right: 48px;
+          }
+          .ico {
+            position: relative;
+            color: #7784e5;
+            font-size: 18px;
+            margin-right: 10px;
+            width: 18px;
+            display: inline-block;
+            @include laptop {
+              font-size: 23px;
+              width: 23px;
+            }
+            &.checked {
+              background-color: #ebedfb;
+            }
+            &>span {
+              position: absolute;
+              top: 3px;
+              left: 3px;
+              font-size: 12px;
+              color: #3b5ce1;
+              @include laptop {
+                top: 5px;
+                left: 6px;
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+      .email {
+        position: relative;
+        &>.error {
+          color: #f26751;
+          display: block;
+          text-align: right;
+          font-size: 10px;
+          margin-top: 5px;
+          &>a {
+            text-decoration: underline;
+          }
+        }
+        .ico-verified {
+          position: absolute;
+          font-size: 14px;
+          top: 18px;
+          right: 2px;
+          color: #927af1;
+          @include tablet {
+            font-size: 16px;
+            top: 10px;
+            right: 5px;
+          }
+        }
+      }
+      .country-code-and-phone-number {
+        margin-top: 32px;
+        @include laptop {
+          margin-top: 0;
+        }
+        .country-code {
+          display: inline-block;
+          margin-right: 10px;
+          @include tablet {
+            margin-right: 0;
+          }
+          .code {
+            .select-element {
+              width: 60px;
+              @include tablet {
+                width: 82px;
+              }              
+            }
+          }
+        }
+        .phone-number {
+          display: inline-block;
+          float: right;
+          @include tablet {
+            margin-top: 9px;
+          }
+          &>input {
+            width: 100%;
+            padding: 2px;
+            font-size: 13px;
+            @include tablet {
+              width: 136px;
+              padding: 7px;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+      .birthday {
+        @include tablet {
+          margin-top: 51px;
+        }
+        .day {
+          margin-right: 19px;
+          @include tablet {
+            margin-right: 32px;
+          }
+          .select-element {
+            width: 51px;
+            @include tablet {
+              width: 68px;
+            }
+          }
+        }
+        .month {
+          margin-right: 20px;
+          @include tablet {
+            margin-right: 32px;
+          }
+          .select-element {
+            width: 87px;
+            @include tablet {
+              width: 112px;
+            }
+          }
+        }
+        .year {
+          .select-element {
+            width: 65px;
+            @include tablet {
+              width: 89px;
+            }
+          }
+        }
+      }
+      .change-password {
+        background-color: #f1f2fc;
+        text-align: center;
+        min-height: 50px;
+        margin-bottom: 25px;
+        @include tablet {    
+          margin-top: 44px;
+        }
+        @include laptop {
+          margin: 44px 40px 0 40px;
+          margin-bottom: 53px;
+        }
+        &>a {
+          color: #5e3bea;
+          text-decoration: underline;
+          font-size: 13px;
+          line-height: 50px;
+          font-weight: 600;
+          @include tablet {
+            font-size: 14px;
+          }
+        }
+        .change-pasword-dropdown-block {
+          padding: 0 30px 0 30px;
+          min-height: 225px;
+          @include tablet {
+              padding: 17px 125px 10px 120px;
+              min-height: 234px;
+          }          
+          @include laptop {
+              padding: 17px 85px 10px 80px;
+          }        
+          @include large-laptop {
+              padding: 17px 135px 10px 130px;
+          }          
+          .new-password-changed {
+            line-height: 225px;            
+            color: #857bb3;
+            font-weight: 600;
+            font-size: 14px;
+            // margin:  0;
+            @include tablet {
+              font-size: 20px;
+              line-height: 234px;
+            }
+          }    
+          .current {
+            
+          }
+          .password {
+            text-align: left;
+            position: relative;
+            margin-bottom: 12px;
+            @include laptop {
+              margin-bottom: 21px;
+            }
+            input {
+              @include laptop {
+                padding: 10px;
+              }
+            }
+            .error {
+              color: #ef6450;
+              font-size: 10px;
+              position: absolute;
+              right: 0;
+              top: 42px;
+            }
+            .field-name {
+              width: 100%;
+              font-size: 10px;
+              @include tablet {
+                width: 196px;
+                font-size: 14px;
+              }
+              
+            }
+            .input-container {
+              display: inline-block;
+              position: relative;
+              width: 100%;
+              @include tablet {
+                width: calc(100% - 200px);
+              }              
+              .incorrectConfirmPassword {
+                border-bottom: 1px solid #e56a60 !important;
+              }
+              .ico {
+                position: absolute;
+                top: 3px;
+                right: 5px;
+                cursor: pointer;
+                color: #7152ec;
+                font-size: 22px;
+                @include tablet {
+                  top: 12px;
+                }
+                .ico-show {
+                  display: none;
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  &.show {
+                    display: inline;
+                  }
+                }
+              }
+              &>input {
+                border-color: #b0aead;
+                width: 100%;
+                padding-right: 40px;
+              }
+            }
+          }
+          .buttons-container {
+            margin-top: 28px;
+            padding-bottom: 20px;
+            @include laptop {
+              margin-top: 81px;
+              padding-bottom: 26px;
+            }
+            .btn {
+              padding: 0;
+              text-align: center;
+              width: 100px;
+              height: 30px;
+              line-height: 30px;
+              font-weight: 400;
+            }
+            .save-btn {
+              color: #5e3bea;
+              border: 1px solid #5e3bea;
+              @include laptop {
+                &:hover {
+                  color: #fff;
+                  background-color: #5e3bea
+                }
+              }              
+              .btn-text {
+                position: relative;
+                top: -1px;  
+              }
+            }
+            .cancel-btn {
+              color: #ef4125;
+              border: 1px solid #ef4125;
+              @include laptop {
+                &:hover {
+                  color: #fff;
+                  background-color: #ef4125;
+                }
+              }              
+              .btn-text {
+                position: relative;
+                top: -1px;  
+              }
+            }
+          }
+        }
+      }
+      .instagram, .facebook {
+        &>.field-name {
+          color: #7784e5;
+        }
+      }
+
+      .save-btn-container {
+        text-align: center;
+        @include laptop {
+          padding-top: 30px;
+        }
+        .save-btn {
+          display: inline-block;
+          cursor: pointer;
+          width: 100px;
+          height: 30px;
+          line-height: 30px;
+          border-radius: 15px;
+          color: #5e3bea;
+          border: 1px solid #5e3bea;
+          font-size: 14px;
+          @include laptop {
+            &:hover {
+              transition: background-color 0.2s;
+              color: #fff;
+              background-color: #5e3bea;
+            }
+          }
+          .btn-text {
+            position: relative;
+            top: -1px;  
+          }
+        }
+      }
+      .select-block {
+          position: relative;          
+          display: inline-block;
+          &>.ico {
+            position: absolute;
+            top: 11px;
+            right: 3px;
+            @include tablet {
+              top: 14px;
+              right: 7px;
+            }
+          }
+        }
+    }
+  }
+}
+// ====================================
+// popup
+html.ngdialog-open, body.ngdialog-open {
+    overflow: initial !important;
+    width: 100%;
+} //необходимо для избегания прокрутки вверх при закрытии диалогового окна
+
+.change-photo-popup {
+  &.ngdialog {
+    &.ngdialog-theme-default {
+      padding-top: 15%;
+      padding-bottom: 20px;
+      @include laptop {
+        padding-top: 12%;
+        padding-bottom: 20px;
+        padding-left: 420px;
+      }
+    }
+        &>.ngdialog-content {
+            padding: 4px 10px 33px 10px;
+            // margin: 0 auto;
+            background-color: #fff;
+            display: block;
+            min-width: 91%;
+            max-width: 91%;
+            @include tablet {
+              padding: 26px 30px 63px 30px;
+              min-width: auto;
+              max-width: auto;
+              width: 767px;
+              min-height: 200px;
+            }
+            .change-photo-popup-content {
+              position: relative;              
+              text-align: center;
+              .close-btn {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: #0d35da;
+                cursor: pointer;
+                .ico {
+                  font-size: 12px;
+                  @include tablet {
+                    font-size: 18px;
+                  }
+                }
+              }      
+              .popup-content-container {
+                padding-top: 40px;
+                @include tablet {
+                  padding-top: 48px;
+                }
+                .cropArea {
+                  background: #f1f1ef;
+                  overflow: hidden;
+                  width: 100%;
+                  height: 262px;
+                  margin: 0 auto 16px;
+                  @include tablet {
+                    width: 520px;
+                    height: 440px;
+                    margin: 0 auto 28px;
+                  }
+
+                  .cropping-guide {
+                    .ico {
+                      font-size: 24px;
+                      @include tablet {
+                        font-size: 30px;
+                      }
+                    }
+                  }
+                }
+                .change-photo-btn-container {
+                  text-align: center;
+                  .select-photo-button {
+                    color: #7784e5;
+                    font-size: 13px;
+                    font-weight: 600;
+                    line-height: 14px;
+                    display: inline-block;
+                    border-bottom: 1px solid #7784e5;
+                    cursor: pointer;
+                    @include tablet {                      
+                      font-size: 15px;
+                      line-height: 16px;
+                    }
+                    &>input {
+                      display: none;
+                    }
+                  }
+                }
+                .scale-and-turn-btns {                  
+                  margin-top: 8px;
+                  text-align: left;
+                  @include tablet {                                
+                    margin-top: 44px;
+                  }
+                  @include laptop {                   
+                    padding: 0 20px;
+                  }
+                  @include large-laptop {                   
+                    padding: 0 40px;
+                  }
+                  .btns-container {
+                    display: none;
+                    @include tablet {
+                      display: inline-block;
+                    }
+                    .btn {
+                      margin: 0;
+                      padding: 0;
+                      width: 100px;
+                      height: 40px;
+                      font-weight: normal;
+                    }
+                    .cancel {
+                      color: #ef4125;
+                      border: 1px solid #ef4125;
+                      &:hover {
+                        color: #fff;
+                        background-color: #ef4125;
+                        border: 1px solid #ef4125;
+                      }
+                    }
+                    .save {
+                      color: #fff;
+                      background-color: #5e3bea;
+                      border: 1px solid #5e3bea;
+                      margin-right: 17px;
+                      @include laptop {
+                        &:hover {
+                          color: #fff;
+                          background-color: #4420d2;
+                          border: 1px solid #4420d2;
+                        }
+                      }
+                    }
+                  }
+                  .range-container {
+                    display: inline-block;
+                    // width: calc(100% - 59px);
+                    width: 213px;
+                    margin-left: 18px;
+                    margin-right: -21px;
+                    @include tablet {
+                      width: 287px;
+                      margin-left: 61px;           
+                    }
+                    &:after {
+                      content: '';
+                      display: inline-block;
+                      height: 100%;
+                      vertical-align: middle;
+                    }
+                    .ico {
+                      vertical-align: middle;
+                      color: #7e61ee;
+                      font-size: 14px;
+                      cursor: pointer;
+                      @include tablet {
+                        font-size: 22px;
+                      }
+                    }
+                    .ico-dec {                      
+                      margin-right: 10px;
+                    }
+                    .ico-add {          
+                      margin-left: 10px;
+                    }
+                    .range-wrapper {
+                      position: relative;
+                      display: inline-block;
+                      // width: calc(100% - 112px);
+                      width: 50%;
+                      vertical-align: middle;
+                      @include tablet {
+                        top: -2px;
+                        width: 60%;
+                      }
+                      #photoRange {
+                        width: 100%;
+                        vertical-align: middle;
+                        min-width: 80px;
+                        &:focus {
+                          outline: none;
+                        }
+                        &.md-active {
+                          .md-slider-wrapper {
+                            .md-thumb {                            
+                                transform: none !important;
+                            }
+                          }
+                        }
+
+                        .md-slider-wrapper {
+                          .md-slider-content {
+                            position: relative;
+                            top: -3px;
+                            .md-track-container {
+                              height: 6px;
+                              @include tablet {
+                                height: 10px;
+                              }
+                              .md-track {
+                                background-color: #e4e6fa;
+                                &.md-track-fill {
+                                  background-color: #e4e6fa;
+                                }
+                              }
+                            }
+                            .md-thumb-container {
+                              .md-thumb {
+                                width: 9px;
+                                height: 9px;
+                                top: 22px;                                
+                                border-radius: 0;
+                                background-color: #7784e5;
+                                cursor: pointer;
+                                transform: none !important;
+                                @include tablet {
+                                  width: 16px;
+                                  height: 16px;
+                                  top: 20px;
+                                }
+                                &::after {
+                                  display: none;
+                                }
+                              }
+                              .md-focus-thumb{
+
+                              }
+                              .md-focus-ring {
+
+                              }
+                              .md-sign {
+
+                              }
+                              .md-disabled-thumb {
+
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }                  
+                  }
+                  .turn-btns {
+                    display: inline-block;
+                    position: relative;
+                    top: 2px;    
+                    @include tablet {
+                      float: right;
+                      line-height: 48px;
+                    }                
+                    .ico {
+                      color: #7557ed;
+                      cursor: pointer;
+                      &:first-child {
+                        margin-right: 8px;
+                        @include tablet {
+                          margin-right: 13px;
+                        }
+                      }
+                      @include tablet {
+                        font-size: 22px;
+                      }
+                    }
+                  }
+                }
+                
+                .popup-buttons-mobile {
+                  text-align: center;
+                  margin-top: 25px;
+                  @include tablet {
+                    display: none;
+                  }
+                  .btns-container {
+                      text-align: center;
+                      .btn {                        
+                        font-weight: normal;
+                        margin: 0;
+                        padding: 0;
+                        width: 88px;
+                        height: 30px;
+                      }
+                      .cancel {
+                          color: #ef4125;
+                          border: 1px solid #ef4125;
+                          &:hover {
+                            color: #fff;
+                            background-color: #e2544e;
+                            border: 1px solid #e2544e;
+                          }
+                      }
+                      .save {
+                          color: #fff;
+                          background-color: #5e3bea;
+                          border: 1px solid #5e3bea;
+                          margin-right: 25px;
+                          @include laptop {
+                            &:hover {
+                              color: #fff;
+                              background-color: #4420d2;
+                              border: 1px solid #4420d2;
+                            }
+                          }
+                      }
+                  }
+                }
+              }
+              
+              
+              &>.ngdialog-close {
+                display: none;
+              }
+            }  
+          &>.ngdialog-close {
+            display: none;
+          }   
+      }
+    }
+}
+
+.change-sex-popup {
+    &.ngdialog {
+      @include laptop {        
+        padding-left: 420px;
+      }
+       &>.ngdialog-content {
+            padding: 20px 20px 31px 20px;
+            margin: 0 auto;
+            background-color: #fff;
+            display: block;
+            max-width: 400px;
+            width: 91%;
+            border-radius: 0;
+            position: relative;
+            @include tablet {
+              width: 400px;
+              height: 200px;
+            }
+            .close-btn {
+              position: absolute;
+              top: 4px;
+              right: 9px;
+              color: #0d35da;
+              cursor: pointer;
+              @include tablet {
+                top: 9px;
+                right: 13px;
+              }
+              .ico {
+                font-size: 12px;
+                @include tablet {
+                  font-size: 16px;
+                }
+              }
+            }  
+            .change-sex-popup-content {
+              text-align: center;
+              padding-top: 28px;      
+              @include tablet {
+                padding-top: 33px;
+              }                  
+              .text {
+                font-size: 14px;
+                @include tablet {
+                  font-size: 16px;
+                }
+              }               
+              .popup-buttons {
+                  padding-top: 26px;
+                  text-align: center;
+                  @include mobile {
+                    padding-top: 44px;
+                  }
+                  .btns-container {
+                      text-align: center;
+                      .btn {
+                        margin: 0;
+                        padding: 0;
+                        font-weight: normal;
+                        width: 90px;
+                        height: 32px;
+                        @include tablet {
+                          width: 100px;
+                          height: 40px;
+                        }
+                      }
+                      .cancel {
+                          color: #ef4125;
+                          border: 1px solid #ef4125;
+                          @include laptop {
+                            &:hover {
+                              background-color: #ef4125;
+                              border: 1px solid #ef4125;
+                              color: #fff;
+                            }
+                          }                          
+                      }
+                      .save {
+                          color: #0a33da;
+                          border: 1px solid #0a33da;
+                          margin-right: 23px;
+                          @include tablet {
+                            margin-right: 18px;
+                          }
+                          @include laptop {
+                            &:hover {
+                              background-color: #0a33da;
+                              color: #fff;
+                            }
+                          }                          
+                      }
+                  }
+              }
+            }
+                
+            &>.ngdialog-close {
+                display: none;
+            }
+        }
+        &>.ngdialog-close {
+            display: none;
+        }
+    }
+}
+.confirm-email-popup {
+    &.ngdialog {      
+      @include laptop {        
+        padding-left: 420px;
+      }
+       &>.ngdialog-content {
+            padding: 10px;
+            margin: 0 auto;
+            background-color: #fff;
+            display: block;
+            max-width: 420px;
+            width: 91%;
+            border-radius: 0;
+            position: relative;
+            @include tablet {
+                width: 420px;
+                height: 200px;
+            }
+            .close-btn {
+              position: absolute;
+              top: 4px;
+              right: 8px;
+              color: #0d35da;
+              cursor: pointer;
+              @include tablet {
+                top: 10px;
+                right: 12px;
+              }
+              .ico {
+                font-size: 12px;
+                @include tablet {
+                  font-size: 16px;
+                }
+              }
+            } 
+            .confirm-email-popup-content {
+                      
+              .text-content {
+                text-align: center;
+                color: #55514f;
+                padding-top: 27px;
+                line-height: 21px;
+                font-size: 13px;
+                margin-top: 11px;
+                margin-bottom: 41px;
+                @include tablet {
+                  font-size: 15px;
+                  margin-top: 26px;
+                }
+                .title {
+                  color: #7e62ee;
+                  font-weight: 600;
+                  font-size: 14px;
+                  display: inline-block;
+                  padding: 0 27px;
+                  @include tablet {
+                    font-size: 16px;
+                    margin-bottom: 7px;
+                  }
+                }
+              }      
+            }
+                
+            &>.ngdialog-close {
+                display: none;
+            }
+        }
+        &>.ngdialog-close {
+            display: none;
+        }
+    }
+}
+.confirm-email-notification-popup {
+    &.ngdialog {      
+      @include laptop {        
+        padding-left: 420px;
+      }
+       &>.ngdialog-content {
+            padding: 10px;
+            margin: 0 auto;
+            background-color: #fff;
+            display: block;
+            width: 91%;
+            max-width: 400px;
+            border-radius: 0;
+            position: relative;
+            text-align: center;
+            @include tablet {
+              width: 400px;
+              height: 200px;
+            }
+            .close-btn {
+              position: absolute;
+              top: 4px;
+              right: 8px;
+              color: #0d35da;
+              cursor: pointer;
+              @include tablet {
+                top: 10px;
+                right: 12px;
+              }
+              .ico {
+                font-size: 12px;
+                @include tablet {
+                  font-size: 16px;
+                }
+              }
+            } 
+            .confirm-email-notification-popup-content {                      
+              .text-content {
+                text-align: center;
+                color: #55514f;
+                padding-top: 27px;
+                line-height: 21px;
+                font-size: 13px;
+                margin-top: 11px;
+                margin-bottom: 22px;
+                @include tablet {
+                  font-size: 15px;
+                  margin-top: 22px;
+                }
+                .title {
+                  color: #6c6866;
+                  font-size: 14px;
+                  display: inline-block;
+                  margin-bottom: 28px;
+                  @include tablet {
+                    font-size: 16px;
+                    margin-bottom: 34px;
+                  }
+                }
+                .ok-button {
+                  background-color: #5e3bea;
+                  font-weight: normal;
+                  border: none;
+                  color: #fff;
+                  margin: 0;
+                  padding: 0;
+                  width: 90px;
+                  height: 32px;
+                  display: block;
+                  margin: 0 auto;
+                  @include tablet {                    
+                    width: 100px;
+                    height: 40px;
+                  }
+                  @include laptop {
+                    &:hover {
+                      background-color: #4420d2;
+                    }
+                  }
+                }
+              }      
+            }
+                
+            &>.ngdialog-close {
+                display: none;
+            }
+        }
+        &>.ngdialog-close {
+            display: none;
+        }
+    }
+}

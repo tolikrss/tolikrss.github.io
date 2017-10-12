@@ -1,0 +1,16 @@
+<div class="mobile-menu-switch-panel shadow">
+  <div class="logo">
+    <span data-ng-show="!vm.userName">
+
+      <a ui-sref=[[vm.backPage]] data-ng-show="vm.backBtn">
+        <span class="back-ico icon-font-1-60"></span>
+      </a>
+      <span data-ng-show="!vm.backBtn"># </span>C R A Z Y F A T B U R N
+    </span>  
+    <span class="back-btn-container" data-ng-show="!!vm.userName">
+      <span class="back-ico icon-font-1-60"></span>
+      [[vm.userName]]
+    </span>
+  </div>
+  <span data-ng-click="vm.openMobileMenu()" class="ico icon-font-1-46"></span>
+</div>

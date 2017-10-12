@@ -1,0 +1,110 @@
+<div class="vote-page-block with-bg">
+
+  <div class="column-navbar" data-simplebar>
+    <large-navbar></large-navbar>
+  </div>
+
+  <div class="column-content">
+    <!-- Do not change padding-right for following div (class: header-container)!!! -->
+    <div class="header-container">
+    </div>
+
+    <div class="content-container">
+      
+      <mobile-menu-switch-panel></mobile-menu-switch-panel>
+
+      <div class="page-title-container">
+        <div class="page-title">
+          Vote! Vote! Vote!
+        </div>
+        <div class="available-likes">
+          You have to give likes! [[' ']]
+          <span>
+            <span class="ico icon-font-1-38"></span>
+            [[' ']] [[vm.neededLikes - vm.likesQuantity]] 
+          </span>more to spend!
+        </div>
+      </div>
+      <div class="content-block">        
+        <div class="slider-container">
+          <div 
+            class="btn-previous slider-btn" 
+            data-ng-click="vm.previousSlide()"
+          >
+            <span class="ico icon-font-1-60"></span>
+          </div>
+          <div 
+            class="btn-next slider-btn" 
+            data-ng-click="vm.nextSlide()"
+          >
+            <span class="ico icon-font-1-63"></span>
+          </div>
+          <div 
+            class="slider shadow" 
+            data-ng-class="vm.getLeagueClassName(slide.league)" 
+            ng-repeat="(index, slide) in vm.slides" 
+            ng-hide="!(index == vm.slideIndex)"
+          >            
+            <div class="title">
+              [[(slide.league == 'boys') ? 'Boys' : ((slide.league == 'girls') ? 'Girls' : 'Family')]] League 
+            </div>
+            <div 
+              class="imgs-container clearfix" 
+              ng-swipe-left="vm.previousSlide()" 
+              ng-swipe-right="vm.nextSlide()"
+            >
+              <div class="img-before">
+                <img ng-src="[[ slide.image ]]" />
+              </div>
+              <div class="img-after">
+                <img ng-src="[[ slide.image ]]" />
+                <div 
+                  data-ng-if="!!slide.vote" 
+                  class="valuation"
+                >
+                  <span 
+                    class="ico-like icon-font-1-36" 
+                    data-ng-if="slide.vote == 'like'"
+                  >
+                  </span>
+                  <span 
+                    class="ico-not-inpressed icon-font-1-37" 
+                    data-ng-if="slide.vote == 'not-like'"
+                  >
+                  </span>
+                </div>
+              </div>            
+            </div>    
+            <div class="btns-container">
+              <button 
+                data-ng-if="(vm.neededLikes - vm.likesQuantity) <= 0" 
+                class="btn finish-vote-btn" 
+                data-ng-click="vm.openThanksForVotingPopup()"
+              >
+                Finish Vote!
+              </button>
+              <button 
+                data-ng-if="(vm.neededLikes - vm.likesQuantity) > 0" 
+                class="btn like-btn" 
+                data-ng-click="vm.like(slide)" 
+                data-ng-disabled="slide.vote === 'like'"
+              >
+                <span class="ico icon-font-1-36"></span> 
+                <span class="text">Like</span> 
+              </button>
+              <button 
+                data-ng-if="(vm.neededLikes - vm.likesQuantity) > 0" 
+                class="btn not-inpressed-btn" 
+                data-ng-click="vm.notLike(slide)" 
+                data-ng-disabled="slide.vote === 'not-like'"
+              >
+                <span class="ico icon-font-1-37"></span> 
+                <span class="text">Not Impressed</span> 
+              </button>
+            </div>     
+          </div>
+        </div>      
+      </div>
+    </div>
+  </div>
+</div>

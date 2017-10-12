@@ -1,0 +1,589 @@
+.body-page-block {
+  background-color: #e5e5e5;
+  .page-title {
+    color: #5e3bea;
+    font-size: 21px;
+    font-weight: 700;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    line-height: 42px;
+    text-align: center;
+    @include tablet {
+        font-size: 42px;
+        padding-top: 51px;
+        padding-bottom: 54px;
+    }
+  }
+  .content-block {
+    background-color: #fff;
+    margin-bottom: 23px;    
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    @include tablet {
+      padding-bottom: 23px;
+    }
+    .my-chart {
+      position: relative;
+      width: 100%;
+      height: 426px;
+      padding-top: 60px;
+      @include tablet {
+        padding-top: 74px;
+        height: 600px;
+      }
+      .tooltip-dot {
+        stroke-width: 6px;
+      }
+      .chart {
+        .line-series {
+          path {
+            stroke-width: 3px;
+          }
+        }
+        
+        .x-axis {            
+            .tick {
+              &:nth-last-child(1) {
+                opacity: 0;
+              }
+              &:last-child {
+                text {
+                  fill: red;
+                  display: none;
+                  opacity: 0;
+                }
+              }
+              text {
+                fill: #807d7b;
+              }              
+            }
+        }
+        
+      }
+      .chart-tooltip {
+        color: #a1a7be;
+        .tooltip-item {
+          .color-dot {
+            display: none;
+          }
+        } 
+      } 
+      &>.line {
+        height: 7px;
+        background-color: #d9dcf8;
+      }
+      .axis { 
+        text {
+          fill: #cfcfcf;
+        }
+        path {
+          stroke: #fff !important;
+        }
+        .tick {
+          @include tablet {
+            font-size: 14px;
+          }
+
+          line {
+            stroke: #fff; 
+          }
+        }
+      }
+      .chart-legend {
+        top: 0;
+        margin: 0;
+        height: 60px;
+        background-color: #f1f2fc;
+        width: 100%;
+        text-align: center;
+        @include tablet {
+          height: 74px;
+        }
+        .item {
+          line-height: 60px;
+          &:last-child {
+            margin-right: 0;
+          }
+          @include tablet {
+            line-height: 74px;
+            margin-right: 30px;
+          }
+          .icon {
+            background-image: none;
+            width: 15px;
+            height: 15px;
+            @include tablet {
+              margin-right: 15px;
+              width: 20px;
+              height: 20px;
+            }
+          }
+          .legend-label {
+            color: #534e4e;
+            @include tablet {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .btns-container {
+    text-align: center;
+    margin-bottom: 36px;
+    @include tablet {
+      margin-bottom: 79px;
+    }
+    .btn {
+      width: 92px;
+      height: 36px;
+      padding: 0;      
+      @include tablet {
+        width: 156px;
+        height: 40px;
+      }
+    }
+    .prev {
+      border: 2px solid #5e3bea;
+      color: #5e3bea;
+      margin-right: 12px;      
+      &:disabled {
+        border-color: #a190e8;
+        color: #a190e8;
+        @include laptop {
+          &:hover {
+            color: #fff;
+            background-color: #a190e8;
+          }
+        }
+      }
+      @include tablet {
+        margin-right: 56px;
+      }
+      @include laptop {
+        &:hover {
+          color: #fff;
+          background-color: #5e3bea; 
+        }
+      }
+    }
+    .next {
+      margin-right: 0;
+      border: 2px solid #5e3bea;
+      color: #5e3bea;
+      @include laptop {
+        &:hover {
+          color: #fff;
+          background-color: #5e3bea;
+        }
+      }      
+      &:disabled {
+        border-color: #a190e8;
+        color: #a190e8;
+        @include laptop {
+          &:hover {
+            color: #fff;
+            background-color: #a190e8;
+          }
+        }
+      }
+    }
+  }
+  .table-block {
+    background-color: #fff;
+    font-size: 11px;    
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    @include tablet {      
+      font-size: 14px;
+    }
+    .editable {
+      width: 28px;
+        max-width: 28px;
+        height: 18px;
+        line-height: 18px;
+        display: inline-block;
+        position: relative;
+        @include tablet {
+          width: 56px;
+          max-width: 56px;
+          height: 36px;
+          line-height: 36px;
+        }
+    }
+    .editable[contenteditable="true"] {
+        width: 28px;
+        max-width: 28px;
+        height: 18px;
+        line-height: 18px;
+        display: inline-block;
+        white-space: nowrap;
+        @include tablet {
+          width: 56px;
+          max-width: 56px;
+          height: 36px;
+          line-height: 36px;
+        }
+        @include laptop {
+          &:hover {
+              background: linear-gradient(to bottom, #eaeaea, #fff);
+          }
+        }        
+        &:focus {
+            background: linear-gradient(to bottom, #eaeaea, #fff);
+        }
+      }
+
+
+    .date-column {
+      display: inline-block;
+      width: 16%;
+      padding-left: 6px;
+      @include tablet {
+        padding-left: 56px;
+        width: 27%;
+      }
+    }            
+    .weight-column{      
+      display: inline-block;
+      width: 15%;
+      text-align: center;
+      @include tablet {
+        width: 13%;
+      }
+    }
+    .chest-column {
+      display: inline-block;
+      width: 15%;
+      text-align: center;
+      @include tablet {
+        width: 13%;
+      }
+    }
+    .waist-column {
+      display: inline-block;
+      width: 15%;
+      text-align: center;
+      @include tablet {
+        width: 13%;
+      }
+    }
+    .hips-column {
+      display: inline-block;
+      width: 15%;
+      text-align: center;
+      @include tablet {
+        width: 13%;
+      }
+    }
+    .hip-girth-column {
+      display: inline-block;
+      width: 17%;
+      text-align: center;
+      @include tablet {
+        width: 13%;
+      }
+    }
+    .table-header {
+      background-color: #f1f2fc;
+      color: #534e4e;
+      height: 45px;
+      line-height: 45px;
+      font-weight: 700;
+      @include tablet {
+        height: 70px;
+        line-height: 70px;
+      }
+    }
+    .table-row {
+      position: relative;
+      height: 41px;
+      line-height: 41px;
+      border-bottom: 1px solid #e9e9e9;
+      color: #55514f;
+      @include tablet {
+        height: 49px;
+        line-height: 49px;
+      }
+      &:last-child {
+        height: 57px;
+        line-height: 57px;
+        @include tablet {
+          height: 48px;
+          line-height: 48px;
+        }
+      }
+      .diference {
+        color: #a1a7be;
+        position: absolute;
+        right: -8px;
+        @include tablet {
+          right: 0;
+        }
+        &.red {
+          color: #f3715d;
+        }
+        &.green {
+          color: #97cf5d;
+        }
+      }
+      .delete-btn {
+        color: #f26953;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        cursor: pointer;
+        .delete-font {
+          font-size: 15px;
+          position: relative;
+          top: 3px;
+          @include tablet {
+            display: none;
+          }
+        }
+        .delete-text {
+          display: none;
+          @include tablet {
+            display: inline;
+          }
+        }
+      }
+    }
+    .add-btn {
+      width: 80px;
+      height: 27px;
+      line-height: 27px;
+      text-align: center;
+      color: #5e3bea;
+      border: 1px solid #5e3bea;
+      padding: 0;
+      margin: 0;
+      font-size: 12px;
+      float: left;
+      position: relative;
+      top: 15px;
+      left: calc(92% - 80px);
+      @include tablet {
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        top: 7px;
+        left: calc(92% - 100px);
+      }
+      @include laptop {
+        &:hover {
+          color: #fff;
+          background-color: #5e3bea;
+        }
+      }      
+    }
+  }
+  
+  .table-block-new {
+    background-color: #fff;
+    font-size: 11px;    
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    @include tablet {      
+      font-size: 14px;
+    }
+    .editable {
+        width: 28px;
+        max-width: 28px;
+        height: 18px;
+        line-height: 11px;
+        display: inline-block;
+        position: relative;
+        @include tablet {
+          width: 56px;
+          max-width: 56px;
+          height: 36px;
+          line-height: 14px;
+        }
+    }
+    .editable[contenteditable="true"] {
+        width: 28px;
+        max-width: 28px;
+        height: 18px;
+        display: inline-block;
+        white-space: nowrap;
+        vertical-align: middle;
+        @include tablet {
+          width: 56px;
+          max-width: 56px;
+          height: 36px;
+        }
+        @include laptop {
+          &:hover {
+              background: linear-gradient(to bottom, #eaeaea, #fff);
+          }
+        }        
+        &:focus {
+            background: linear-gradient(to bottom, #eaeaea, #fff);
+        }        
+        &::after {
+          content: '';
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+        }
+      }
+
+
+    .date-column {
+      display: inline-block;
+      width: 16%;
+      padding-left: 6px;
+      @include tablet {
+        padding-left: 56px;
+        width: 27%;
+      }
+    }            
+    .weight-column{      
+      display: inline-block;
+      width: 15%;
+      text-align: center;
+      @include tablet {
+        width: 13%;
+      }
+    }
+    .chest-column {
+      display: inline-block;
+      width: 15%;
+      text-align: center;
+      @include tablet {
+        width: 13%;
+      }
+    }
+    .waist-column {
+      display: inline-block;
+      width: 15%;
+      text-align: center;
+      @include tablet {
+        width: 13%;
+      }
+    }
+    .hips-column {
+      display: inline-block;
+      width: 15%;
+      text-align: center;
+      @include tablet {
+        width: 13%;
+      }
+    }
+    .hip-girth-column {
+      display: inline-block;
+      width: 17%;
+      text-align: center;
+      @include tablet {
+        width: 13%;
+      }
+    }
+    .table-header {
+      background-color: #f1f2fc;
+      color: #534e4e;
+      height: 45px;
+      line-height: 45px;
+      font-weight: 700;
+      @include tablet {
+        height: 70px;
+        line-height: 70px;
+      }
+    }
+    .table-row {
+      position: relative;
+      height: 41px;
+      border-bottom: 1px solid #e9e9e9;
+      color: #55514f;      
+      vertical-align: middle;
+      @include tablet {
+        height: 49px;
+      }
+      &:last-child {
+        height: 57px;
+        line-height: 57px;
+        @include tablet {
+          height: 48px;
+          line-height: 48px;
+        }
+      }
+      &::after {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+      .diference {
+        color: #a1a7be;
+        position: absolute;
+        right: -8px;
+        @include tablet {
+          right: 0;
+        }
+        &.red {
+          color: #f3715d;
+        }
+        &.green {
+          color: #97cf5d;
+        }
+      }
+      .delete-btn {
+        color: #f26953;
+        display: inline-block;
+        position: absolute;
+        top: 9px;
+        right: 3px;
+        cursor: pointer;
+        @include tablet {
+          top: 13px;
+          right: 10px;
+        }
+        .delete-font {
+          font-size: 15px;
+          position: relative;
+          top: 3px;
+          @include tablet {
+            display: none;
+          }
+        }
+        .delete-text {
+          display: none;
+          @include tablet {
+            display: inline;
+          }
+        }
+      }
+    }
+    .add-btn {
+      width: 80px;
+      height: 27px;
+      line-height: 27px;
+      text-align: center;
+      color: #5e3bea;
+      border: 1px solid #5e3bea;
+      padding: 0;
+      margin: 0;
+      font-size: 12px;
+      float: left;
+      position: relative;
+      top: 15px;
+      left: calc(92% - 80px);
+      @media(max-width: 476px) {        
+        left: calc(97% - 80px);
+      }
+      @include tablet {
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        top: 7px;
+        left: calc(92% - 100px);
+      }
+      @include laptop {
+        &:hover {
+          color: #fff;
+          background-color: #5e3bea;
+        }
+      }      
+    }
+  }
+}

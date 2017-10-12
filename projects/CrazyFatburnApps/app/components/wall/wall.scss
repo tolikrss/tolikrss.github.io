@@ -1,0 +1,220 @@
+.wall-block {
+  
+  .house {
+    padding: 15px 0 0 0;
+    text-align: center;
+    position: relative;
+    @include tablet {
+      padding: 45px 0 25px 0;
+    }
+    &:hover {
+      .icon-edit {
+        display: inline-block;
+      }
+    }
+
+    .name-house {
+      display: inline-block;
+      width: calc(100% - 90px);
+      @include tablet {
+        width: calc(100% - 160px);
+      }
+      .name-value {
+        background-color: #ccc1f1;
+        resize: none;
+        width: 100%;
+        text-align: center;
+        color: #5e3bea;
+        font-size: 22px;
+        font-weight: 700;
+        @include tablet {
+          font-size: 43px;
+        }
+      }
+      .name-value:disabled {
+        background-color: transparent;
+      }
+    }
+    .icon-edit {
+      background-color: #d6cff9;
+      color: #5e3bea;
+      border-radius: 50%;
+      position: absolute;
+      cursor: pointer;
+      top: 13px;
+      right: 7px;
+      padding: 7px;
+      float: right;
+      font-size: 19px;
+      display: inline-block;
+      @include tablet {
+        font-size: 22px;
+        right: 26px;
+        top: 52px;
+        padding: 7px;
+      }
+      @include laptop {
+        display: none;
+      }
+      &:hover {
+        background-color: #5e3bea;
+        color: #d6cff9;
+      }
+    }
+  }
+
+  .back-btn{
+    text-align: center;
+    margin-top: 21px;
+    @include large-laptop {
+      margin-top: 50px;
+    }
+    .btn {
+      width: 162px;
+      height: 35px;
+      font-size: 13px;
+      padding: 7px 10px;
+      @include laptop {
+        width: 180px;
+        font-size: 14px;
+        height: 42px;
+        padding: 10px 10px;
+        margin-left: 8px;
+      }
+      .ico {
+        margin-right: 7px;
+        @include laptop {
+          margin-right: 8px;
+        }
+      }
+    }
+    &.back-btn-mobile {
+      @include large-laptop {
+        display: none;
+      }
+    }
+  }
+
+  .share {
+    //min-height: 144px;
+    background-color: #d6cff9;
+    width: 100%;
+    padding-top: 40px;
+    margin-top: 10px;
+
+    @include tablet {
+      //min-height: 140px;
+      //padding: 42px 20px;
+      padding-top: 42px;
+      margin-top: 20px;
+      min-height: 60px;
+    }
+
+    .share-content {
+      background-color: #c5bcf1;
+      min-height: 65px;
+      width: 100%;
+      margin: auto;
+      vertical-align: middle;
+      border-radius: 44px;
+      padding: 8px 7px;
+      position: relative;
+      @include tablet {
+        min-height: 55px;
+        padding: 4px 7px;
+      }
+      &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+
+      .img-container {
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        left: -5px;
+        &>img {
+          float: left;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          @include tablet {
+            width: 47px;
+            height: 47px;
+          }
+        }
+      }
+      
+      .share-input {
+        background-color: transparent;   
+        width: calc(100% - 58px);
+        padding: 5px 12px;
+        color: #857bb3;
+        font-weight: 700;
+        font-size: 14px;
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+
+        @include tablet {
+          width: calc(100% - 55px);
+          padding: 10px 12px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  //.photos-fullscreen {
+  //  margin-top: 15px;
+  //  .photo {
+  //    background-color: white;
+  //    width: 100%;
+  //    padding: 2px 0 20px 0;
+  //    margin-bottom: 10px;
+  //
+  //    .date {
+  //      float: right;
+  //      color: #aaa8a7;
+  //      font-size: 11px;
+  //      margin-right: 5px;
+  //    }
+  //    .img {
+  //      width: 100%;
+  //      img {
+  //        margin-top: 5px;
+  //        width: 100%;
+  //      }
+  //    }
+  //    .likes-comments {
+  //      padding: 0 10px;
+  //      margin-top: 6px;
+  //      div {
+  //        display: inline-block;
+  //      }
+  //      .likes {
+  //        color: #5e3bea;
+  //        .ico {
+  //          font-size: 22px;
+  //          vertical-align: sub;
+  //        }
+  //        .likes-text {
+  //          color: #aaa8a7;
+  //          margin-left: 10px;
+  //        }
+  //      }
+  //      .comments {
+  //        float: right;
+  //        color: #aaa8a7;
+  //        .ico {
+  //          font-size: 25px;
+  //          vertical-align: middle;
+  //          margin-right: 5px;
+  //        }
+  //      }
+  //    }
+  //  }
+  //}
+}

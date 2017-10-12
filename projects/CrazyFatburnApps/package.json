@@ -1,0 +1,46 @@
+{
+  "name": "crazyfatburn-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yarandin",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-ngmin": "^0.3.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-tinypng-compress": "^1.2.1",
+    "gulp-uglify": "^2.0.0"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.0",
+    "angular": "^1.6.0",
+    "angular-animate": "^1.6.5",
+    "angular-aria": "^1.6.6",
+    "angular-audio": "^1.7.3",
+    "angular-carousel": "^1.1.0",
+    "angular-elastic": "^2.5.1",
+    "angular-file-upload": "^2.5.0",
+    "angular-material": "^1.1.4",
+    "angular-messages": "^1.6.6",
+    "angular-sanitize": "^1.6.6",
+    "angular-scroll": "^1.0.2",
+    "angular-select-option": "^1.0.4",
+    "angular-slick-carousel": "^3.1.7",
+    "angular-touch": "^1.6.6",
+    "d3": "3.5.17",
+    "n3-charts": "^2.0.28",
+    "ng-content-editable": "0.0.5",
+    "ng-dialog": "^1.4.0",
+    "ng-img-crop-full-extended": "^0.6.2",
+    "ng-scrollbar": "0.0.8",
+    "normalize.css": "^5.0.0",
+    "simplebar": "^2.4.3",
+    "ui-cropper": "^1.0.4"
+  }
+}

@@ -1,0 +1,118 @@
+.task-info-block {
+  padding: 0 5px;
+  font-family: "Open Sans", sans-serif;
+  .title {
+    margin-top: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0 4px;
+    color: #2b2523;
+    @include tablet {
+      margin-top: 62px;
+      font-size: 33px;
+      padding: 0 5px;
+    }
+  }
+  .media {
+    width: 100%;
+    margin-top: 27px;
+    @include tablet {
+      margin-top: 57px;
+      &:first-child {
+        margin-top: 27px;
+      }
+    }
+  }
+  .padding-block {
+    @include tablet {
+      padding: 0 55px;
+    }
+  }
+  .video {
+    width: 100%;
+    margin-top: 12px;
+    height: 173px;
+    @include tablet {
+      margin: 22px;
+      height: 478px;
+      width: calc(100% - 44px);
+    }
+  }
+  .paragraph {
+    text-indent: 12px;
+    font-size: 13px;
+    padding: 0 5px;
+    color: #6a6766;
+    margin-top: 15px;
+    @include tablet {
+      text-indent: 36px;
+      margin-top: 40px;
+      font-size: 21px;
+      line-height: 35px;
+      &:first-child {
+        margin-top: 22px;
+      }
+    }
+  }
+  .blue-link {
+    color: #3b5ce1;
+  }
+  .blue-link-underline {
+    color: #3b5ce1;
+    padding: 0 5px;
+    margin-top: 18px;
+    font-size: 13px;
+    text-decoration: underline;
+    @include tablet {
+      margin-top: 43px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+  .purple-link {
+    color: #7e62ee;
+  }
+  .caption {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 10px;
+    @include tablet {
+      font-size: 21px;
+      font-weight: 700;
+      margin-top: 23px;
+    }
+  }
+  .task {
+    .task-descr {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 3px;
+      @include tablet {
+        font-size: 20px;
+        margin-top: 16px;
+      }
+    }
+    .exercises {
+      padding: 18px 4px 1px 4px;
+      font-size: 13px;
+      @include tablet {
+        padding: 39px 4px 16px 4px;
+        font-size: 21px;
+      }
+      .exercise {
+        margin-bottom: 6px;
+        div {
+          display: inline-block;
+        }
+        .count {
+          min-width: 33px;
+          @include tablet {
+            font-weight: 600;
+            min-width: 54px;
+          }
+        }
+      }
+    }
+  }
+}

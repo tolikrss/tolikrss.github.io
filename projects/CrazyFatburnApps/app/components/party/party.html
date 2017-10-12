@@ -1,0 +1,96 @@
+<div class="party-block with-bg">
+
+  <div class="column-navbar" data-simplebar>
+    <large-navbar></large-navbar>
+  </div>
+
+  <div class="column-sidebar">
+  </div>
+
+  <div class="column-content">
+    <!-- Do not change padding-right for following div (class: header-container)!!! -->
+    <div class="header-container">
+    </div>
+
+    <div class="content-container">
+      
+      <mobile-menu-switch-panel></mobile-menu-switch-panel>
+
+      <div class="page-content">
+        <div class="header">
+          <span class="btn"
+                data-ng-class="vm.showAll ? 'black filled transparent' : ''"
+                data-ng-click="vm.getAllPosts();">
+                The party
+          </span>
+          <span class="btn"
+                data-ng-class="vm.showFavourites ? 'black filled transparent' : ''"
+                data-ng-click="vm.getFavourites();">
+                Your Favourites
+          </span>
+          <div class="search"
+               data-ng-class="vm.showSearch ? 'search-btn' : ''"
+               data-ng-click="vm.search();">
+            <span class="ico icon-search"></span>
+            <span class="text-search">Search</span>
+          </div>
+        </div>
+        <div class="share" data-ng-show="!vm.showSearch">
+          <div class="input-content">
+            <span class="user-img">
+              <img src="/assets/img/user.jpg" alt="">
+            </span>
+            <div class="input"
+                 contenteditable="true"
+                 data-ng-focus="vm.clearShare()"
+                 data-ng-model="vm.shareContent"
+                 data-ng-init="vm.shareContent='Frank Sinatra'"
+                 data-ng-blur="vm.fillShare()"
+                 data-ng-keypress="vm.contentEditingDone($event)">
+            </div>
+          </div>
+        </div>
+        <div class="search-panel" data-ng-show="vm.showSearch">
+          <div class="search-panel-input">
+            <div class="input-content small">
+              <div class="input"
+                   contenteditable="true"
+                   data-ng-focus="vm.clearInitialSearch($event.target)">
+                Name
+              </div>
+            </div>
+            <div class="btn purple filled find">Find</div>
+          </div>
+          <div class="results-panel">
+            <div class="start-searh" data-ng-show="vm.searchResult == 0">
+              <div class="ico icon-font-1-03"></div>
+            </div>
+            <div class="nothing-found"  data-ng-show="vm.searchResult == 1">Nobody found. Try someone else</div>
+            <div class="search-results"  data-ng-show="vm.searchResult == 2">
+              <div class="search-result" data-ng-repeat="person in vm.searchResults">
+                <div class="user-img"><img src="[[person.imageSrc]]" alt=""></div>
+                <div class="text">
+                  <div class="name">[[person.name]]</div>
+                  <div class="i-follow" data-ng-show="person.iFollow">FOLLOW <span class="ico icon-font-1-51"></span></div>
+                  <div class="follows-me" data-ng-show="person.followsMe">FOLLOWING <span class="ico icon-font-1-17"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <party-posts posts="vm.posts" data-ng-show="!vm.showSearch"></party-posts>
+
+      </div>
+
+
+
+
+    </div>
+
+
+  </div>
+
+</div>

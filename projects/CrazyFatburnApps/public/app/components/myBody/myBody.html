@@ -1,0 +1,185 @@
+<div class="body-page-block with-bg">
+
+  <div class="column-navbar" data-simplebar>
+    <large-navbar></large-navbar>
+  </div>
+
+  <div class="column-sidebar">
+  </div>
+
+  <div class="column-content">
+    <!-- Do not change padding-right for following div (class: header-container)!!! -->
+    <div class="header-container">
+    </div>
+
+    <div class="content-container">
+      
+      <mobile-menu-switch-panel></mobile-menu-switch-panel>
+
+      <div class="page-title">
+        Your Body
+      </div>
+      <div class="content-block">
+        <div class="my-chart">
+          <div class="line"></div>
+          <linechart data="vm.data" options="vm.options"></linechart>
+        </div>
+      </div>
+      <div class="btns-container">
+        <button class="btn prev">Previous</button>
+        <button class="btn next" disabled>Next</button>
+      </div>
+      
+      <!--<div class="table-block">
+        <div class="table-header">
+          <div class="date-column">
+            Date
+          </div>
+          <div class="weight-column">
+            Weight
+          </div>
+          <div class="chest-column">
+            Chest
+          </div>
+          <div class="waist-column">
+            Waist
+          </div>
+          <div class="hips-column">
+            Hips
+          </div>
+          <div class="hip-girth-column">
+            Hip Girth
+          </div>
+        </div>
+        <div class="table-row" data-ng-repeat="elem in vm.weightTableData">
+          <div class="date-column">
+            [[elem.date]]
+          </div>
+          <div class="weight-column">
+            <span class="editable" contenteditable="[[(elem.weight) ? 'false' : 'true']]" ng-keypress="vm.contentEditingDone($event, elem)">
+              [[elem.weight]] 
+              <span class="diference" data-ng-class="(elem.diference.weight === 0) ? '' : ((elem.diference.weight < 0) ? 'green' : 'red')" data-ng-if="elem.diference">
+                [[(elem.diference.weight > 0) ? ('+' + elem.diference.weight) : elem.diference.weight]]
+              </span>
+            </span>
+          </div>
+          <div class="chest-column">
+            <span class="editable" contenteditable="[[(elem.chest) ? 'false' : 'true']]" ng-keypress="vm.contentEditingDone($event, elem)">
+              [[elem.chest]] 
+              <span class="diference" data-ng-class="(elem.diference.chest === 0) ? '' : ((elem.diference.chest < 0) ? 'green' : 'red')" data-ng-if="elem.diference">
+                [[(elem.diference.chest > 0) ? ('+' + elem.diference.chest) : elem.diference.chest]]
+              </span>
+            </span>
+          </div>
+          <div class="waist-column">
+            <span class="editable" contenteditable="[[(elem.waist) ? 'false' : 'true']]" ng-keypress="vm.contentEditingDone($event, elem)">
+              [[elem.waist]] 
+              <span class="diference" data-ng-class="(elem.diference.waist === 0) ? '' : ((elem.diference.waist < 0) ? 'green' : 'red')" data-ng-if="elem.diference">[[(elem.diference.waist > 0) ? ('+' + elem.diference.waist) : elem.diference.waist]]</span>
+            </span>
+          </div>
+          <div class="hips-column">
+            <span class="editable" contenteditable="[[(elem.hips) ? 'false' : 'true']]" ng-keypress="vm.contentEditingDone($event, elem)">
+              [[elem.hips]] 
+              <span class="diference" data-ng-class="(elem.diference.hips === 0) ? '' : ((elem.diference.hips < 0) ? 'green' : 'red')" data-ng-if="elem.diference">[[(elem.diference.hips > 0) ? ('+' + elem.diference.hips) : elem.diference.hips]]</span>
+            </span>
+          </div>
+          <div class="hip-girth-column">
+            <span class="editable" contenteditable="[[(elem.hipGirth) ? 'false' : 'true']]" ng-keypress="vm.contentEditingDone($event, elem)">
+              [[elem.hipGirth]]
+              <span class="diference" data-ng-class="(elem.diference.hipGirth === 0) ? '' : ((elem.diference.hipGirth < 0) ? 'green' : 'red')" data-ng-if="elem.diference">
+                [[(elem.diference.hipGirth > 0) ? ('+' + elem.diference.hipGirth) : elem.diference.hipGirth]]
+              </span>
+            </span>            
+          </div>
+          <div data-ng-if="!elem.weight && !elem.chest && !elem.waist && !elem.hips && !elem.hipGirth" class="delete-btn" data-ng-click="vm.deleteElem($index)">
+            <span class="icon-font-1-59 delete-font"></span>
+            <span class="delete-text">Delete</span>
+          </div>
+        </div>
+        <div class="table-row">
+          <div class="btn add-btn" data-ng-click="vm.addWeightData()">
+            + Add
+          </div>
+        </div>
+      </div>-->
+
+      <div class="table-block-new">
+        <div class="table-header">
+          <div class="date-column">
+            Date
+          </div>
+          <div class="weight-column">
+            Weight
+          </div>
+          <div class="chest-column">
+            Chest
+          </div>
+          <div class="waist-column">
+            Waist
+          </div>
+          <div class="hips-column">
+            Hips
+          </div>
+          <div class="hip-girth-column">
+            Hip Girth
+          </div>
+        </div>
+        <div class="table-row" data-ng-repeat="elem in vm.weightTableData">
+          <div class="date-column">
+            [[elem.date]]
+          </div>
+          <div class="weight-column">
+            <span class="editable" contenteditable="[[(elem.weight) ? 'false' : 'true']]" ng-keypress="vm.contentEditingDone($event, elem)">
+              [[elem.weight]] 
+              <span class="diference" data-ng-class="(elem.diference.weight === 0) ? '' : ((elem.diference.weight < 0) ? 'green' : 'red')" data-ng-if="elem.diference">
+                [[(elem.diference.weight > 0) ? ('+' + elem.diference.weight) : elem.diference.weight]]
+              </span>
+            </span>
+          </div>
+          <div class="chest-column">
+            <span class="editable" contenteditable="[[(elem.chest) ? 'false' : 'true']]" ng-keypress="vm.contentEditingDone($event, elem)">
+              [[elem.chest]] 
+              <span class="diference" data-ng-class="(elem.diference.chest === 0) ? '' : ((elem.diference.chest < 0) ? 'green' : 'red')" data-ng-if="elem.diference">
+                [[(elem.diference.chest > 0) ? ('+' + elem.diference.chest) : elem.diference.chest]]
+              </span>
+            </span>
+          </div>
+          <div class="waist-column">
+            <span class="editable" contenteditable="[[(elem.waist) ? 'false' : 'true']]" ng-keypress="vm.contentEditingDone($event, elem)">
+              [[elem.waist]] 
+              <span class="diference" data-ng-class="(elem.diference.waist === 0) ? '' : ((elem.diference.waist < 0) ? 'green' : 'red')" data-ng-if="elem.diference">[[(elem.diference.waist > 0) ? ('+' + elem.diference.waist) : elem.diference.waist]]</span>
+            </span>
+          </div>
+          <div class="hips-column">
+            <span class="editable" contenteditable="[[(elem.hips) ? 'false' : 'true']]" ng-keypress="vm.contentEditingDone($event, elem)">
+              [[elem.hips]] 
+              <span class="diference" data-ng-class="(elem.diference.hips === 0) ? '' : ((elem.diference.hips < 0) ? 'green' : 'red')" data-ng-if="elem.diference">[[(elem.diference.hips > 0) ? ('+' + elem.diference.hips) : elem.diference.hips]]</span>
+            </span>
+          </div>
+          <div class="hip-girth-column">
+            <!--[[(elem.hipGirth) ? elem.hipGirth : '']]
+            <span class="editable" data-ng-if="!elem.hipGirth" contenteditable="true"></span>-->
+            <span class="editable" contenteditable="[[(elem.hipGirth) ? 'false' : 'true']]" ng-keypress="vm.contentEditingDone($event, elem)">
+              [[elem.hipGirth]]
+              <span class="diference" data-ng-class="(elem.diference.hipGirth === 0) ? '' : ((elem.diference.hipGirth < 0) ? 'green' : 'red')" data-ng-if="elem.diference">
+                [[(elem.diference.hipGirth > 0) ? ('+' + elem.diference.hipGirth) : elem.diference.hipGirth]]
+              </span>
+            </span>            
+          </div>
+          <div data-ng-if="!elem.weight && !elem.chest && !elem.waist && !elem.hips && !elem.hipGirth" class="delete-btn" data-ng-click="vm.deleteElem($index)">
+            <span class="icon-font-1-59 delete-font"></span>
+            <span class="delete-text">Delete</span>
+          </div>
+        </div>
+        <div class="table-row">
+          <div class="btn add-btn" data-ng-click="(vm.isCanAddNewData === true) ? vm.addWeightData() : ''">
+            + Add
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

@@ -1,0 +1,339 @@
+<div class="empty-template-block">
+
+  <div class="column-navbar">
+  </div>
+
+  <div class="column-sidebar">
+  </div>
+
+  <div class="column-content">
+    <!-- Do not change padding-right for following div (class: header-container)!!! -->
+    <div class="header-container">
+        
+    </div>
+
+    <div class="content-container">
+    <div>
+        test readmore button
+    </div>
+    <div style="width: 50%;" my-read-more-directive>
+        [[vm.testText]]
+    </div>
+    <div style="width: 50%;" my-read-more-directive>
+        [[vm.testText]]
+    </div>
+    <hr/>
+    <div>
+        hm-read-more test
+    </div>
+    <div style="width: 50%;" 
+        hm-read-more
+		hm-text="[[vm.testText]]" 
+		hm-limit="100" 
+		hm-more-text="read more" 
+		hm-less-text="read less"
+		hm-dots-class="dots"
+        hm-link-class="links"
+    >
+    <!-- 
+        hm-text - full text
+        hm-limit - number > 0 of maximum characters before adding "..." and the more/less text. Default: unlimited
+        hm-more-text - link text for read more. Default: Read more
+        hm-less-text - link text for read less. Default: Read less
+        hm-dots-class - css class for dots
+        hm-link-class - css class for links of read more/read less text
+     -->
+        
+    </div>
+    
+
+    <hr/>
+        <span class="post-content-span" ng-model="vm.test" contenteditable="true">editable</span>
+        <div>
+            model: 
+            <span ng-bind="vm.test"></span>
+        </div>
+        <div>
+            <div class="test-focus" contenteditable="true">
+                test
+            </div> 
+            <button data-ng-click="vm.testFocus()">test focus</button>
+        </div>
+        
+        <hr/>
+
+        <div>
+            test: [[vm.test]]
+            <button data-ng-click="vm.testRequest()">test request</button>
+        </div>
+    <hr/>
+    <div class="row" nv-file-drop="" uploader="uploader">
+
+          <div class="col-md-3">
+
+              <h3>Select files</h3>
+
+    
+              <!--<input type="file" nv-file-select="" uploader="uploader"  multiple/><br/>-->
+              <input 
+                    type="file" 
+                    id="fileInput" 
+                    ng-model="vm.files" 
+                    custom-on-change="vm.onFileInputChange" 
+                />
+
+          </div>
+
+          <div class="col-md-9" style="margin-bottom: 40px">
+              <h2>Uploads only images (with canvas preview)</h2>
+              <h3>The queue</h3>
+
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th width="50%">Name</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr > <!-- ng-repeat="item in uploader.queue" -->
+                          <td>
+                              <strong>[[ uploader.queue.file.name ]]</strong>
+                        <md-slider             
+                            id="photoRange"        
+                            ng-model="vm.rangeValue"
+                            min="[[vm.photoRangeMin]]"
+                            max="[[vm.photoRangeMax]]"
+                            step="0.01"
+                        >
+                        </md-slider>
+                               <span>[[testWidth]]</span>
+                          <div class="cropArea">
+                            <image-crop			 
+                                data-height="[[(vm.screenType() == 'mobile') ? 182 : 440]]"
+                                data-width="[[(vm.screenType() == 'mobile') ? 140 : 300]]"
+                                data-shape="square"
+                                data-step="imageCropStep"
+                                src="myImage"
+                                data-result="myCroppedImage"
+                                data-result-blob="resultBlob"
+                                crop="initCrop"
+                                padding-horizontal="0"                                
+                                padding-vertical="0"
+                                max-size="2560"
+                                zoom-value="vm.rangeValue"
+                                min-zoom-level="vm.photoRangeMin"
+                                max-zoom-level="vm.photoRangeMax"
+                                zoom-ratio="4"
+                            ></image-crop>
+                            <!--padding-horizontal="[[(vm.screenType() == 'mobile') ? 120 : 220]]"                                
+                                padding-vertical="[[(vm.screenType() == 'mobile') ? 150 : 140]]"-->
+                          </div>
+                          <button ng-click="initCrop = true">Crop!</button>
+                          <div>Cropped Image:</div>
+                          <div><img data-ng-src="[[myCroppedImage]]"/></div>
+
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      <br/>
+      <hr/>
+        <div>
+            <div>
+                ngScrollbar test
+            </div>
+            <div>
+                <div style="width:40px; height:100px; max-height: 100px;" ng-scrollbar bottom data-ng-show="true">                     
+                    test  
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test      
+                </div>
+            </div>
+        </div>
+      <br/>
+        <div>
+            <div>
+                ngScrollable test
+            </div>
+            <div>
+                <div style="width:40px; height:100px; max-height: 100px;" ng-scrollable="{scrollX:'none',scrollY:'left'}">                     
+                    test
+                    test1
+                    test  
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test      
+                </div>
+            </div>
+        </div>
+    <br/>
+    <hr/>
+        <div>
+            <div>
+                myCustomScroll test1
+            </div>
+            <div style="width:50px; height:100px; max-height: 100px;" my-custom-scroll>
+                <div  >                     
+                    test
+                    test1
+                    test  
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test      
+                </div>
+            </div>
+        </div>
+    <br/>
+        <div>
+            <div>
+                data simplebar test
+            </div>
+            <div style="width:50px; height:100px; max-height: 100px;" data-simplebar >
+                <div  >                     
+                    test
+                    test1
+                    test  
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test    
+                    test1
+                    test
+                    test1   
+                    test
+                    test1
+                    test      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

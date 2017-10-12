@@ -1,0 +1,39 @@
+//
+// Menu switch panel (tablet and mobile header)
+//
+.mobile-menu-switch-panel {
+  display:block;
+  background-color: #46c4c0;
+  color: white;
+  height: 60px;
+  width: 100%;
+
+  .logo {
+    height: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px 12px;
+    display: inline-block;
+    .back-btn-container {
+      font-size: 16px;
+      .back-ico {
+        position: relative;
+        top: 1px;
+        font-weight: bold;
+        margin-right: 5px;
+      }
+    }
+    
+  }
+  @include laptop {
+    display: none;
+  }
+  .ico {
+    float: right;
+    font-size: 22px;
+    font-weight: 100;
+    padding: 0 12px;
+    cursor: pointer;    
+    line-height: 60px;
+  }
+}

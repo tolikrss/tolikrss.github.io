@@ -1,0 +1,182 @@
+<div class="messages-block with-bg">
+
+  <div class="column-navbar" data-simplebar> 
+    <large-navbar></large-navbar>
+  </div>
+
+  <div class="column-sidebar"></div>
+
+  <div class="column-content">
+    <div class="header-container">
+    </div>
+
+    <div class="content-container">
+      
+      <div class="mobile-menu-switch-panel shadow">
+        <div class="logo">
+          <span data-ng-show="!vm.activeId || !vm.isScreenMobile()">
+            # C R A Z Y F A T B U R N
+          </span>  
+          <span 
+            data-ng-show="vm.activeId && vm.isScreenMobile()" 
+            class="back-btn-container" 
+            data-ng-click="vm.toggleChatList(); vm.activeId = ''"
+          >
+            <span class="back-ico icon-font-1-60"></span>
+            <span>[[vm.dialogs[vm.activeId].name]]</span>
+          </span>
+        </div>
+        <span data-ng-click="vm.openMobileMenu()" class="ico icon-font-1-46"></span>
+      </div>
+
+      <div class="page-content" >
+        <div 
+          class="left-panel" 
+          data-ng-class="(!vm.activeId && vm.isScreenMobile()) ? 'show' : ''"
+        >
+          <div class="search-panel">
+            <div class="search-container">
+              <div class="before-search">
+                <span class="ico icon-font-1-29"></span>
+              </div>
+              <input 
+                class="search" 
+                data-ng-model="vm.findDialog" 
+                ng-change="vm.findInputChanged()"
+              ></input>
+            </div>
+          </div>
+          <div 
+            class="dialogs-list"   
+            data-simplebar         
+          >
+          <!--
+            ng-scrollbar 
+            rebuild-on-resize 
+            rebuild-on="rebuild:dialogList" 
+            bottom
+          -->
+          
+            <div 
+                class="dialog"
+                data-ng-repeat="(id, dialog) in vm.dialogs"
+                data-ng-click="vm.currentMessageHistory=vm.dialogs[id].messageHistory; vm.activeId=id; vm.toggleChatList()"
+                data-ng-class="id==vm.activeId ? 'active' : ((dialog.newMessages) ? 'hasNewMessages' : '')"
+                data-ng-show="vm.findFilter(dialog)"
+            >
+              <div class="user-img">
+                <img src="/assets/img/user.jpg" alt="">
+              </div>
+              <div class="text">
+                <div class="first-row">
+                  <div class="name">[[dialog.name]]</div>
+                  <div class="time">[[dialog.time]]</div>
+                </div>
+                <div class="second-row">
+                  <div class="message-text">[[dialog.message]]</div>
+                  <div 
+                    class="new-message" 
+                    data-ng-show="dialog.newMessages"
+                  >
+                    [[dialog.newMessages]]
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="right-panel"> <!-- ng-swipe-right="vm.toggleChatList(); vm.activeId = ''" -->
+            <div 
+              class="messages-panel-info" 
+              data-ng-show="!vm.activeId"
+            >
+              <span class="info-text">Dialog Not Selected</span>
+            </div>
+
+         
+          <div class="messages-panel" data-ng-show="!!vm.activeId">
+            <div
+              class="messages"
+              data-simplebar>
+              <div class="date">Friday, July 11, 2017</div>
+              <div class="message-div"
+                  data-ng-repeat="message in vm.currentMessageHistory"
+                  repeat-directive-for-messages>
+                <div data-ng-class="message.type == 'in' ? 'incoming-message' : 'outgoing-message'">
+                  <div class="user-img">
+                    <img src="/assets/img/user.jpg" alt="">
+                  </div>
+                  <div class="message">
+                <span class="message-text"
+                      ng-bind-html="message.text">
+                </span>
+                  </div>
+                  <div class="time">[[message.time]]</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-panel" data-ng-show="!!vm.activeId">
+            <div class="new-reply">
+              <div class="new-reply-input large"
+                   contenteditable="true"
+                   data-ng-model="vm.newMessage">
+              </div>
+              <div class="actions">
+                <label class="attach-file">
+                  <span class="ico icon-attach icon-font-1-30"></span>Attach file
+                  <input
+                  type="file"
+                  id="fileInput"
+                  ng-model="vm.files"
+                  custom-on-change="vm.onFileInputChange"
+                  />
+                </label>
+                <button class="btn purple filled send"
+                        type="submit"
+                        value="Submit"
+                        data-ng-click="vm.addNewMessage(vm.newMessage)">
+                  Send
+                </button>
+              </div>
+              <div class="upload-photo-list">
+                <div class="photo-container" ng-repeat="image in vm.images">
+                  <img data-ng-src="[[image.imageBase64]]"></img>
+                  <div class="name-container">
+                    <span class="name">[[image.imageName.name]]</span>
+                    <span class="type">[[image.imageName.type]]</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <!--<div class="input-panel" data-ng-show="!!vm.activeId">-->
+              <!--<form data-ng-submit="vm.addNewMessage(vm.newMessage)">-->
+                <!--<div class="input">-->
+                  <!--<textarea class="input-message" data-ng-model="vm.newMessage"></textarea>-->
+                <!--</div>-->
+
+                <!--<div class="actions">-->
+                  <!--<label class="attach-file">-->
+                    <!--<span class="ico icon-attach icon-font-1-30"></span>Attach file-->
+                    <!--<input -->
+                      <!--type="file" -->
+                      <!--id="fileInput" -->
+                      <!--ng-model="vm.files" -->
+                      <!--custom-on-change="vm.onFileInputChange">-->
+                  <!--</label>-->
+                  <!--<button class="btn purple filled send" type="submit" value="Submit">Send</button>-->
+                <!--</div>-->
+              <!--</form>-->
+            <!--</div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+          

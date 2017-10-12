@@ -1,0 +1,79 @@
+<div class="add-photo-popup-content">
+    <div class="close-btn" ng-click="close()">
+        <span class="ico icon-font-1-12"></span>
+    </div>
+
+    <div class="popup-content-container">
+        <div class="cropArea-wrapper">
+            <div class="file-name">
+                <span class="title">
+                    Uploaded:
+                </span>
+                <span class="name">
+                    [[vm.myImage.imageName]]
+                </span>
+            </div>
+            <div class="cropArea">
+                <ui-cropper 
+                    image="vm.myImage.imageBase64" 
+                    result-image="vm.myCroppedImage.imageBase64"
+                    area-init-size=""
+                    area-min-size="vm.rangeValue"
+                    result-blob="" 
+                    url-blob=""                 
+                    area-type="square"
+                    on-load-done="vm.uiCropperImageLoadDone()"
+                >
+                </ui-cropper> 
+            </div>
+        </div>
+        
+        <div class="scale-and-turn-btns">
+                <div class="btns-container">
+                    <button class="btn save" ng-click="savePhoto()">Save</button>
+                    <button class="btn cancel" ng-click="close()">Cancel</button>
+                </div>
+            <div class="range-container">
+                <span data-ng-click="vm.decRangeValue()" class="ico ico-dec icon-font-1-26"></span>
+                <div class="range-wrapper">
+                    <md-slider             
+                        id="photoRange"        
+                        ng-model="vm.rangeValue"
+                        min="[[vm.photoRangeMin]]"
+                        max="[[vm.photoRangeMax]]"
+                    >
+                    </md-slider>
+                </div>
+                <span data-ng-click="vm.addRangeValue()" class="ico ico-add icon-font-1-27"></span>
+            </div>            
+            <div class="turn-btns">
+                <span 
+                    class="ico icon-font-1-54"
+                    data-ng-click="vm.rotateLeft()"
+                >
+                </span>
+                <span 
+                    class="ico icon-font-1-25"
+                    data-ng-click="vm.rotateRight()"
+                >
+                </span>
+            </div>
+        </div>
+        <div class="popup-buttons-mobile">
+                <div class="btns-container">
+                    <button 
+                        class="btn save" 
+                        ng-click="savePhoto()"
+                    >
+                    Save
+                    </button>
+                    <button 
+                        class="btn cancel" 
+                        ng-click="close()"
+                    >
+                    Cancel
+                    </button>
+                </div>
+        </div>
+    </div>    
+</div>

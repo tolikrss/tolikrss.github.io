@@ -1,0 +1,93 @@
+<div class="users-photos-block with-bg">
+
+  <div class="column-navbar">
+    <large-navbar></large-navbar>
+  </div>
+
+  <div class="column-content">
+    <!-- Do not change padding-right for following div (class: header-container)!!! -->
+
+    <div class="content-container">      
+      
+      <mobile-menu-switch-panel data-back-btn="true" data-back-page="'usersPhotos({ id: 1})'"></mobile-menu-switch-panel>
+
+      <div class="photo-info">
+        <div class="comments">
+          <!--<div class="previous-comments" data-ng-show="vm.comments.length>5">Previous comments [[vm.comments.length - 5]]</div>-->
+          <div class="opened-comments">
+            <div class="comment" data-ng-repeat="comment in vm.comments | limitTo:5">
+              <div class="user-img">
+                <img ng-src=[[comment.authorImgUrl]] alt="" data-ng-show="[[comment.authorImgUrl]]">
+              </div>
+              <div class="text">
+                <div class="first-raw">
+                  <div class="name">[[comment.author]]</div>
+                  <div class="was-edited" data-ng-show="comment.wasEdited">Edited</div>
+                </div>
+                <div class="second-raw">
+                  <span class="comment-content-span">[[comment.content]]</span>
+                </div>
+                <div class="third-raw">
+                  <div class="like">
+                    <span class="ico" data-ng-class="comment.likesCount ? 'icon-lightning-filled' : 'icon-lightning'"></span>
+                    <span class="count" data-ng-class="comment.likesCount ? 'liked' : ''">[[comment.likesCount]]</span>
+                  </div>
+                  <div class="date">[[comment.date]]</div>
+                  <div class="reply-word"
+                       data-ng-click="vm.showReply($index+comment.replyId)">
+                    Reply
+                  </div>
+                  <!--<div class="edit">Edit</div>-->
+                </div>
+              </div>
+              <div class="new-reply without-margin" data-ng-if="vm.replies[$index+comment.replyId]">
+                <div class="new-reply-input"
+                     contenteditable="true"
+                     data-ng-model="vm.replyInners[$index+comment.replyId]"
+                     data-ng-init="vm.replyInners[$index+comment.replyId]=[[comment.author]]+',&nbsp'"
+                     set-focus-to-element>
+                </div>
+                <div class="btns-block">
+                  <div class="btn red cancel"
+                       data-ng-click="vm.replies[$index+comment.replyId] = false">
+                    Cancel
+                  </div>
+                  <div class="btn purple filled send">Send</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="write-comment">
+          <div class="write-comment-content"
+               data-ng-click="vm.showReply('main-reply')"
+               data-ng-show="!vm.replies['main-reply']">
+            <span class="ico icon-font-1-13"></span>
+            <div class="share-input">
+              Write a comment
+            </div>
+          </div>
+          <div class="new-reply bottom-large"
+               data-ng-show="vm.replies['main-reply']">
+            <div class="new-reply-input"
+                 data-ng-model="reply.replyInners['main']"
+                 set-focus-to-element
+                 contenteditable="true">
+            </div>
+            <div class="btns-block">
+              <div class="btn red cancel"
+                   data-ng-click="vm.replies['main-reply']=false; reply.replyInners['main'] = ''">
+                Cancel
+              </div>
+              <div class="btn purple filled send"
+                   data-ng-click="vm.replies['main-reply']=false; reply.replyInners['main'] = ''">
+                Send
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

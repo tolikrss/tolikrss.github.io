@@ -1,0 +1,12 @@
+
+<div class="select-element" data-ng-click="vm.openSelect()" >
+  <div>
+    <div class="selected-item">[[vm.userActiveItem() ||  vm.activeItem]]</div>
+    <span class="switch-icon icon-font-1-14"></span>
+  </div>
+  <ul class="select-list hide" disable-scroll-event-propagation>
+          <li class="select-list-item"
+        data-ng-repeat="item in vm.items"
+        data-ng-click="vm.select(item);">[[item]]</li>
+  </ul>
+</div>

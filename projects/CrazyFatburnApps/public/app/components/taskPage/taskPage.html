@@ -1,0 +1,178 @@
+<div class="task-page-block with-bg">
+
+  <div 
+    class="column-navbar" 
+    data-ng-class="(vm.isScreenDesktop()) ? 'small-1 small-2' : ''"
+    ng-mouseover="vm.fromSmall($event.currentTarget)"
+    ng-mouseleave="vm.toSmall($event.currentTarget)"
+    data-simplebar
+  > <!-- data-ng-class="{small: (vm.isScreenDesktop()) ? !vm.mouseOver : ''}" -->
+    <large-navbar></large-navbar>
+  </div>
+
+  <div class="column-sidebar">
+  </div>
+
+  <div class="column-content">
+    <!-- Do not change padding-right for following div (class: header-container)!!! -->
+    <div class="header-container">
+    </div>
+
+    <mobile-menu-switch-panel></mobile-menu-switch-panel>
+    <div id="large-block">
+      <div class="head-large-block">
+        <div class="large-block-content">
+          <div class="btn turquoise filled">
+            <a href="#/course">
+              <span class="ico icon-font-1-60"></span>
+              <span class="back-btn-text">Back to Season</span>
+            </a>
+          </div>
+          <div class="day-number">#Day 5</div>
+          <div class="text">I announcement the start of the new season of the most greatest massive game of the world!</div>
+          <div class="player-background">
+            <div class="task-completed"><span class="ico icon-font-1-17"></span>TASK COMPLETED</div>
+            <div 
+              class="player-btn-container" 
+              data-ng-click="(vm.sound.paused) ? vm.sound.play() : vm.sound.pause()"
+            >
+              <div class="player-btn">
+                <span 
+                  class="ico" 
+                  data-ng-class="(vm.sound.paused) ? 'icon-font-1-62' : 'icon-font-1-65'"
+                >
+                </span>
+              </div>            
+            </div>
+            <div class="player">
+              <span class="track-title">M83 - Midnight city</span>
+              <span class="time-and-ico">
+                <span class="ico icon-font-1-04"></span>  
+                <span class="time">[[(vm.sound.duration | trackTime)]]</span>
+              </span>
+            </div>
+
+            <div class="progress-wrapper">
+              <!--[[vm.sound.currentTime / vm.sound.duration]]-->
+              <div class="progress-container">
+                <div 
+                  class="progress" 
+                  style="width: [[(vm.sound.currentTime / vm.sound.duration) * 100]]%"
+                >
+                </div>
+                <div class="progress-bar-background"></div>
+                <input 
+                  id="sound-progress-bar" 
+                  class="form-control" 
+                  type="range" 
+                  min="0" max="1" 
+                  step="0.01" 
+                  ng-model="vm.progress" 
+                  data-ng-change="vm.progressChanged($event.target)" 
+                  data-ng-click="vm.changeProgress()"
+                > 
+              </div>
+              <span class="text">
+                [[vm.sound.currentTime | trackTime]] / [[(vm.sound.duration | trackTime)]]
+              </span>
+            </div>
+          </div>          
+        </div>
+      </div>
+      <div class="content">
+      <div class="strips">
+        <div class="color-block lets-go-block">
+          <div class="brackets"><span class="ico icon-font-1-61"></span></div>
+          <div class="get-off">GET OFF YOUR LAZY ASS!</div>
+          <div class="lets-go">Let's go!</div>
+        </div>
+        <div class="color-block introduction" data-ng-click="vm.openIntroduction = !vm.openIntroduction">
+          <span class="ico icon-font-1-19 icon-visualization"></span>
+          <div class="text">
+            <div class="caption">The introduction</div>
+            <div class="explanation">
+              Although no, probably, first of all, you need to greet your tattered rolls, which were ripped off by 700 mountain ranges? If you read this task, not having fulfilled ...
+            </div>
+          </div>
+          <span class="ico icon-arrow" data-ng-class="vm.openIntroduction ? 'icon-font-1-53' : 'icon-font-1-14'"></span>
+        </div>
+        <div class="block-open" data-ng-show="vm.openIntroduction">
+          <task-info></task-info>
+          <div class="close-task" data-ng-click="vm.openIntroduction = false">Close</div>
+        </div>
+        <div class="color-block motivation">
+          <span class="ico icon-font-1-20 icon-visualization"></span>
+          <div class="text">
+            <div class="caption">The motivation</div>
+            <div class="explanation">
+              I recommend doing it in the morning, but you can do it when you feel comfortable.
+              Frend, I know that you want to not finish any 5 times of any exercise, not to stand the bar.
+            </div>
+          </div>
+          <span class="ico icon-font-1-14 icon-arrow"></span>
+        </div>
+        <div class="color-block cooking-class">
+          <span class="ico icon-font-1-21 icon-visualization"></span>
+          <div class="text">
+            <div class="caption">The cooking class</div>
+            <div class="explanation">
+              Although no, probably, first of all, you need to greet your tattered rolls, which were ripped off by 700 mountain ranges? If you read this task, not having fulfilled ...            </div>
+          </div>
+          <span class="ico icon-font-1-14 icon-arrow"></span>
+        </div>
+        <div class="color-block training">
+          <span class="ico icon-font-1-22 icon-visualization"></span>
+          <div class="text">
+            <div class="caption">The training</div>
+            <div class="explanation">
+              I recommend doing it in the morning, but you can do it when you feel comfortable.
+              Frend, I know that you want to not finish any 5 times of any exercise, not to stand the bar.            </div>
+          </div>
+          <span class="ico icon-font-1-14 icon-arrow"></span>
+        </div>
+        <div class="color-block attention">
+          <span class="ico icon-font-1-23 icon-visualization"></span>
+          <div class="text">
+            <div class="caption">Attention!</div>
+            <div class="explanation">
+              Although no, probably, first of all, you need to greet your tattered rolls, which were ripped off by 700 mountain ranges? If you read this task, not having fulfilled ...
+            </div>
+          </div>
+          <span class="ico icon-font-1-14 icon-arrow"></span>
+        </div>
+        <div class="color-block fun-stuff">
+          <span class="ico icon-font-1-24 icon-visualization"></span>
+          <div class="text">
+            <div class="caption">Fun stuff</div>
+            <div class="explanation">
+              I recommend doing it in the morning, but you can do it when you feel comfortable.
+              Frend, I know that you want to not finish any 5 times of any exercise, not to stand the bar.            </div>
+          </div>
+          <span class="ico icon-font-1-14 icon-arrow"></span>
+        </div>
+        <div class="tast-not-performed">
+          <div class="text">
+            <div class="caption">TASK NOT PERFORMED</div>
+          </div>
+        </div>
+        <div class="chat-header">
+          <div class="text">
+            <div class="explanation">
+            </div>
+          </div>
+        </div>
+        <task-report></task-report>
+        <div class="tast-not-performed">
+          <div class="text">
+            <div class="caption">TASK NOT PERFORMED(photo)</div>
+          </div>
+        </div>
+        <task-photo-report></task-photo-report>
+        <chat></chat>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</div>
+

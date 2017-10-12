@@ -1,0 +1,123 @@
+<div class="course-page-block with-bg">
+
+  <div class="column-navbar" data-simplebar>
+    <large-navbar></large-navbar>
+  </div>
+
+  <div class="column-sidebar">
+  </div>
+
+  <div class="column-content">
+    
+    <div class="header-container">
+    </div>
+
+    <div class="content-container">
+      
+      <mobile-menu-switch-panel></mobile-menu-switch-panel>
+
+      <div class="page-title-container">
+        <div class="page-title">
+          <p class="gradient-text">
+            <span>#CFB </span>
+            <span>SEASON 1</span>
+          </p>
+        </div>
+      </div>
+      <div class="content-block">
+        <div class="btns-block">
+          <div class="btns-container">
+            <button class="btn find-today">Find today</button>
+            <button class="btn done">Done <span class="number">15</span></button>
+          </div>          
+        </div>
+        <div class="course-items-block">
+
+          <div class="vertical-line">
+            <div class="top">
+              15 more
+            </div>
+
+            <div class="down">
+              5 more
+            </div>
+          </div>
+
+          <div class="course-items-container">
+            <div 
+              class="item " 
+              data-ng-class="(!!item.completed) ? 'done' : ((item.available) ? ((item.type === 'task') ? 'task' : 'info') : '')" 
+              data-ng-repeat="item in vm.items" 
+              data-ng-click="(!item.available) ? vm.openInformPopup() : vm.goToTaskPage(item)">
+
+              <div class="item-label">
+                <div class="day-month">
+                  [[item.date.month]] [[item.date.day]] 
+                </div>
+                <div class="time">
+                  [[item.date.time]]
+                </div>
+              </div>
+
+              <div 
+                data-ng-if="item.title" 
+                class="title" 
+                data-ng-class="(!!item.completed) ? 'completed' : (!!item.available) ? 'available' : ''"
+              >
+                [[item.title]]
+              </div>
+
+              <div 
+                class="text" 
+                data-ng-class="(!!item.completed) ? 'completed' : (!!item.available) ? 'available' : ''"
+              >
+                [[item.text]]
+              </div>
+
+              <div 
+                class="time-or-info"
+                data-ng-class="">
+                [[item.time]]
+              </div>
+
+              <div class="people-complete">
+                <span class="number">[[(item.completed_task) ? item.completed_task : '0']]</span> burners completed the task.
+              </div>
+
+              <div class="item-btns-container">
+                <button 
+                  class="btn task-btn" 
+                  data-ng-if="!!item.available"
+                  data-ng-click="$event.stopPropagation();"
+                  data-ng-class="">
+                  <span 
+                    data-ng-if="!!item.completed" 
+                    class="icon-font-1-17 ico">
+                  </span>
+                  <span 
+                    data-ng-if="!item.completed" 
+                    class="icon-font-1-16 ico">
+                  </span>
+                </button>
+
+                <button 
+                  class="btn message-btn"  
+                  data-ng-disabled="!item.available || item.completed"
+                  data-ng-click="$event.stopPropagation();"
+                  data-ng-class="">
+                  <span class="icon-font-1-05 ico">
+                    <span 
+                      data-ng-if="!!item.hasUnreadMessages" 
+                      class="hasUnreadMessages">
+                    </span>
+                  </span>
+                </button>
+              </div>
+              
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

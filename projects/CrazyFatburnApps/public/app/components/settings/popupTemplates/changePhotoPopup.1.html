@@ -1,0 +1,258 @@
+<div class="change-photo-popup-content">
+    <div class="close-btn" ng-click="close()">
+        <span class="ico icon-font-1-12"></span>
+    </div>
+
+        <div class="row" nv-file-drop="" uploader="uploader"> 
+            <div class="col-md-9" style="margin-bottom: 40px">          
+                  
+                      <div ng-repeat="item in uploader.queue">
+                   
+                                <div>[[item.file.name]]</div>
+                                <div class="cropArea">
+                                    <!--<ui-cropper 
+                                        image="vm.image" 
+                                        result-image="vm.resultImage"
+                                        change-on-fly="true"
+                                    >
+                                    </ui-cropper>-->
+
+                                    <!--<ui-cropper 
+                                        image="uploader.queue[0].image"
+                                        result-image="uploader.queue[0].croppedImage"
+                                        change-on-fly="true"
+                                    >
+                                    </ui-cropper>-->
+                                    <img-crop 
+                                        image="uploader.queue[0].image"
+                                        result-image="uploader.queue[0].croppedImage"                                        
+                                    >
+                                    </img-crop>
+                                </div>
+                                <div>Cropped Image:</div>
+                                <div>
+                                    <!--<img ng-src="[[vm.resultImage]]" />-->
+
+                                    <img ng-src="[[uploader.queue[0].croppedImage]]" />
+                      </div>
+          </div>
+          <div class="col-md-3">
+              <h3>Select files</h3>
+              <input type="file" nv-file-select="" uploader="uploader"  multiple/><br/>
+          </div>
+        </div>
+
+    <div class="popup-buttons">
+        <div class="btns-container">
+            <div class="btn save" ng-click="close()">Save</div>
+            <div class="btn cancel" ng-click="close()">Cancel</div>
+        </div>
+    </div>
+</div>
+
+//=====================================================================================================
+(function () {
+    'use strict';
+
+    angular.module('App').component('settings', {
+        templateUrl: "./app/components/settings/settings.html",
+        controllerAs: 'vm',
+        controller: settingsController
+    });
+
+    settingsController.$inject = ['$scope', '$document', '$element', '$state', '$http', 'ngDialog', 'FileUploader'];
+
+
+    function settingsController($scope, $document, $element, $state, $http , ngDialog, FileUploader) {
+
+        var vm = this;
+
+        vm.$onInit = function() {
+            console.log('init');
+            // console.dir(vm.image);
+            // $http.get("https://httpbin.org/image/jpeg", {contentType: "Content-Type: image/jpg"})
+            // .then(function(response) {                
+            // });
+        }
+        
+        vm.logoutDropDown = angular.element(document.querySelector('.logout'))[0];
+
+        vm.changeSexPopupOpened  = false;
+        vm.changePhotoPopupOpened  = false;
+        vm.popupOpened = false;
+
+        vm.image = '';
+        vm.resultImage = '';
+
+        
+
+
+        // crop img ======================
+
+        var uploader = $scope.uploader = new FileUploader({
+            // url: '/api/users/photo'
+            // queueLimit: 1
+        });
+
+        uploader.onAfterAddingAll = function () {
+            if (uploader.getNotUploadedItems().length > 1) {
+                uploader.removeFromQueue(0);
+            }
+        };
+
+        // FILTERS
+
+        uploader.filters.push({
+            name: 'imageFilter',
+            fn: function(item /*{File|FileLikeObject}*/, options) {
+                var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
+                return '|jpg|png|jpeg|bmp|'.indexOf(type) !== -1;
+            }
+        });
+
+        // CALLBACKS
+
+        /**
+         * Show preview with cropping
+         */
+        uploader.onAfterAddingFile = function(item) {
+            console.log('item - ');
+            console.dir(item);           
+            
+            item.croppedImage = '';
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                $scope.$apply(function(){
+                    item.image = event.target.result;
+                });
+            };
+            reader.readAsDataURL(item._file);
+            console.log('uploader.onAfterAddingFile');
+            console.dir(item.image);
+        };
+                /*
+                Upload Blob (cropped image) instead of file.
+                @see
+                    https://developer.mozilla.org/en-US/docs/Web/API/FormData
+                    https://github.com/nervgh/angular-file-upload/issues/208
+                */
+                uploader.onBeforeUploadItem = function(item) {
+                    var blob = dataURItoBlob(item.croppedImage);
+                    item._file = blob;
+                };
+
+                /*
+                Converts data uri to Blob. Necessary for uploading.
+                @see
+                http://stackoverflow.com/questions/4998908/convert-data-uri-to-file-then-append-to-formdata
+                @param  {String} dataURI
+                @return {Blob}
+                */
+                var dataURItoBlob = function(dataURI) {
+                    var binary = atob(dataURI.split(',')[1]);
+                    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+                    var array = [];
+                    
+                    for(var i = 0; i < binary.length; i++) {
+                        array.push(binary.charCodeAt(i));
+                    }
+                    return new Blob([new Uint8Array(array)], {type: mimeString});
+                };
+        // crop img ======================
+
+        vm.user = {
+            showMyLastName: true,
+            showMyNickName: false,
+            sex: 'male',
+            codesList: ['+380', '+340'],
+            selectedCode: '+380',            
+            daysList: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13'],
+            selectedDay: 12,            
+            monthList: ['April', 'May', 'June', 'July'],
+            selectedMonth: 'May',
+            yearList: ['1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999'],
+            selectedYear: 1985
+        }
+       
+
+        // vm.toggleLogout = function() {
+        //     vm.logoutDropDown.classList.toggle('show');
+        // }
+
+        vm.changeShowStatus = function(e) {
+            vm.user[e] = !vm.user[e];
+        }
+
+        vm.logout = function() {
+            console.log('logout');
+            $state.go('wall');
+        }
+
+        vm.changeShowPasswordIco = function(e) {
+            if(!!e.firstElementChild && e.firstElementChild.classList.contains('show')) {
+                e.firstElementChild.classList.remove('show');
+            } else if(e.firstElementChild) {
+                e.firstElementChild.classList.add('show');
+            }
+            else {
+                e.classList.remove('show');
+            }            
+        }
+
+        vm.openChangeSexPopup = function() {
+            if (!vm.popupOpened) {
+                var changeSexPopup = ngDialog.open({
+                    template: './app/components/settings/popupTemplates/changeSexPopup.html',
+                    appendClassName: 'popup',
+                    scope: $scope,
+                    controller: ['$scope', function($scope) {
+                        console.log('changeSexPopup controller');
+                        $scope.close = function() {
+                            changeSexPopup.close();
+                        }
+                    }]
+                });                
+                vm.changeSexPopupOpened = true;
+                vm.popupOpened = true;            
+                changeSexPopup.closePromise.then(function(data) {
+                    vm.changeSexPopupOpened = false;
+                    vm.popupOpened = false;
+                    console.log(data.id + ' has been dismissed.');
+                    console.dir(data);
+                });
+            }            
+            console.log('changeSexPopup already done'); //for test
+        };
+
+        vm.openChangePhotoPopup = function() {
+            if (!vm.popupOpened) {
+                var changeSexPopup = ngDialog.open({
+                    template: './app/components/settings/popupTemplates/changePhotoPopup.html',
+                    appendClassName: 'change-photo-popup',
+                    scope: $scope,
+                    controller: ['$scope', function($scope) {
+                        console.log('changePhotoPopup controller');
+                        $scope.close = function() {
+                            changeSexPopup.close();
+                        }
+                        console.dir(vm.user);
+
+                        vm.inputFile = angular.element(document.querySelector('#fileInput'));
+                        vm.inputFile.on('change', vm.handleFileSelect);
+                        
+                    }]
+                });                
+                vm.changeSexPopupOpened = true;
+                vm.popupOpened = true;            
+                changeSexPopup.closePromise.then(function(data) {
+                    vm.changeSexPopupOpened = false;
+                    vm.popupOpened = false;
+                    console.log(data.id + ' has been dismissed.');
+                    console.dir(data);
+                });
+            }            
+            console.log('changeSexPopup already done'); //for test
+        };
+    }
+})();
+

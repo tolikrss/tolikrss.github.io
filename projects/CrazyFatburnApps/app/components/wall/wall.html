@@ -1,0 +1,63 @@
+<div class="wall-block with-bg">
+
+  <div class="column-navbar" data-simplebar>
+    <large-navbar></large-navbar>
+  </div>
+
+  <div class="column-sidebar">
+    <div class="back-btn" data-ng-show="!vm.myWall">
+      <div class="btn turquoise filled">
+        <span class="ico icon-font-1-60"></span>Go back
+      </div>
+    </div>
+  </div>
+
+  <div class="column-content">
+    <!-- Do not change padding-right for following div (class: header-container)!!! -->
+    <div class="header-container">
+    </div>
+
+    <div class="content-container">
+      
+      <mobile-menu-switch-panel></mobile-menu-switch-panel>
+
+      <div class="back-btn back-btn-mobile" data-ng-show="!vm.myWall">
+        <div class="btn turquoise filled">
+          <span class="ico icon-font-1-60"></span>Go back
+        </div>
+      </div>
+
+      <div class="house" data-ng-show="vm.myWall">
+        <form class="name-house" data-ng-submit="vm.disableNameEditing = true">
+          <input class="name-value" type="text" rows="1" ng-disabled="vm.disableNameEditing" max-length="25" value="Frank Sinatra's house"/>
+        </form>
+        <span class="ico icon-edit" data-ng-click="vm.disableNameEditing = !vm.disableNameEditing"></span>
+      </div>
+
+      <user-info data-my-wall="vm.myWall"></user-info>
+
+      <div class="shadow">
+        <div class="share shadow">
+          <div class="share-content"
+               data-ng-show="vm.myWall">
+            <span class="img-container">
+              <img src="/assets/img/user.jpg" alt="">
+            </span>
+            <div class="share-input"
+                 data-ng-focus="vm.clearShare()"
+                 contenteditable="true"
+                 data-ng-model="vm.shareContent"
+                 data-ng-init="vm.shareContent='Share your thoughts here. Don\'t be shy.'"
+                 data-ng-blur="vm.fillShare()"
+                 data-ng-keypress="vm.contentEditingDone($event)">
+            </div>
+          </div>
+        </div>
+        <posts></posts>
+      </div>
+
+    </div>
+    
+  </div>
+
+</div>

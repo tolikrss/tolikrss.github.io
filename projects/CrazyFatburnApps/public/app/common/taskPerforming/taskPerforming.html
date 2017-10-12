@@ -1,0 +1,114 @@
+<div class="task-performing-block">
+    <div class="chat-header">
+        <div class="text">
+            <div class="caption">The Chat</div>
+            <div class="explanation">
+            </div>
+        </div>
+    </div>
+    <div class="chat-content">
+        <div class="post" data-ng-repeat="(id, post) in vm.posts">
+            <div class="user-img">
+                <img ng-src="[[post.authorImgUrl]]" data-ng-show="post.authorImgUrl">
+            </div>
+
+            <div class="chat-message-inner">
+                <div class="first-raw">
+                    <div class="user-info">
+                        <div class="name">[[post.name]]</div>
+                        <div class="date">[[post.date]] at [[post.time]]</div>
+                    </div>
+                </div>
+
+                <div class="second-raw">
+                    <div class="post-content">
+                        [[post.content]]
+                    </div>
+                </div>
+                <div class="third-raw">
+                    <div class="like"><span class="ico" data-ng-class="post.likesCount ? 'icon-lightning-filled' : 'icon-lightning'"></span><span class="count">[[post.likesCount]]</span>like this</div>
+                    <div class="reply">Reply</div>
+                </div>
+            </div>
+
+            <div class="message-replies" data-ng-show="vm.repliesCount(post.replies)">
+                <!--<div class="replies-count"><span class="count">[[vm.repliesCount(post.replies)]]</span><span class="text">Replies</span></div>-->
+                <div class="message-reply" data-ng-repeat="reply in post.replies">
+                    <div class="user-img">
+                        <img ng-src=[[reply.authorImgUrl]] alt="">
+                    </div>
+                    <div class="chat-message-inner">
+                        <div class="first-raw">
+                            <div class="user-info">
+                                <div class="name">[[post.name]]</div>
+                                <div class="date">[[post.date]] at [[post.time]]</div>
+                            </div>
+                        </div>
+
+                        <div class="second-raw">
+                            <div class="post-content">
+                                [[post.content]]
+                            </div>
+                        </div>
+                        <div class="third-raw">
+                            <div class="like"><span class="ico" data-ng-class="post.likesCount ? 'icon-lightning-filled' : 'icon-lightning'"></span><span class="count">[[post.likesCount]]</span>like this</div>
+                            <div class="reply">Reply</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-panel">
+            <div class="new-reply">
+                <div class="new-reply-input large"
+                     contenteditable="true"
+                     data-ng-model="vm.newMessage">
+                </div>
+                <div class="actions">
+                    <label class="attach-file">
+                        <span class="ico icon-attach icon-font-1-30"></span>Attach file
+                        <input
+                        type="file"
+                        id="fileInput"
+                        ng-model="vm.files"
+                        custom-on-change="vm.onFileInputChange"
+                        />
+                    </label>
+                    <button class="btn purple filled send"
+                            type="submit"
+                            value="Submit"
+                            data-ng-click="vm.addNewMessage(vm.newMessage)">
+                        Send
+                    </button>
+                </div>
+                <div class="upload-photo-list">
+                    <div class="photo-container" ng-repeat="image in vm.images">
+                        <img data-ng-src="[[image.imageBase64]]"></img>
+                        <div class="name-container">
+                            <span class="name">[[image.imageName.name]]</span>
+                            <span class="type">[[image.imageName.type]]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="input-panel">-->
+            <!--<form data-ng-submit="vm.addNewMessage(vm.newMessage)">-->
+                <!--<div class="input"><textarea class="input-message" data-ng-model="vm.newMessage"></textarea></div>-->
+
+                <!--<div class="actions">-->
+                    <!--<div class="attach-file">-->
+                        <!--<span class="ico icon-attach icon-font-1-30"></span>Attach-->
+                    <!--</div>-->
+                    <!--<button class="btn purple filled" type="submit" value="Submit">Send</button>-->
+                <!--</div>-->
+            <!--</form>-->
+
+        <!--</div>-->
+    </div>
+    <!--<div class="btn-block">-->
+        <!--<span class="btn purple filled">Show more</span>-->
+    <!--</div>-->
+</div>

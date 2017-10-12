@@ -1,0 +1,225 @@
+<div class="task-photo-report-block">
+    <div class="content-wrapper">
+        <div
+            class="message"
+            contenteditable="true"
+            data-ng-model="vm.messageText"
+            data-ng-focus="vm.clickOnMessage()"
+        >            
+        </div>
+        <div class="photos-container clearfix">
+            <div class="left-block">
+                <span class="title">
+                    Before
+                </span>
+                <div 
+                    class="photo-block"
+                    data-ng-class="(!vm.images.before.front.imageBase64) ? 'not-uploaded' : 'photo-uploaded'"
+                >
+                    <span class="photo-type">
+                        Front
+                    </span>
+                    <label class="upload-photo-button">
+                        Upload <span>your</span> photo
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            ng-model="vm.files" 
+                            custom-on-change="vm.onFileBeforeFront" 
+                        />
+                    </label>
+                    <img 
+                        ng-src="[[vm.images.before.front.imageBase64]]"
+                        data-ng-show="vm.images.before.front.imageBase64">
+                </div>
+                <div 
+                    class="photo-block"
+                    data-ng-class="(!vm.images.before.back.imageBase64) ? 'not-uploaded' : 'photo-uploaded'"
+                >
+                    <span class="photo-type">
+                        Back
+                    </span>
+                    <label class="upload-photo-button">
+                        Upload <span>your</span> photo
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            ng-model="vm.files" 
+                            custom-on-change="vm.onFileBeforeBack" 
+                        />
+                    </label>
+                    <img 
+                        ng-src="[[vm.images.before.back.imageBase64]]"
+                        data-ng-show="vm.images.before.back.imageBase64">
+                </div>
+                <div 
+                    class="photo-block"
+                    data-ng-class="(!vm.images.before.left.imageBase64) ? 'not-uploaded' : 'photo-uploaded'"
+                >
+                    <span class="photo-type">
+                        Left
+                    </span>
+                    <label class="upload-photo-button">
+                        Upload <span>your</span> photo
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            ng-model="vm.files" 
+                            custom-on-change="vm.onFileBeforeLeft" 
+                        />
+                    </label>
+                    <img 
+                        ng-src="[[vm.images.before.left.imageBase64]]"
+                        data-ng-show="vm.images.before.left.imageBase64">
+                </div>
+                <div 
+                    class="photo-block"
+                    data-ng-class="(!vm.images.before.right.imageBase64) ? 'not-uploaded' : 'photo-uploaded'"
+                >
+                    <span class="photo-type">
+                        Right
+                    </span>
+                    <label class="upload-photo-button">
+                        Upload <span>your</span> photo
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            ng-model="vm.files" 
+                            custom-on-change="vm.onFileBeforeRight" 
+                        />
+                    </label>
+                    <img 
+                        ng-src="[[vm.images.before.right.imageBase64]]"
+                        data-ng-show="vm.images.before.right.imageBase64">
+                </div>
+            </div>
+            <div class="right-block">                
+                <span class="title">
+                    After
+                </span>
+                <div 
+                    class="photo-block"
+                    data-ng-class="(!vm.images.after.front.imageBase64) ? 'not-uploaded' : 'photo-uploaded'"
+                >
+                    <label class="upload-photo-button">
+                        Upload <span>your</span> photo
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            ng-model="vm.files" 
+                            custom-on-change="vm.onFileAfterFront" 
+                        />
+                    </label>
+                    <img 
+                        ng-src="[[vm.images.after.front.imageBase64]]"
+                        data-ng-show="vm.images.after.front.imageBase64">
+                    <span class="photo-uploaded-ico">
+                        <span class="ico icon-font-1-28"></span>
+                    </span>
+                    <label class="change-your-photo">
+                        <span>Select your photo</span>
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            ng-model="vm.files" 
+                            custom-on-change="vm.onFileAfterFront"   
+                        />
+                    </label>
+                </div>
+                <div 
+                    class="photo-block"
+                    data-ng-class="(!vm.images.after.back.imageBase64) ? 'not-uploaded' : 'photo-uploaded'"
+                >
+                    <label class="upload-photo-button">
+                        Upload <span>your</span> photo
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            ng-model="vm.files" 
+                            custom-on-change="vm.onFileAfterBack" 
+                        />
+                    </label>
+                    <img 
+                        ng-src="[[vm.images.after.back.imageBase64]]"
+                        data-ng-show="vm.images.after.back.imageBase64">
+                    <span class="photo-uploaded-ico">
+                        <span class="ico icon-font-1-28"></span>
+                    </span>
+                    <label class="change-your-photo">
+                        <span>Select your photo</span>
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            ng-model="vm.files" 
+                            custom-on-change="vm.onFileAfterBack" 
+                        />
+                    </label>
+                </div>
+                <div 
+                    class="photo-block"
+                    data-ng-class="(!vm.images.after.left.imageBase64) ? 'not-uploaded' : 'photo-uploaded'"
+                >
+                    <label class="upload-photo-button">
+                        Upload <span>your</span> photo
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            ng-model="vm.files" 
+                            custom-on-change="vm.onFileAfterLeft" 
+                        />
+                    </label>
+                    <img 
+                        ng-src="[[vm.images.after.left.imageBase64]]"
+                        data-ng-show="vm.images.after.left.imageBase64">
+                    <span class="photo-uploaded-ico">
+                        <span class="ico icon-font-1-28"></span>
+                    </span>
+                    <label class="change-your-photo">
+                        <span>Select your photo</span>
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            ng-model="vm.files" 
+                            custom-on-change="vm.onFileAfterLeft"  
+                        />
+                    </label>
+                </div>
+                <div 
+                    class="photo-block"
+                    data-ng-class="(!vm.images.after.right.imageBase64) ? 'not-uploaded' : 'photo-uploaded'"
+                >
+                    <label class="upload-photo-button">
+                        Upload <span>your</span> photo
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            ng-model="vm.files" 
+                            custom-on-change="vm.onFileAfterRight" 
+                        />
+                    </label>
+                    <img 
+                        ng-src="[[vm.images.after.right.imageBase64]]"
+                        data-ng-show="vm.images.after.right.imageBase64">
+                    <span class="photo-uploaded-ico">
+                        <span class="ico icon-font-1-28"></span>
+                    </span>
+                    <label class="change-your-photo">
+                        <span>Select your photo</span>
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            ng-model="vm.files" 
+                            custom-on-change="vm.onFileAfterRight"  
+                        />
+                    </label>
+                </div>
+            </div>
+        </div>
+        <button
+            class="btn purple send"
+            data-ng-click="vm.sendReport()"
+        >
+            Send
+        </button>
+    </div>
+</div>

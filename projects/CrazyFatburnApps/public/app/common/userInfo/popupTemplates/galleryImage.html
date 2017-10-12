@@ -1,0 +1,167 @@
+<div class="gallery-image-popup-content">
+    <div class="close-btn" ng-click="close()">
+        <span class="ico icon-font-1-12"></span>
+    </div>
+    <div class="prev-btn" ng-click="getPrevPhoto()">
+        <span class="ico icon-font-1-60"></span>
+    </div>
+    <div class="next-btn" ng-click="getNextPhoto()">
+        <span class="ico icon-font-1-63"></span>
+    </div>
+
+    <div class="popup-content-container">
+        <div class="photo">
+            <img src="[[photo.src]]" alt="">
+        </div>
+        <div class="photo-info">
+            <div class="author">
+                <div class="user-img">
+                    <img ng-src=[[photo.authorImgUrl]] alt="">
+                </div>
+                <div class="text">
+                    <div class="first-raw">
+                        <div class="name">[[photo.author]]</div>
+                    </div>
+                    <div class="third-raw">
+                        <div class="like"><span class="ico" data-ng-class="photo.likesCount ? 'icon-lightning-filled' : 'icon-lightning'"></span><span class="count">[[photo.likesCount]]</span>likes this</div>
+                        <div class="date">[[photo.date]]</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="comments">
+                <div class="previous-comments" data-ng-show="photo.comments.length>5">Previous comments [[photo.comments.length - 5]]</div>
+                <div class="opened-comments" disable-scroll-event-propagation>
+                    <div class="comment" data-ng-repeat="comment in photo.comments | limitTo:5">
+                        <div class="user-img">
+                            <img ng-src=[[comment.authorImgUrl]] alt="" data-ng-show="[[comment.authorImgUrl]]">
+                        </div>
+                        <div class="text">
+                            <div class="first-raw">
+                                <div class="name">[[comment.author]]</div>
+                                <div class="edit"
+                                     data-ng-show="comment.isMy"
+                                     data-ng-click="comment.commentEditing=!comment.commentEditing">Edit</div>
+                                <div class="was-edited"
+                                     data-ng-show="comment.wasEdited && !comment.isMy">Edited</div>
+                            </div>
+                            <div class="second-raw">
+                                <span class="comment-content-span"
+                                      ng-keypress="vm.commentEditingDone($event, comment)"
+                                      contenteditable="[[(comment.commentEditing) ? 'true' : 'false']]">
+                                    [[comment.content]]
+                                </span>
+                            </div>
+                            <div class="third-raw">
+                                <div class="like">
+                                    <span class="ico" data-ng-class="comment.likesCount ? 'icon-lightning-filled' : 'icon-lightning'"></span>
+                                    <span class="count" data-ng-class="comment.likesCount ? 'liked' : ''">[[comment.likesCount]]</span>
+                                </div>
+                                <div class="date">[[comment.date]]</div>
+                                <div class="reply-word" data-ng-click=" vm.showReply($index.toString()+comment.id)">Reply</div>
+                                <!--<div class="edit">Edit</div>-->
+                            </div>
+                        </div>
+                        <div class="replies" data-ng-show="comment.replies.length">
+                            <!--<div class="replies-count"><span class="count">[[comment.replies.length]]</span><span class="text">Replies</span></div>-->
+                            <div class="reply" data-ng-repeat="reply in comment.replies | limitTo:5">
+                                <div class="user-img">
+                                    <img ng-src=[[reply.authorImgUrl]] alt="" data-ng-show="[[reply.authorImgUrl]]">
+                                </div>
+                                <div class="text">
+                                    <div class="first-raw">
+                                        <div class="name">[[reply.author]]</div>
+                                        <div class="edit"
+                                             data-ng-show="reply.isMy"
+                                             data-ng-click="reply.commentEditing=!reply.commentEditing">Edit</div>
+                                        <div class="was-edited"
+                                             data-ng-show="reply.wasEdited && !reply.isMy">Edited</div>
+                                    </div>
+                                    <div class="second-raw">
+                                        <span class="comment-content-span"
+                                              ng-keypress="vm.commentEditingDone($event, reply)"
+                                              contenteditable="[[(reply.commentEditing) ? 'true' : 'false']]">[[reply.content]]</span>
+                                    </div>
+                                    <div class="third-raw">
+                                        <div class="like">
+                                            <span class="ico" data-ng-class="reply.likesCount ? 'icon-lightning-filled' : 'icon-lightning'"></span>
+                                            <span class="count" data-ng-class="reply.likesCount ? 'liked' : ''">[[reply.likesCount]]</span>
+                                        </div>
+                                        <div class="date">[[reply.date]]</div>
+                                        <div class="reply-word" data-ng-click=" vm.showReply($index.toString()+comment.id+reply.id)">Reply</div>
+                                        <!--<div class="edit">Edit</div>-->
+                                    </div>
+                                </div>
+                                <div class="new-reply" data-ng-if="vm.replies[$index.toString()+comment.id+reply.id]">
+                                    <div class="new-reply-input"
+                                         contenteditable="true"
+                                         data-ng-model="comment.newReply"
+                                         data-ng-init="comment.newReply=[[comment.author]]+',&nbsp'"
+                                         set-focus-to-element>
+                                    </div>
+                                    <div class="btns-block">
+                                        <div class="btn red cancel"
+                                             data-ng-click="comment.newReply=[[comment.author]]+',&nbsp'; vm.replies[$index.toString()+comment.id+reply.id] = false">
+                                            Cancel
+                                        </div>
+                                        <div class="btn purple filled send"
+                                             data-ng-click="comment.newReply=[[comment.author]]+',&nbsp'; vm.replies[$index.toString()+comment.id+reply.id] = false">
+                                            Send
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new-reply" data-ng-if="vm.replies[$index.toString()+comment.id]">
+                            <div class="new-reply-input"
+                                 contenteditable="true"
+                                 data-ng-model="reply.newReply" data-ng-init="reply.newReply=[[comment.author]] + ',&nbsp'"
+                                 set-focus-to-element>
+                            </div>
+                            <div class="btns-block">
+                                <div class="btn red cancel"
+                                     data-ng-click="reply.newReply=[[comment.author]] + ',&nbsp'; vm.replies[$index.toString()+comment.id] = false">
+                                    Cancel
+                                </div>
+                                <div class="btn purple filled send"
+                                     data-ng-click="reply.newReply=[[comment.author]] + ',&nbsp'; vm.replies[$index.toString()+comment.id] = false">
+                                    Send
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="write-comment">
+                <div class="write-comment-content"
+                     data-ng-show="!vm.replies['main-reply']"
+                     data-ng-click="vm.showReply('main-reply')">
+                    <span class="ico icon-font-1-13"></span>
+                    <div class="share-input">
+                        Write a comment
+                    </div>
+                </div>
+                <div class="new-reply" data-ng-if="vm.replies['main-reply']">
+                    <div class="new-reply-input large"
+                         contenteditable="true"
+                         data-ng-model="post.newReply"
+                         set-focus-to-element
+                    ></div>
+                    <div class="btns-block send">
+                        <div class="btn red cancel"
+                             data-ng-click="post.newReply=null; vm.replies['main-reply']=false">
+                            Cancel
+                        </div>
+                        <div class="btn purple filled send"
+                             data-ng-click="post.newReply=null; vm.replies['main-reply']=false">
+                            Send
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

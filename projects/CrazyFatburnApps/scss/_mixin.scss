@@ -1,0 +1,37 @@
+//
+// Responsive design media queries
+// -Mobile first principle-
+//
+
+$large-laptop-width: 1750px;
+$laptop-width: 1200px;
+$tablet-width: 768px;
+$mobile-width: 767px;
+$total-container-width: 1559px;
+//$max-width: 1920px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$laptop-width}) {
+    @content;
+  }
+}
+
+
+@mixin large-laptop {
+  @media (min-width: #{$large-laptop-width}) {
+    @content;
+  }
+}
+

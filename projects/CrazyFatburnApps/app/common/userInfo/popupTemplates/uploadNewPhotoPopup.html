@@ -1,0 +1,72 @@
+<div class="upload-new-photo-popup-content"  data-ng-class="vm.saved ? 'saved-popup' : ''">
+    <div class="close-btn" ng-click="close()" >
+        <span class="ico icon-font-1-12"></span>
+    </div>
+
+    <div class="popup-content-container">
+        <div class="uploading" data-ng-show="!vm.saved">
+            <div class="change-photo-btn-container">
+                <label class="select-photo-button">
+                    [[vm.myImage ? 'Uploaded' : 'Upload']] [[vm.imageCaption]]
+                    <input type="file" id="fileInput" ng-model="vm.files" custom-on-change="vm.onFileInputChange" />
+                </label>
+            </div>
+            <div class="cropArea">
+                <ui-cropper
+                    image="vm.myImage"
+                    result-image="vm.myCroppedImage"
+                    area-init-size=""
+                    area-min-size="vm.rangeValue"
+                    area-type="square"
+                    result-blob=""
+                    url-blob=""
+                    on-load-done="vm.uiCropperImageLoadDone()">
+                </ui-cropper>
+            </div>
+
+            <div class="scale-and-turn-btns">
+                    <div class="btns-container">
+                        <button class="btn save" data-ng-disabled="!vm.myImage"  data-ng-click="save()">Save</button>
+                        <button class="btn cancel" data-ng-click="close()">Cancel</button>
+                    </div>
+                <div class="range-container">
+                    <span data-ng-click="vm.decRangeValue()" class="ico ico-dec icon-font-1-26"></span>
+                    <div class="range-wrapper">
+                        <md-slider
+                            id="photoRange"
+                            ng-model="vm.rangeValue"
+                            min="[[vm.photoRangeMin]]"
+                            max="[[vm.photoRangeMax]]"
+                        >
+                        </md-slider>
+                    </div>
+                    <span data-ng-click="vm.addRangeValue()" class="ico ico-add icon-font-1-27"></span>
+                </div>
+                <div class="turn-btns">
+                    <span
+                        class="ico icon-font-1-54"
+                        data-ng-click="vm.rotateLeft()"
+                        >
+                    </span>
+                    <span
+                        class="ico icon-font-1-25"
+                        data-ng-click="vm.rotateRight()"
+                        >
+                    </span>
+                </div>
+            </div>
+            <div class="popup-buttons-mobile">
+                    <div class="btns-container">
+                        <button class="btn save" data-ng-disabled="!vm.myImage" data-ng-click="save()">Save</button>
+                        <button class="btn cancel" data-ng-click="close()">Cancel</button>
+                    </div>
+            </div>
+        </div>
+
+        <div class="upload-success" data-ng-show="vm.saved">
+            <img ng-src="[[vm.myCroppedImage]]" />
+            <div class="img-title">[[vm.imageCaption]]</div>
+            <div class="upload-successfull"  data-ng-click="close()"><span class="ico icon-font-1-28"></span>Upload successfull</div>
+        </div>
+    </div>    
+</div>

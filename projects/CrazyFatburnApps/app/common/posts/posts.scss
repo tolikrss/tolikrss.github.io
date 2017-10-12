@@ -1,0 +1,292 @@
+.posts-block {
+  background-color: white;
+  width: 100%;
+  padding: 40px 7px;
+  @include tablet {
+    padding: 32px 20px;
+  }
+  .chat-content {
+    width: 100%;
+    max-width: 880px; //
+    margin: auto;
+    .post {
+      position: relative;
+      margin-bottom: 25px;
+
+      @include tablet {
+        margin-top: 50px;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .user-img {
+        display: inline-block;
+        vertical-align: top;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        @include tablet {
+          width: 40px;
+          height: 40px;
+        }
+        img {
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .text {
+        display: inline-block;
+        font-size: 11px;
+        margin-left: 7px;
+        width: calc(100% - 36px);
+        @include tablet {
+          margin-left: 10px;
+          font-size: 14px;
+          width: calc(100% - 54px);
+        }
+
+        .first-raw {
+          font-size: 13px;
+          margin-top: -1px;
+          @include tablet {
+            font-size: 18px;
+            margin-top: -4px;
+          }
+          .name {
+            display: inline-block;
+            font-weight: 800;
+            color: #6948eb;
+            cursor: pointer;
+            @include tablet {
+              font-weight: 600;
+            }
+          }
+          .recipient {
+            display: inline-block;
+            color: #6948eb;
+            font-weight: 600;
+            margin: 0 12px;
+          }
+          .post-content {
+            color: #2b2523;
+            display: inline-block;
+            margin-left: 7px;
+            font-weight: 700;
+            @include tablet {
+              font-weight: 700;
+            }            
+          }
+          .post-content-span {            
+            font-weight: 700;
+            .dots {
+            display: none;
+            }
+            .links {
+              padding-left: 10px;
+              color: #5e3bea;
+              cursor: pointer;
+            }
+            @include tablet {
+              font-weight: 700;
+            }
+          }
+          .post-content-span[contenteditable="true"] {
+            display: block;
+            border: 2px solid #e9e9e9;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 5px;
+          }
+        }
+
+        .third-raw {
+          color: #aaa8a7;
+          margin-top: 3px;
+          margin-left: 3px;
+          @include tablet {
+            margin-top: 0;
+            margin-left: 0;
+          }
+          div {
+            display: inline-block;
+            margin-right: 12px;
+          }
+          .count {
+            color: #5e3bea;
+            font-weight: 600;
+          }
+          .reply-word, .edit {
+            font-weight: 600;
+            cursor: pointer;
+          }
+          .like {
+            cursor: pointer;
+            .ico {
+              vertical-align: sub;
+              font-size: 16px;
+              color: #5e3bea;
+              margin-left: -3px;
+              margin-right: 1px;
+              font-weight: 600;
+              @include tablet {
+                font-size: 21px;
+              }
+            }
+            .ico:hover {
+
+            }
+          }
+        }
+      }
+      .replies {
+        margin-top: 28px;
+        margin-left: 20px;
+        padding: 0 11px;
+        padding-right: 0;
+        @include tablet {
+          margin-top: 20px;
+          padding: 0 30px;
+          margin-left: 16px;
+        }
+
+        .replies-count {
+          margin-bottom: 20px;
+          @include tablet {
+            margin-bottom: 23px;
+          }
+          &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+          }
+          .count {
+            color: white;
+            font-weight: 600;
+            background-color: #2b2523;
+            border-radius: 50%;
+            font-size: 11px;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            padding: 4px 0;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+            @include tablet {
+              width: 30px;
+              height: 30px;
+              font-size: 15px;
+            }
+          }
+          .text {
+            display: inline;
+            margin-left: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            vertical-align: middle;
+            cursor: pointer;
+            @include tablet {
+              margin-left: 7px;
+              font-size: 16px;
+            }
+          }
+        }
+
+        .reply {
+          margin: 15px 0;
+          @include tablet {
+            .user-img {
+              width: 30px;
+              height: 30px;
+              margin-right: 5px;
+            }
+          }
+          .text {
+            width: calc(100% - 36px);
+            @include tablet {
+              width: calc(100% - 50px);
+            }
+            .first-raw {
+              width: calc(100% - 0);
+              @include tablet {
+                width: calc(100% - 25px);
+              }
+              .reply-content-span {
+                font-weight: 600;
+              }
+              .reply-content-span[contenteditable="true"] {
+                display: block;
+                border: 2px solid #e9e9e9;
+                border-radius: 5px;
+                padding: 10px;
+                margin-bottom: 5px;
+              }
+              .recipient {
+              }
+            }
+          }
+        }
+      }
+
+      .write-comment {
+        width: 100%;
+        padding: 9px 4px 0 4px;
+
+        @include tablet {
+          padding: 0;
+          margin-top: 27px;
+        }
+        .write-comment-content {
+          background-color: #e9e9e9;
+          min-height: 45px;
+          width: 100%;
+          border-radius: 44px;
+          position: relative;
+          cursor: pointer;
+
+          @include tablet {
+            min-height: 47px;
+            margin-bottom: 5px;
+          }
+
+          .ico {
+            float: left;
+            position: absolute;
+            left: 10px;
+            top: 24%;
+            font-size: 21px;
+            color: #a7a5a4;
+            @include tablet {
+              left: 15px;
+              top: 23%;
+              font-size: 24px;
+            }
+          }
+
+          .share-input {
+            background-color: transparent;
+            border: none;
+            width: calc(100%);
+            padding: 13px 25px 13px 46px;
+            color: #9d9b9a;
+            font-weight: 700;
+            font-size: 13px;
+            min-height: 45px;
+
+            @include tablet {
+              padding: 10px 35px 10px 60px;
+              font-size: 18px;
+              min-height: 47px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
