@@ -45,7 +45,8 @@ a {
 
 body {
   font-family: "OpenSans";
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  color: #4f4f4f; }
 
 .preloader-overlay {
   position: fixed;
@@ -126,3 +127,14 @@ body {
   87.5% {
     -webkit-box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
     box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em; } }
+
+.project-list-container .title {
+  font-size: 20px;
+  line-height: 26px; }
+
+.project-list-container .list .list-item {
+  font-size: 16px;
+  line-height: 22px; }
+  .project-list-container .list .list-item:hover {
+    text-decoration: none;
+    color: #000; }
