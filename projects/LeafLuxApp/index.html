@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>LeafLux Test</title>
+    <!-- <link rel="icon" type="image/vnd.microsoft.icon" href="./favicon.ico"> -->
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="css/normalize.css">
+	<!-- <link rel="stylesheet" type="text/css" href="js/slick/slick/slick.css"/> -->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="fonts/leaflux/style.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
+</head>
+
+<body>
+<!-- ======================================================================================================================================== -->
+	<div class="preloader-overlay">
+		<div class="loader">Loading...</div>
+	</div>
+	<div class="main-container">
+		<div id="mobile-overlay"></div>
+		<div class="scroll-to-up">
+			<i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+		</div>
+		<header class="header clearfix" id="home">
+			<div class="logo-container">
+				<img src="img/logo.png" alt="Logo">
+			</div>
+			<nav class="menu">
+				<div class="open-mobile-menu">
+					<span class="ico icon-Font-12"></span>
+					<div class="name">
+						Меню
+					</div>
+				</div>
+				<ul class="menu-block">
+					<div class="close-mobile-menu">
+						<span class="ico icon-Font-13" aria-hidden="true"></span>
+					</div>
+					<div class="menu-mobile-title">
+						Меню
+					</div>
+					<li class="home-mobile"><a href="#home">Главная</a></li>
+					<li><a href="#range">Ассортимент</a></li>
+					<li><a href="#packing">Упаковка</a></li>
+					<li><a href="#distribution">Дистрибюция</a></li>
+					<li><a href="#aboutus">О нас</a></li>
+					<li><a href="#advantage">Преимущества</a></li>
+					<li><a href="#contacts">Контакты</a></li>
+
+					<li class="language">
+						<div class="selected-language">RU</div>
+						<div class="languages-list">
+								<div class="language-item">
+									<a href="/set-locale/en"> EN </a>
+								</div>
+						</div>
+					</li>
+					<div class="language-mobile-menu">
+						<div class="language-mobile-title">
+							Языки
+						</div>
+						<div class="languages-list">
+							<!-- <div class="language-item active">
+								<a href="">Русский</a>
+							</div>
+							<div class="language-item">
+								<a href="">English</a>
+							</div> -->
+							<div class="language-item active">
+								<a href="">Русский</a>
+							</div>
+							<div class="language-item">
+								<a href="/set-locale/en">Английский</a>
+							</div>
+						</div>
+					</div>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="header-section">
+			<div class="bg"></div>
+			<div class="lavr-image"></div>
+			<div class="leaf-5"></div>                          
+				<div class="title ru">
+					<span>Л</span><span class="a">а</span><span class="b">в</span><span>р</span>о<span>вы</span>й лист	
+					<div class="leaf-2"></div>
+					<div class="leaf-3"></div>
+				</div>
+			<div class="description">
+				<p>Один из самых качественных в мире</p>
+				<p>лавровый лист растет в Гурии</p>
+				<button class="contact-us"><a href="#contact-us-form">Связаться с нами</a></button>
+			</div>
+		</section>
+
+		<section class="tovar" id="range">
+			<div class="title">
+				Ассортимент
+			</div>
+			<div class="description">
+				После збора лавровый лист помещается в камеру и на протяжении 48 часов происходит его сушка при температуре 
+				выше 50° С, что позволяет максимально сохранить эфирные масла (что придает приятный аромат) яркий зеленый
+				цвет (который сохраняется
+				<br/> 
+				на протяжении долгого времени). 
+				<br/>
+				Влажность лаврового листа после сушки 7-9%.
+			</div>
+			<div class="leaf-top" animate="right">
+
+			</div>
+			<div class="row-top">
+				<div class="item">
+					<div class="squre"></div>
+					<div class="item-number">1</div>
+					<div class="item-title">
+						Лавровый лист машинной сушки не перебранный
+					</div>
+					<div class="item-sub-title">
+						(аналог турецкого semi selected)
+					</div>
+					<div class="item-description">
+						Перед фасовкой в тюки лавровый лист проходит инспекцию, где отбираются больные листья, веточки, соцветия.
+					</div>
+					<div class="list-container">
+						<div class="list">
+							<div class="list-item">
+								<div class="row-value">
+									50° C
+								</div>
+								<div class="row-name">
+									Температура
+								</div>
+							</div>
+							<div class="list-item">
+								<div class="row-value">
+									48 ч
+								</div>
+								<div class="row-name">
+									Сушка
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="squre"></div>
+					<div class="item-number">2</div>
+					<div class="item-title">
+						Лавровый лист машинной сушки перебранный крупный <12 см
+					</div>
+					<div class="item-sub-title">
+						(аналог турецкого hand selected)
+					</div>
+					<div class="item-description">
+						Перед фасовкой в тюки лавровый лист проходит инспекцию, где отбираются больные листья, веточки, соцветия.
+						Также с помощью барабана происходит отсеивание мелкого и ломаного листа.
+					</div>
+					<div class="list-container">
+						<div class="list">
+							<div class="list-item">
+								<div class="row-value">
+									50° C
+								</div>
+								<div class="row-name">
+									Температура
+								</div>
+							</div>
+							<div class="list-item">
+								<div class="row-value">
+									48 ч
+								</div>
+								<div class="row-name">
+									Сушка
+								</div>
+							</div>
+							<div class="list-item">
+								<div class="row-value">
+									<12 см
+								</div>
+								<div class="row-name">
+									Размер
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row-bottom">
+				<div class="item">
+					<div class="squre"></div>
+					<div class="item-number">3</div>
+					<div class="item-title">
+						Лавровый лист машинной сушки перебранный <8 см
+					</div>
+					<div class="item-sub-title">
+						<span>(аналог турецкого hand selected)</span>					
+						<div class="item-sub-sub-title">
+							Применяется для автоматической сортировки на станках
+						</div>
+					</div>
+					<div class="item-description">
+						Перед фасовкой в тюки лавровый лист проходит инспекцию, где отбираются больные листья, веточки, соцветия.
+						Также с помощью барабана происходит отсеивание мелкого и ломаного листа нужной фракции (3-8 см).
+					</div>
+					<div class="list-container">
+						<div class="list">
+							<div class="list-item">
+								<div class="row-value">
+									50° C
+								</div>
+								<div class="row-name">
+									Температура
+								</div>
+							</div>
+							<div class="list-item">
+								<div class="row-value">
+									48 ч
+								</div>
+								<div class="row-name">
+									Сушка
+								</div>
+							</div>
+							<div class="list-item">
+								<div class="row-value">
+									<8 см
+								</div>
+								<div class="row-name">
+									Размер
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="squre"></div>
+					<div class="item-number">4</div>
+					<div class="item-title">
+						Дробленный лавровый лист
+					</div>
+					<div class="fraction">
+						Фракция от 1 до 10 мм
+					</div>
+					<div class="photo"></div>
+				</div>
+			</div>
+
+			<div class="leaf-bottom" animate="left">
+
+			</div>
+		</section>
+
+		<section class="packing" id="packing">
+			<div class="title">
+				Упаковка
+			</div>
+			<div class="description">
+				Лавровый лист может быть упакован в картонные ящики или полипропиленовые мешки
+				<!-- <br/> -->
+				весом 10-20 кг, по желанию покупателя.
+				<!-- <br/> -->
+				Фасовка в полипропиленовые мешки по 15 кг.
+			</div>
+			<div class="row-top">
+				<span class="ico icon-Font-07"></span>
+				<div class="desc">
+					Фасовка в картонные ящики по 15 кг
+				</div>
+			</div>
+			<div class="row-bottom">
+				<span class="ico icon-Font-07"></span>
+				<div class="desc">
+					Фасовка в полипропиленовые мешки по 15 кг
+				</div>
+			</div>
+		</section>
+
+		<section class="distribution" id="distribution">
+			<div class="title">
+				Дистрибьюция
+			</div>
+			<ul class="distrib-list">
+				<li class="distrib-list-item">
+					Мы сегодня активно развиваемся и расширяем нашу дистрибьюторскую сеть.
+				</li>
+				<li class="distrib-list-item">
+					Мы приглашаем Вас к сотрудничеству.
+				</li>
+				<li class="distrib-list-item">
+					Наши принципы взаимодействия просты и прозрачны.
+				</li>
+				<li class="distrib-list-item">
+					Мы предоставляем собой компанию с семейным типом культуры, 
+					поэтому хорошие стабильные отношения с нашими партнерами - большая ценность для нас.
+				</li>
+				<li class="distrib-list-item">
+					Мы сделаем все, чтобы наша совместная работа была
+					приятна и выгодна для обеих сторон.
+				</li>
+			</ul>
+			<div class="wait-for-you">
+				Ждем Вас!
+				<div class="logo-font">
+					<span class="ico icon-Font-07"></span>				
+				</div>
+			</div>
+		</section>
+
+		<section class="tizer">
+			<div class="text">
+				Мы готовы рассмотреть любые ваши пожелания к качеству и предложить очень конкурентные цены!
+			</div>
+			<button class="contact-us"><a href="#contact-us-form">Связаться с нами</a></button>
+		</section>
+		
+		<section class="about-us" id="aboutus">
+			<div class="title">
+				О нас
+			</div>
+			<article class="advan-1 clearfix">
+				<div class="image" animate="right">
+					<img src="img/x2/hend_leaf-x2.jpg" alt="">
+				</div>
+				<div class="description">				
+					<span class="bold-yellow">Н</span>аша компания <span class="bold">"LeafLux" Ltd</span> предлагает высококачественный лавровый лист с <span class="bold">2000</span> года, 
+					выращеный в экологических чистых горных районах Грузии.
+					<br/>
+					<br/>
+					При выращивании лавра не применяется никаких химических средств. В результате лист имеет превосходный насыщенный аромат.
+					<br/>
+					Мы уверены в самом лучшем качестве нашего продукта, что подтверждает сертификат.
+				</div>
+			</article>
+			<article class="advan-2 clearfix">
+				<div class="image" animate="left">
+					<img src="img/x2/map.png" alt="">
+				</div>
+				<div class="description">
+					<div class="desc-title">
+						Сделанные нами инвестиции в производство позволяют осуществлять:
+					</div>
+					<ul class="desc-list">
+						<li class="desc-list-item">
+							качественную сушку в высокопроизводительных сушильных камерах;
+						</li>
+						<li class="desc-list-item">
+							автоматическую калибровку и сортировку лаврового листа;
+						</li>
+						<li class="desc-list-item">
+							качественную упаковку.
+						</li>
+					</ul>
+				</div>
+			</article>
+		</section>
+
+		<section class="advan" id="advantage">
+			<div class="title">
+				Преимущества
+			</div>
+			<div class="row-top">
+				<div class="item">
+					<span class="ico icon-Font-01"></span>
+					<span class="description">
+						Лавр выращенный в экологически чистых горных районах Грузии. Без применения химических средств.
+					</span>
+				</div>
+				<div class="item">
+					<span class="ico icon-Font-03"></span>
+					<span class="description">
+						Качество нашего продукта, подтверждает наличие сертификата.
+					</span>
+				</div>
+			</div>
+			<div class="row-bottom">
+				<div class="item">
+					<span class="ico icon-Font-05"></span>
+					<span class="description">
+						Быстрая доставка товара в любую точку мира.
+					</span>
+				</div>
+				<div class="item">
+					<span class="ico icon-Font-04"></span>
+					<span class="description">
+						Все процессы осуществляются на уровне самых современных технологий.
+					</span>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer" id="contact-us-form">
+			<section class="contact-form-container">
+				<div class="contact-form">
+					<div class="contact-form-title">
+						Связаться с нами:
+					</div>
+					<form id="contact_form" class="send-contact-form clearfix" action="/" method="post">
+						<input    id="entry_name"    type="text"   class="name"    name="user_name" placeholder="Имя" required>
+						<input    id="entry_phone"   type="text"   class="phone"   name="user_phone" placeholder="Телефон" required>
+						<textarea id="entry_message" type="text"   class="message" name="message" placeholder="Сообщение" required></textarea>
+						<button   id="submit-button" type="submit" class="send-contact-btn">
+							<span class="send">Отправить</span>
+							<span class="sending">
+								<span class=""></span>
+								<span class=""></span>
+								<span class=""></span>
+							</span>
+							<span class="send-error">Ошибка!</span>
+							<span class="sended"><i class="fa fa-check" aria-hidden="true"></i> Отправлено</span>
+						</button>
+					</form>
+				</div>
+				<div class="bg"></div>
+				<div class="leaf" animate="right" style="transform: rotate(-25deg);"></div>
+			</section>
+			<section class="contact-information" id="contacts">
+				<div class="adress">
+					<span class="ico icon-Font-08"></span>
+					<span class="text">
+						Хелвачаури р-н, село Капрешуми, Грузия				
+					</span>
+				</div>
+				<div class="email">
+					<span class="ico icon-Font-09"></span>
+					<span class="text">
+						zbutlux@gmail.com
+					</span>
+				</div>
+				<div class="phone">
+					<span class="ico icon-Font-10"></span>
+					<span class="text">
+						тел. (099) 568 71 94
+					</span>
+				</div>
+			</section>
+		</footer>
+	</div>
+<!-- ======================================================================================================================================== -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<!-- <script src="js/slick/slick/slick.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script> -->
+	<script src="js/main.js"></script>
+</body>
+</html>
