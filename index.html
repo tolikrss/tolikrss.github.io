@@ -2,39 +2,64 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<title>Anatoliy Lakhno</title>
+	<meta charset="UTF-8">
+	<title>SannaCode</title>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/main.css"/>
 </head>
+
 <body>
-	<div class="preloader-overlay">
-		<div class="loader">Loading...</div>
+<!-- ======================================================================================================================================== -->
+
+<div class="calculator-wrapper">
+	<div class="calculator">
+		<section class="screen-container ">
+			<div class="screen"></div>
+		</section>
+		<section class="buttons-wrapper">
+			<div class="buttons-container">
+				<asside class="numbers">
+					<div class="line">
+						<button class="number-btn clear">C</button>
+						<button class="number-btn btn">(</button>
+						<button class="number-btn btn">)</button>
+						<button class="number-btn power"><i class="fa fa-power-off" aria-hidden="true"></i></button> <!-- &nbsp;<span class="value">Off</span> -->
+					</div>
+					<div class="line">
+						<button class="number-btn btn">7</button>
+						<button class="number-btn btn">8</button>
+						<button class="number-btn btn">9</button>
+						<button class="control-btn btn">*</button>
+					</div>
+					<div class="line">
+						<button class="number-btn btn">4</button>
+						<button class="number-btn btn">5</button>
+						<button class="number-btn btn">6</button>
+						<button class="control-btn btn">/</button>
+					</div>
+					<div class="line">
+						<button class="number-btn btn">1</button>
+						<button class="number-btn btn">2</button>
+						<button class="number-btn btn">3</button>
+						<button class="control-btn btn">+</button>
+					</div>
+					<div class="line">
+						<button class="number-btn btn">0</button>
+						<button class="number-btn btn">.</button>
+						<button class="number-btn result">=</button>
+						<button class="control-btn btn">-</button>
+					</div>
+				</asside>
+			</div>
+		</section>
 	</div>
-	
-	<div class="project-list-container">
-		<div class="title">
-			Некоторые примеры работ:
-		</div>
-		<ul class="list">
-			<li class="list-item">
-				<a href="projects/LeafLuxApp/index.html">LeafLux</a>
-			</li>
-			<li class="list-item">
-				<a href="projects/CandyStickersApp/app/index.html">CandyStickersApp</a>
-			</li>
-			<li class="list-item">
-				<a href="projects/CrazyFatburnApp/public/index.html">CrazyfatburnApp</a>
-			</li>
-		</ul>
-	</div>
-	
-	
-	
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</div>
+
+<!-- ======================================================================================================================================== -->
+	<script src="js/vendor/jquery-3.2.1.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
