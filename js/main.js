@@ -50,15 +50,6 @@ function Calc (str) {
             token = incStr[position++];
         };
 
-        if ( typeof token === 'string'     && 
-             typeof prevToken === 'string' &&
-             prevToken.toString() == '('   &&
-             (token.toString() == '+' || token.toString() == '-')
-           ) 
-        {
-            Operands.push(0);
-        }
-
         if (typeof token === 'number') {            
             Operands.push( Number(token) );
         } else if (typeof token === 'string') { 
